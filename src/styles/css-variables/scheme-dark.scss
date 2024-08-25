@@ -1,0 +1,40 @@
+@import "../media";
+
+@mixin schemeDark {
+  --bg_color: #181818;
+  --text_color: #FFFFFF;
+  --hint_color: #AAAAAA;
+  --link_color: #4991E5;
+  --link_alpha_color: #4991E51A;
+  --button_text_color: #FFFFFF;
+  --button_color: #4991E5;
+  --secondary_bg_color: #212121;
+  // 6.10
+  --section_bg_color: #181818; // fallback: bg_color
+  --accent_text_color: #4991E5; // fallback: link_color
+  --subtitle_text_color: #AAAAAA; // fallback: hint_color
+  --destructive_text_color: #EE686F;
+  --header_bg_color: #232326;
+  --section_header_text_color: #AAAAAA; // fallback: hint_color
+
+  --stroke_separator: #FFFFFF33;
+  --stroke_image_border: #FFFFFF14;
+  --button_color_hover: #64B1EE;
+  --secondary_bg_color_hover: #292929;
+  --hint_color_hover: #999999;
+
+  --color_orange: #FF9500;
+  --color_red: #FF453A;
+  --overlay: #00000066;
+  --bg_modal: #18181A;
+  --bg_header_blur: #000000E0;
+  --bg_hover_alpha: #E5E5EA14;
+
+  --bg_skeleton: #323234;
+  --bg_skeleton_gradient: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 52.08%, rgba(0, 0, 0, 0) 100%);
+  --bg_ripple: #FFFFFFA3;
+
+  --card_color: rgba(28, 28, 30, 1);
+
+  --highlight-default: rgb(255 255 255 / 5%);
+}

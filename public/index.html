@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#000000" />
+  <meta
+          name="description"
+          content="Web site created using create-react-app"
+  />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="stylesheet" href="/loader.css"/>
+
+  <script src="/telegram-web-app.js"></script>
+  <script src="/tganalytics.js"></script>
+  <script src="/csrf-retry-polyfill.js"></script>
+  <script src="/setupColorScheme.js"></script>
+  <script src="/setupFeatures.js"></script>
+  <script src="/init.js"></script>
+  <style>
+    @font-face {
+      font-family: 'RobotoFlex';
+      font-weight: 700;
+      src: url('RobotoFlex-VariableFont.ttf') format('ttf');
+    }
+
+    @font-face {
+      font-family: 'RobotoFlex';
+      font-weight: 590;
+      src: url('RobotoFlex-VariableFont.ttf') format('ttf');
+    }
+
+    @font-face {
+      font-family: 'RobotoFlex';
+      font-weight: 510;
+      src: url('RobotoFlex-VariableFont.ttf') format('ttf');
+    }
+
+    @font-face {
+      font-family: 'RobotoFlex';
+      font-weight: 400;
+      src: url('RobotoFlex-VariableFont.ttf') format('ttf');
+    }
+
+    body {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      color: var(--text_color);
+      background: var(--bg_color);
+    }
+
+    .twaBody {
+      height: 100vh;
+      overflow: hidden;
+      -webkit-text-size-adjust:none;
+    }
+
+    .twaBody * {
+      -webkit-user-select: none;
+      user-select: none;
+    }
+  </style>
+  <title>Tapps center</title>
+</head>
+<body class="twaBody">
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+<div class="appLoader">
+  <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M59.2826 21.1758C62.9777 20.7275 66.1139 23.8637 65.6656 27.5588L60.0694 73.69C59.4936 78.4366 53.7031 80.4351 50.3222 77.0542L9.78704 36.5192C6.40611 33.1382 8.40461 27.3478 13.1512 26.772L59.2826 21.1758Z" fill="var(--bg_skeleton)"/>
+    <path d="M24.3746 47.0036C25.6759 45.7023 27.7858 45.7023 29.0871 47.0036L39.7309 57.6474C41.0323 58.9487 41.0323 61.0586 39.7309 62.3599L34.6971 67.3937C33.3958 68.695 31.286 68.695 29.9846 67.3937L19.3408 56.7498C18.0395 55.4485 18.0395 53.3387 19.3408 52.0374L24.3746 47.0036Z" fill="var(--bg_skeleton)"/>
+    <path d="M34.7867 57.4146C36.088 56.1133 38.1979 56.1133 39.4992 57.4146L41.3177 59.2331C42.619 60.5344 42.619 62.6442 41.3177 63.9455L36.2839 68.9793C34.9825 70.2806 32.8727 70.2806 31.5714 68.9793L28.9888 66.3968C28.1095 65.5174 28.1095 64.0918 28.9888 63.2125L34.7867 57.4146Z" fill="var(--bg_skeleton)"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M50.7216 77.4182L30.0729 56.7695L64.029 22.8135C65.2185 24.0034 65.8897 25.7116 65.6656 27.5588L60.0694 73.69C59.5156 78.2548 54.1398 80.2772 50.7216 77.4182Z" fill="var(--bg_skeleton)"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M61.8113 8.72989C63.2382 8.24043 64.6836 7.7942 66.1469 7.39343C70.3669 6.23763 74.4053 7.72744 76.9664 10.567C79.2756 13.1269 80.3839 16.784 79.3418 20.5887C74.4029 38.6201 62.6299 54.0162 46.5228 63.5076L40.3826 67.1259L19.6097 46.353L23.2279 40.2128C31.9492 25.4128 45.6558 14.272 61.8113 8.72989Z" fill="var(--bg_skeleton)"/>
+    <path d="M34.038 55.6499C32.2651 56.0806 31.5683 58.3118 32.8584 59.6019L40.3826 67.1259L46.5228 63.5076C62.6299 54.0162 74.4029 38.6201 79.3418 20.5887C79.7987 18.9206 79.8416 17.2803 79.5518 15.749C71.7593 35.8564 54.6423 50.6449 34.038 55.6499Z" fill="var(--bg_skeleton)"/>
+    <path d="M63.2734 35.564C59.961 38.8764 54.5904 38.8764 51.278 35.564C47.9655 32.2515 47.9655 26.881 51.278 23.5686C54.5904 20.2561 59.961 20.2561 63.2734 23.5686C66.5859 26.881 66.5859 32.2515 63.2734 35.564Z" fill="var(--bg_color)"/>
+    <path d="M11.701 67.96C13.2014 62.9896 19.4616 61.417 23.1328 65.0882C26.804 68.7594 25.2313 75.0196 20.261 76.5199L8 80.2209L11.701 67.96Z" fill="var(--bg_skeleton)"/>
+  </svg>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 3px;
+  align-items: center;
+  color: var(--color_orange);
+}

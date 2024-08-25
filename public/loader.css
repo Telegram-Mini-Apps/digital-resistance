@@ -1,0 +1,17 @@
+.appLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: var(--bg_color);
+    z-index: 100;
+    opacity: 1;
+    will-change: transform;
+    transform: translateZ(0);
+    transition: opacity 0.3s var(--first_layer);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

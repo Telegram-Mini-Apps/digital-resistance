@@ -1,0 +1,224 @@
+@import "../../styles/media";
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
+.font-weight-semi-bold {
+  font-weight: 590;
+}
+
+.font-weight-medium {
+  font-weight: 510;
+}
+
+.font-weight-regular {
+  font-weight: 400;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+.h1 {
+  font-size: 38px;
+  line-height: 46px;
+
+  @include media-breakpoint-m {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  @include media-breakpoint-s {
+    font-size: 34px;
+    line-height: 40px;
+
+    &.font-weight-semi-bold {
+      @include ios-only {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+.h2 {
+  font-size: 32px;
+  line-height: 40px;
+
+  @include media-breakpoint-m {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  @include media-breakpoint-s {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.h3 {
+  font-size: 26px;
+  line-height: 34px;
+
+  @include media-breakpoint-m {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  @include media-breakpoint-s {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+.h4 {
+  font-size: 24px;
+  line-height: 32px;
+
+  @include media-breakpoint-m {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  @include media-breakpoint-s {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.body {
+  font-size: 21px;
+  line-height: 28px;
+
+  @include media-breakpoint-m {
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  @include media-breakpoint-s {
+    font-size: 17px;
+    line-height: 22px;
+  }
+}
+
+.callout {
+  font-size: 18px;
+  line-height: 24px;
+
+  @include media-breakpoint-m {
+    font-size: 17px;
+    line-height: 24px;
+  }
+
+  @include media-breakpoint-s {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.subHeadline {
+  &__level__1 {
+    font-size: 17px;
+    line-height: 22px;
+
+    @include media-breakpoint-m {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @include media-breakpoint-s {
+      font-size: 15px;
+      line-height: 18px;
+    }
+  }
+
+  &__level__2 {
+    font-size: 16px;
+    line-height: 20px;
+
+    @include media-breakpoint-m {
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    @include media-breakpoint-s {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}
+
+.footNote {
+  font-size: 15px;
+  line-height: 20px;
+
+  @include media-breakpoint-m {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  @include media-breakpoint-s {
+    font-size: 13px;
+    line-height: 16px;
+
+    &.font-weight-semi-bold,
+    &.font-weight-medium,
+    &.font-weight-regular {
+      @include ios-only {
+        font-size: 13px;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+.caption {
+  &__level__1 {
+    font-size: 14px;
+    line-height: 18px;
+
+    @include media-breakpoint-m {
+      font-size: 13px;
+      line-height: 16px;
+    }
+
+    @include media-breakpoint-s {
+      font-size: 12px;
+      line-height: 14px;
+
+      &.font-weight-semi-bold,
+      &.font-weight-medium,
+      &.font-weight-regular {
+        @include ios-only {
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+
+  &__level__2 {
+    font-size: 13px;
+    line-height: 16px;
+
+    @include media-breakpoint-m {
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    @include media-breakpoint-s {
+      font-size: 12px;
+      line-height: 14px;
+
+      &.font-weight-semi-bold,
+      &.font-weight-medium,
+      &.font-weight-regular {
+        @include ios-only {
+          font-size: 11px;
+          line-height: 13px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.root {
+  padding: 40px 28px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.typography {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 8px;
+}
+
+.lottieContainer {
+  width: 112px;
+  height: 112px;
+}

@@ -1,0 +1,28 @@
+.rippleContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+.rippleElement {
+  position: absolute;
+  background-color: var(--bg_ripple);
+  opacity: 25%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  border-radius: 50%;
+}
+
+.tapHighLight {
+  &:active {
+    background-color: var(--highlight-default);
+    transition: background-color 0.3s var(--first_layer);
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+

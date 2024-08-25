@@ -1,0 +1,78 @@
+@import "../../../styles/mixins";
+
+.root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  gap: 8px;
+  padding-top: 40px;
+}
+
+.iconsHolder {
+  width: 100%;
+  height: 72px;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  background-size: auto 72px;
+}
+
+.top {
+  background-image: url("./Top.png");
+  animation: moveBackgroundLeft 800s linear infinite;
+}
+
+.bottom {
+  background-image: url("./Bottom.png");
+  animation: moveBackgroundRight 800s linear infinite;
+}
+
+.highlight {
+  background: linear-gradient(89deg, #2B82EB 0%, #1CC8FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-feature-settings: 'clig' off, 'liga' off;
+}
+
+.title {
+  text-align: center;
+  max-width: 500px;
+
+  @include media-breakpoint-m {
+    max-width: 470px;
+  }
+
+  @include media-breakpoint-s {
+    max-width: 320px;
+  }
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0 32px;
+  align-items: center;
+  gap: 20px;
+}
+
+@keyframes moveBackgroundLeft {
+  0% {
+    background-position: center center;
+  }
+  100% {
+    background-position: -400% 0; /* Adjust the percentage based on the width you set earlier */
+  }
+}
+
+@keyframes moveBackgroundRight {
+  0% {
+    background-position: center center;
+  }
+  100% {
+    background-position: 400% 0; /* Adjust the percentage based on the width you set earlier */
+  }
+}

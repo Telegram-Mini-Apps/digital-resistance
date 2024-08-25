@@ -1,0 +1,138 @@
+@import "../../styles/mixins";
+
+.root {
+  gap: 12px;
+  display: flex;
+  padding: 12px 16px;
+  border-radius: 14px;
+  flex-direction: row;
+  justify-content: stretch;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    background-color: var(--bg_hover_alpha);
+  }
+
+  &.noFocus {
+    outline: none;
+    background-color: initial;
+  }
+
+  @include media-breakpoint-s {
+    padding: 8px 16px;
+  }
+}
+
+.imageContainer {
+  border-radius: 16px;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+
+  @include media-breakpoint-m {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.image {
+  border-radius: 16px;
+  transition: transform .3s var(--first_layer);
+
+  width: 72px;
+  height: 72px;
+
+  @include media-breakpoint-m {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    & .description {
+      color: var(--hint_color);
+
+      @include text-ellipsis-multiline(1);
+    }
+  }
+
+  .additionInfoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .controls {
+    margin-left: auto;
+
+    .buttonLabel {
+      white-space: nowrap;
+    }
+  }
+}
+
+.poster {
+  border-radius: 16px;
+}
+
+.title {
+  min-width: 110px;
+
+  @include text-ellipsis-multiline(1);
+}
+
+.shimmers {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.shimmer {
+  height: 10px;
+  width: 100%;
+  max-width: 100px;
+  border-radius: 12px;
+
+  &.small {
+    max-width: 68px;
+  }
+
+  &.medium {
+    max-width: 130px;
+  }
+
+  &.big {
+    max-width: 160px;
+  }
+}
+
+.shimmersRow {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.shine {
+  @include shine(true);
+}

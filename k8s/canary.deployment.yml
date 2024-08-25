@@ -1,0 +1,78 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: canary-deployment
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: app-canary
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: app-canary
+    spec:
+      containers:
+        - image: 058378981158.dkr.ecr.eu-central-1.amazonaws.com/tapps-frontend-cra:${IMAGE_TAG}
+          imagePullPolicy: Always
+          name: app-canary
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              memory: 2048Mi
+            requests:
+              cpu: 500m
+              memory: 512M
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  name: service-canary
+spec:
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
+  type: NodePort
+  selector:
+    app.kubernetes.io/name: app-canary
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: default
+  name: canary-lb
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-central-1:058378981158:certificate/144d3462-39d6-4af8-b23c-099aa37c0597
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "http"
+    service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: "60"
+    service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443,8443"
+    service.beta.kubernetes.io/aws-load-balancer-connection-draining-enabled: "true"
+    service.beta.kubernetes.io/aws-load-balancer-connection-draining-timeout: "60"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "Cache-Control: no-cache";
+spec:
+  tls:
+    - hosts:
+        - tappscenter.org
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: service-canary
+                port:
+                  number: 80

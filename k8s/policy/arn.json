@@ -1,0 +1,14 @@
+{
+  "Policy": {
+    "PolicyName": "ALBIngressControllerIAMPolicy",
+    "PolicyId": "ANPAQ3F5IR4TH3TETTC7C",
+    "Arn": "arn:aws:iam::058378981158:policy/ALBIngressControllerIAMPolicy",
+    "Path": "/",
+    "DefaultVersionId": "v1",
+    "AttachmentCount": 0,
+    "PermissionsBoundaryUsageCount": 0,
+    "IsAttachable": true,
+    "CreateDate": "2024-07-12T20:07:44+00:00",
+    "UpdateDate": "2024-07-12T20:07:44+00:00"
+  }
+}

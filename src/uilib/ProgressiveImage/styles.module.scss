@@ -1,0 +1,24 @@
+.placeholder {
+  background-color: var(--bg_skeleton);
+  opacity: 1;
+  display: block;
+  transition: opacity 0.3s var(--first_layer);
+}
+
+.hidden {
+  opacity: 0;
+  display: none;
+}
+
+.border {
+  box-shadow: inset 0 0 0 var(--border_width) var(--stroke_image_border);
+}
+
+.preventSelect {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  touch-action: none;
+  -ms-touch-action: none;
+  pointer-events: none;
+}

@@ -1,0 +1,16 @@
+name: Build Lightning
+
+on:
+  workflow_dispatch:
+    inputs:
+
+concurrency:
+  group: lightning
+  cancel-in-progress: true
+
+jobs:
+  build:
+    uses: ./.github/workflows/build-common.yml
+    secrets: inherit
+    with:
+      image_tag: lightning

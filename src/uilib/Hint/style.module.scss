@@ -1,0 +1,18 @@
+.root {
+  border: var(--border_width) solid var(--stroke_separator);
+  color: var(--text_color);
+  background-color: var(--bg_color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 20px;
+  justify-content: center;
+  padding: 1px 4px;
+  width: fit-content;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.caption {
+  line-height: 0;
+}

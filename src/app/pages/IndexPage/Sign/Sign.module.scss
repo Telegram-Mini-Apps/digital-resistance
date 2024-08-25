@@ -1,0 +1,35 @@
+.root {
+  padding-top: 24px;
+}
+
+.info {
+  background: #212A33;
+  padding: 10px 14px;
+  color: #8794A1;
+  font-family: 'SF Pro Text', sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.23px;
+  border-radius: 10px;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #248BDA;
+  padding: 14px;
+  font-family: "SF Pro Text", sans-serif;
+  font-weight: 590;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.43px;
+  gap: 6px;
+  appearance: none;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+

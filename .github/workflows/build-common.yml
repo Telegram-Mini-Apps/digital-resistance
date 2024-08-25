@@ -1,0 +1,78 @@
+---
+name: Build Common
+
+on:
+  workflow_call:
+    inputs:
+      image_tag:
+        required: true
+        type: string
+    secrets: { }
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: refs/tags/${{ inputs.image_tag }}
+
+      - name: Set kubectl version to v1.23.0
+        uses: azure/setup-kubectl@v3.0
+        with:
+          version: 'v1.23.0'
+        id: install
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_ID }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          output-credentials: true
+
+      - name: Set sha-short
+        run: echo "GITHUB_SHA_SHORT=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ${{ steps.login-ecr.outputs.registry }}/tapps-frontend-cra
+          flavor: |
+            prefix=${{ inputs.image_tag }}
+          tags: |
+            type=sha
+            type=sha,format=long
+            type=ref,event=branch
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            sha=${{ github.sha }}
+            sha_short=${{ env.GITHUB_SHA_SHORT }}
+            app_env=production
+
+      - name: Checkout back to head
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Apply AWS k8s config
+        run: aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name ${{ secrets.AWS_CLUSTER }}
+
+      - name: Deploy to EKS
+        run: sed "s/\${IMAGE_TAG}/sha-${GITHUB_SHA}/g" k8s/${{ inputs.image_tag }}.deployment.yml | kubectl apply -f -
+
+      - name: Verify deployment
+        run: kubectl -n default rollout status deployment/${{ inputs.image_tag }}-deployment

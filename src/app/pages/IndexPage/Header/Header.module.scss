@@ -1,0 +1,28 @@
+.imgContainer {
+  text-align: center;
+  padding: 12px 0 4px;
+}
+
+.hashTags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #8794A1;
+  font-weight: 590;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.23;
+  font-family: "SF Pro Text", sans-serif;
+}
+
+.title {
+  color: white;
+  font-family: 'Google Sans', sans-serif;
+  font-weight: bold;
+  line-height: 34px;
+  font-size: 28px;
+  letter-spacing: -1%;
+  text-align: center;
+  padding: 8px 0 34px;
+}

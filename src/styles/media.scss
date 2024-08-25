@@ -1,0 +1,46 @@
+@use "sass:map";
+
+$smallGridBreakpoint: 900px;
+$mediumGridBreakpoint: 1400px;
+
+$grid-breakpoints: (
+        s: $smallGridBreakpoint,
+        m: $mediumGridBreakpoint,
+);
+
+@mixin media-breakpoint-s {
+  @media (max-width: #{map.get($grid-breakpoints, "s")}) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-m {
+  @media (max-width: #{map.get($grid-breakpoints, "m")}) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-between($a, $b) {
+  @media (min-width: #{map-get($grid-breakpoints, $a)}) and (max-width: #{map-get($grid-breakpoints, $b)}) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-up($breakpoint) {
+  @media (min-width: #{map-get($grid-breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+/* only Safari 10.1+ */
+@mixin media-only-safari {
+  _::-webkit-full-page-media, _:future, :root #{$selector} {
+    @content;
+  }
+}
+
+@mixin ios-only {
+  @supports (-webkit-touch-callout: none) {
+    @content;
+  }
+}

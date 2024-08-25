@@ -1,0 +1,57 @@
+@import "../../styles/media";
+@import "../../styles/mixins";
+
+$ripple-size: 38px;
+$icon-size: 48px;
+$input-padding-vertical: 13px;
+$input-padding-horizontal: 4px;
+$input-padding-left: $input-padding-horizontal + $icon-size;
+$input-padding-right: $input-padding-horizontal + $icon-size;
+
+.root {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.input {
+  appearance: none;
+  border: none;
+  width: 100%;
+  background: var(--secondary_bg_color);
+  display: block;
+  padding: $input-padding-vertical $input-padding-right $input-padding-vertical $input-padding-horizontal;
+  border-radius: var(--android_input_border_radius);
+  color: var(--text_color);
+  caret-color: var(--link_color);
+  -webkit-tap-highlight-color: transparent;
+
+  @include placeholder-color() {
+    color: var(--hint_color)
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.iconIncluded {
+    padding-left: $input-padding-left;
+  }
+}
+
+.iconContainer {
+  overflow: hidden;
+  position: absolute;
+  height: $ripple-size;
+  width: $ripple-size;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  color: var(--hint_color);
+  z-index: 1;
+}

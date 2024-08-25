@@ -1,0 +1,92 @@
+@import "../../styles/mixins";
+
+.button {
+  border-radius: var(--button_border_radius);
+  border: none;
+  padding: 6px 12px 6px 12px;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: fit-content;
+  user-select: none;
+  font-family: var(--font_family_rounded);
+  transition: transform .2s var(--first_layer), filter .2s var(--first_layer);
+  -webkit-tap-highlight-color: transparent;
+  height: fit-content;
+
+
+  &:active {
+    transform: scale(.96);
+  }
+
+  &__primary {
+    background-color: var(--button_color);
+    color: var(--button_text_color);
+
+    &:active {
+      background-color: var(--button_color);
+      filter: brightness(100%);
+      color: var(--button_text_color);
+    }
+  }
+
+  &__secondary {
+    background-color: var(--secondary_bg_color);
+    color: var(--link_color);
+
+    &:active {
+      background-color: var(--secondary_bg_color);
+      color: var(--link_color);
+    }
+  }
+
+  &__alternative {
+    background-color: var(--bg_color);
+    color: var(--text_color);
+    box-shadow: 0px 2px 28px 0px #00001C0F;
+    box-shadow: 0px 0px 1px 0px #00001C1F;
+
+    &:active:not(:focus) {
+      background-color: var(--secondary_bg_color);
+      color: var(--link_color);
+    }
+  }
+
+  &__tertiary {
+    background-color: transparent;
+    color: var(--link_color);
+
+    &:active {
+      background-color: transparent;
+      color: var(--link_color);
+    }
+  }
+
+  &__inversed {
+    background-color: var(--secondary_bg_color);
+    color: var(--link_color);
+
+    &:active:not(:focus) {
+      opacity: 0.8;
+      color: var(--link_color);
+    }
+  }
+
+  &__activeStateDisabled {
+    &:active {
+      transform: none;
+    }
+  }
+
+  &__pointerDisabled {
+    pointer-events: none;
+  }
+
+  &__shine {
+    @include shine(true);
+  }
+
+  &__context {
+    background-color: var(--color_white);
+    color: var(--color_black);
+  }
+}

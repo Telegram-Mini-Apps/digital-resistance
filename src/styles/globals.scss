@@ -1,0 +1,19 @@
+@import "mixins";
+@import "css-variables/scheme-dark";
+@import "css-variables/scheme-light";
+@import "css-variables/shared";
+
+:root {
+  @include schemeLight();
+
+  @media (prefers-color-scheme: dark) {
+    @include schemeDark();
+  }
+
+  @include shared();
+}
+
+/* Misc. */
+@import "reset";
+@import "html-body";
+@import "misc";

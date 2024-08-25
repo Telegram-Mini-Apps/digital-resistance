@@ -1,0 +1,42 @@
+@import "../media";
+
+@mixin shared {
+  --font_family: -apple-system, system-ui, "Roboto", sans-serif;
+  --font_family_rounded: ui-rounded, system-ui, "Roboto", sans-serif;
+
+  --border_width: 1px;
+  --border_mobile: 0.5px;
+  --button_border_radius: 30px;
+  --button_border_radius_android: 6px/12px;
+  --input_border_radius: 12px;
+  --android_input_border_radius: 28px;
+
+  --first_layer: ease; // core ui elements (buttons, inputs, modals, etc)
+  --second_layer: cubic-bezier(.44,.49,.48,-0.12); // bg elements
+  --third_layer: cubic-bezier(.44,.49,.88,-0.12); // Small elements
+  --core_layer: cubic-bezier(.64,.64, 0, 1.01);
+
+  @include media-breakpoint-s {
+    --border_width: var(--border_mobile);
+  }
+
+  --color_white: #fff;
+  --color_black: #000;
+
+  --tabs_z_index: 1;
+  --header_z_index: 2;
+  --backdrop_z_index: 3;
+  --search_z_index: 4;
+  --search_results_z_index: 5;
+
+  --header_height: 52px;
+  --initial_header_height: 52px;
+  --tabs_height: 72px;
+
+  --recently_launched_height: 0px;
+  --initial_recently_launched_height: 0px;
+  --bg-alpha: rgba(255, 255, 255, 0.15);
+  --light_border: rgba(0, 0, 0, 0.08);
+
+  --placeholder_height: 50px;
+}

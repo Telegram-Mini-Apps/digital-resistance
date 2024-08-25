@@ -1,0 +1,20 @@
+@import '../../styles/mixins';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-bottom: 18px;
+  overflow-y: auto;
+
+  .icon {
+    color: var(--hint_color);
+  }
+
+  @include noScrollbar();
+}
+
+.footerWrapper {
+  margin-top: auto;
+}
+

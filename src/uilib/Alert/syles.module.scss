@@ -1,0 +1,44 @@
+@import "../../styles/mixins";
+
+.root {
+  margin: 10px 16px;
+  padding: 12px;
+  border-radius: 16px;
+  background-color: var(--link_alpha_color);
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .iconContainer {
+    padding: 4px 6px;
+    color: var(--link_color);
+  }
+
+  .crossIconContainer {
+    color: var(--hint_color);
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .img {
+    color: var(--link_color);
+  }
+
+  .title {
+    @include text-ellipsis-multiline(1);
+    color: var(--link_color);
+  }
+
+  .caption {
+    @include text-ellipsis-multiline(3);
+  }
+}

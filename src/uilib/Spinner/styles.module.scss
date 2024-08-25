@@ -1,0 +1,30 @@
+@import '../../styles/media';
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.spinner {
+  display: block;
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  border: calc(var(--border_width) * 2) solid var(--stroke_separator);
+  border-top-color: var(--button_color);
+  border-radius: 50%;
+  animation: rotation 1s infinite var(--first_layer);
+
+  @include media-breakpoint-s {
+    border-width: calc(var(--border_width) * 4);
+  }
+}
+
+.spinnerWrapper {
+  width: 17px;
+  height: 17px;
+}
