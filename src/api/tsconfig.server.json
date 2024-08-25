@@ -15,11 +15,11 @@
   "exclude": [
     "build/*",
     "node_modules/*",
-    "node_modules/@types/*",
+    "node_modules/@types/*"
   ],
   "include": [
     "index.ts",
     "../../types/entities.ts",
     "@types/node"
-  ],
+  ]
 }

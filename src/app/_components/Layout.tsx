@@ -7,17 +7,17 @@ import { NavigationEvents } from './NavigationEvents';
 import { hideLoader } from '../../utils/ui';
 
 export default function Layout() {
-    useEffect(() => {
-        void hideLoader();
-    }, []);
+  useEffect(() => {
+    void hideLoader();
+  }, []);
 
-    return (
-        <>
-            <NavigationEvents/>
-            <ScrollRestoration/>
-            <DataProvider>
-                <Outlet/>
-            </DataProvider>
-        </>
-    );
+  return (
+    <>
+      <NavigationEvents/>
+      <ScrollRestoration/>
+      <DataProvider>
+        <Outlet/>
+      </DataProvider>
+    </>
+  );
 }

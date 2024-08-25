@@ -4,8 +4,8 @@ $smallGridBreakpoint: 900px;
 $mediumGridBreakpoint: 1400px;
 
 $grid-breakpoints: (
-        s: $smallGridBreakpoint,
-        m: $mediumGridBreakpoint,
+  s: $smallGridBreakpoint,
+  m: $mediumGridBreakpoint,
 );
 
 @mixin media-breakpoint-s {

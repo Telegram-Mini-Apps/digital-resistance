@@ -6,9 +6,9 @@ interface ISpinnerProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Spinner: React.FC<ISpinnerProps> = (props) => {
-    return (
-        <span className={classNames(styles.spinnerWrapper, props.className)}>
+  return (
+    <span className={classNames(styles.spinnerWrapper, props.className)}>
             <div className={styles.spinner}/>
         </span>
-    );
-}
+  );
+};

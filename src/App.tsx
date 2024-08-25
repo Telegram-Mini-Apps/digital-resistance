@@ -10,16 +10,16 @@ import 'swiper/css';
 import './styles/globals.scss';
 
 function App() {
-    const router = useMemo(() => createBrowserRouter([{
-        id: 'root',
-        element: <Layout/>,
-        children: [
-            { path: '/', element: <IndexPage/> },
-            { path: '*', element: <Navigate to="/"/> },
-        ],
-    }], { basename: TWA_ROOT_PATH }), []);
+  const router = useMemo(() => createBrowserRouter([{
+    id: 'root',
+    element: <Layout/>,
+    children: [
+      { path: '/', element: <IndexPage/> },
+      { path: '*', element: <Navigate to="/"/> },
+    ],
+  }], { basename: TWA_ROOT_PATH }), []);
 
-    return <RouterProvider router={router}/>;
+  return <RouterProvider router={router}/>;
 }
 
 export default App;

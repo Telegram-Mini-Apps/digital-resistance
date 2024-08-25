@@ -1,51 +1,51 @@
-import { Storage } from './Storage'
+import { Storage } from './Storage';
 
 const RENDERER_DELAY = 400;
 
 class System {
-    constructor() {
+  constructor() {
+  }
+
+  get storage() {
+    return this._storage;
+  }
+
+  public delayAction(action: Function, delay: number = RENDERER_DELAY) {
+    if (window.Telegram.WebApp.platform === 'android' || window.Telegram.WebApp.platform === 'tdesktop') {
+      setTimeout(action, delay);
+      return;
     }
 
-    get storage() {
-        return this._storage;
-    }
+    action();
+  }
 
-    public delayAction(action: Function, delay: number = RENDERER_DELAY) {
-        if (window.Telegram.WebApp.platform === 'android' || window.Telegram.WebApp.platform === 'tdesktop') {
-            setTimeout(action, delay);
-            return;
-        }
+  public preloadImage(url: string, callback?: (loaded: boolean) => void) {
+    const img = new Image();
+    img.onload = () => callback && callback(true);
+    img.onerror = () => callback && callback(false);
+    img.src = url;
+  }
 
-        action();
-    }
+  public preloadImages(urls: string[], callback?: (loaded: boolean) => void) {
+    let loadedCount = 0;
+    const totalImages = urls.length;
 
-    public preloadImage(url: string, callback?: (loaded: boolean) => void) {
-        const img = new Image();
-        img.onload = () => callback && callback(true);
-        img.onerror = () => callback && callback(false);
-        img.src = url;
-    }
+    const checkAllImagesLoaded = () => {
+      loadedCount++;
+      if (loadedCount === totalImages) {
+        callback && callback(true);
+      }
+    };
 
-    public preloadImages(urls: string[], callback?: (loaded: boolean) => void) {
-        let loadedCount = 0;
-        const totalImages = urls.length;
+    urls.forEach(url => {
+      const img = new Image();
+      img.onload = checkAllImagesLoaded;
+      img.onerror = () => callback && callback(false);
+      img.src = url;
+    });
+  }
 
-        const checkAllImagesLoaded = () => {
-            loadedCount++;
-            if (loadedCount === totalImages) {
-                callback && callback(true);
-            }
-        };
-
-        urls.forEach(url => {
-            const img = new Image();
-            img.onload = checkAllImagesLoaded;
-            img.onerror = () => callback && callback(false);
-            img.src = url;
-        });
-    }
-
-    private _storage: Storage = new Storage();
+  private _storage: Storage = new Storage();
 }
 
 const system = new System();

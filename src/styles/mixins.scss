@@ -71,23 +71,23 @@ $transition-duration-fast: .1s;
   }
 }
 
-@mixin animate($animation,$duration,$method,$times){
+@mixin animate($animation,$duration,$method,$times) {
   animation: $animation $duration $method $times;
 }
 
 
-@mixin animateAndFreezeLast($animation,$duration,$method,$times){
+@mixin animateAndFreezeLast($animation,$duration,$method,$times) {
   animation: $animation $duration $method $times;
   animation-fill-mode: forwards;
 }
 
-@mixin keyframes($name){
+@mixin keyframes($name) {
   @keyframes #{$name}{
     @content;
   }
 }
 
-@mixin firstLayerTransition ($prop, $duration: 0.2s, $acceleration: true) {
+@mixin firstLayerTransition($prop, $duration: 0.2s, $acceleration: true) {
   transition: $prop $duration var(--first_layer);
 
   @if $acceleration {
@@ -95,14 +95,13 @@ $transition-duration-fast: .1s;
   }
 }
 
-@mixin coreLayerTransition ($prop, $duration: 0.3s, $acceleration: true) {
+@mixin coreLayerTransition($prop, $duration: 0.3s, $acceleration: true) {
   transition: $prop $duration var(--core_layer);
 
   @if $acceleration {
     transform: translateZ(0);
   }
 }
-
 
 
 @mixin shine($once: false) {
@@ -119,7 +118,7 @@ $transition-duration-fast: .1s;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
 
-    @include keyframes(placeholderShimmer){
+    @include keyframes(placeholderShimmer) {
       0% {
         opacity: 0.6;
       }
@@ -135,7 +134,7 @@ $transition-duration-fast: .1s;
     background-size: 800px 104px;
     background-image: var(--bg_skeleton_gradient);
 
-    @include keyframes(placeholderShimmer){
+    @include keyframes(placeholderShimmer) {
       0% {
         background-position: -468px 0;
       }

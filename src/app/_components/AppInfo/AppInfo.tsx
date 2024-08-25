@@ -4,23 +4,23 @@ import { EditorsChoiceBadge } from '../EditorsChoiceBadge/EditorsChoiceBadge';
 import styles from './styles.module.scss';
 
 export const AppInfo = () => {
-    const { application, isLoading } = useApplicationContext();
+  const { application, isLoading } = useApplicationContext();
 
-    if (isLoading) {
-        return (
-            <div className={styles.root}>
-                <EditorsChoiceBadge shine={true}/>
-            </div>
-        )
-    }
+  if (isLoading) {
+    return (
+      <div className={styles.root}>
+        <EditorsChoiceBadge shine={true}/>
+      </div>
+    );
+  }
 
-    return application?.attributes?.editors_choice
-        ? (
-            <AnimateEnter>
-                <div className={styles.root}>
-                    <EditorsChoiceBadge />
-                </div>
-            </AnimateEnter>
-        )
-        : null;
-}
+  return application?.attributes?.editors_choice
+    ? (
+      <AnimateEnter>
+        <div className={styles.root}>
+          <EditorsChoiceBadge/>
+        </div>
+      </AnimateEnter>
+    )
+    : null;
+};

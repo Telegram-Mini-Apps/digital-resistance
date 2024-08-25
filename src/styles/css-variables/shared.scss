@@ -12,9 +12,9 @@
   --android_input_border_radius: 28px;
 
   --first_layer: ease; // core ui elements (buttons, inputs, modals, etc)
-  --second_layer: cubic-bezier(.44,.49,.48,-0.12); // bg elements
-  --third_layer: cubic-bezier(.44,.49,.88,-0.12); // Small elements
-  --core_layer: cubic-bezier(.64,.64, 0, 1.01);
+  --second_layer: cubic-bezier(.44, .49, .48, -0.12); // bg elements
+  --third_layer: cubic-bezier(.44, .49, .88, -0.12); // Small elements
+  --core_layer: cubic-bezier(.64, .64, 0, 1.01);
 
   @include media-breakpoint-s {
     --border_width: var(--border_mobile);
