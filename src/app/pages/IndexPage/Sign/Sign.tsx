@@ -1,5 +1,6 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Trans } from 'react-i18next';
+import useSWR from 'swr';
 
 import { Section } from '../Section/Section';
 import { Button } from '../Button/Button';
@@ -17,25 +18,41 @@ function SignIcon() {
   );
 }
 
-export function Sign(props: { onSigned(): void }) {
-  const [loading, setLoading] = useState(false);
+export function Sign({ onSigned }: { onSigned(): void }) {
+  const [performRequest, setPerformRequest] = useState(false);
+  const { data, isLoading } = useSWR(
+    performRequest ? 'signPetition' : null, () => {
+      return fetch('/api/petitions/freedurov/sign', {
+        method: 'PATCH',
+        headers: {
+          'x-init-data': window.Telegram.WebApp.initData,
+        },
+      })
+        .then(r => r.json())
+        .then(r => {
+          if (r.error) {
+            throw new Error(r.message);
+          }
+          return r.data;
+        });
+    },
+  );
 
-  const onSign = useCallback(() => {
-    // fixme
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      props.onSigned();
-    }, 2000);
+  const onSignClick = useCallback(() => {
+    setPerformRequest(true);
   }, []);
+
+  useEffect(() => {
+    data && onSigned();
+  }, [onSigned]);
 
   return (
     <Section className={styles.root}>
       <Button
         icon={<SignIcon/>}
-        disabled={loading}
-        onClick={onSign}
-        after={loading && (
+        disabled={isLoading}
+        onClick={onSignClick}
+        after={isLoading && (
           <div className={styles.spinner}>
             <span className={styles.spinnerThumb}/>
           </div>
