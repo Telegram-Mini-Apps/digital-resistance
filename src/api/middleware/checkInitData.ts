@@ -1,6 +1,6 @@
 import { configDotenv } from 'dotenv';
 import { Request, Response, NextFunction } from 'express';
-import { validate, parse } from '@telegram-apps/init-data-node';
+import { validate } from '@telegram-apps/init-data-node';
 
 configDotenv();
 
@@ -16,16 +16,6 @@ export function checkInitData(options: InitDataOptions = {}) {
     const initData = req.headers['x-init-data'] as string;
 
     if (!initData) {
-      res.status(403);
-      res.send('Unauthorized');
-
-      return;
-    }
-
-    const parsedData = parse(initData);
-    const isUserIdValid = req.body.telegram_user_data.id === parsedData!.user!.id;
-
-    if (!isUserIdValid) {
       res.status(403);
       res.send('Unauthorized');
 

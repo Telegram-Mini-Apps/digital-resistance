@@ -10,9 +10,6 @@ import redisClient from './redisClient';
 import cors from 'cors';
 
 import { attachAnalyticsController } from './controllers/analytics';
-import { attachApplicationsController } from './controllers/applications';
-import { attachConfigController } from './controllers/config';
-import { attachEntitiesProxy } from './controllers/entities';
 import {
   FRAME_ANCESSORS,
   TRUSTED_CONNECT_PROVIDERS,
@@ -25,6 +22,7 @@ import {
   csrfTokenMiddleware,
   verifyCsrfToken,
 } from './middleware/csrfProtection';
+import { attachPetitionsController } from './controllers/petitions';
 
 configDotenv({ path: path.join(__dirname, '../../.env') });
 
@@ -57,10 +55,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../build')));
 
 attachCSRFController(app);
-attachConfigController(app);
 attachAnalyticsController(app);
-attachApplicationsController(app);
-attachEntitiesProxy(app);
+attachPetitionsController(app);
 
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '../../build', 'index.html'));
