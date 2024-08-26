@@ -1,5 +1,9 @@
 @import "../../styles/media";
 
+*{
+  user-select: none;
+}
+
 .font-weight-bold {
   font-weight: 700;
 }
