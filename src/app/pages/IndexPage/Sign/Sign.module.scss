@@ -1,3 +1,5 @@
+@import '../../../../styles/media';
+
 .root {
   padding-top: 24px;
 }
@@ -20,7 +22,7 @@
   justify-content: center;
   color: white;
   background: #248BDA;
-  padding: 14px;
+  padding: 13px;
   font-family: "SF Pro Text", sans-serif;
   font-weight: 590;
   font-size: 17px;
@@ -31,5 +33,34 @@
   border: none;
   border-radius: 10px;
   margin-bottom: 8px;
+  position: relative;
 }
 
+.spinner {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &Thumb {
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(359deg);
+      }
+    }
+
+    display: block;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    border: 2px solid white;
+    border-top-color: #248BDA;
+    border-radius: 50%;
+    animation: rotation 1s infinite var(--first_layer);
+  }
+}

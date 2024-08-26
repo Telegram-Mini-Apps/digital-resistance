@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Trans } from 'react-i18next';
 
 import { Section } from '../Section/Section';
@@ -17,11 +17,26 @@ function SignIcon() {
 }
 
 export function Sign() {
+  const [loading, setLoading] = useState(false);
+
+  const onSign = useCallback(() => {
+    // fixme
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  } ,[]);
+
   return (
     <Section className={styles.root}>
-      <button className={styles.button}>
+      <button className={styles.button} disabled={loading} onClick={onSign}>
         <SignIcon/>
         <Trans i18nKey={'sign_letter'}/>
+        {loading && (
+          <div className={styles.spinner}>
+            <span className={styles.spinnerThumb}/>
+          </div>
+        )}
       </button>
       <div className={styles.info}>
         {/*fixme: translations*/}
