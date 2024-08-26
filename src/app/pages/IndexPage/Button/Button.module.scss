@@ -1,5 +1,3 @@
-@import '../../../../styles/media';
-
 .root {
   width: 100%;
   display: flex;
@@ -39,35 +37,4 @@
 
 .icon {
   display: flex;
-}
-
-.content {}
-
-.spinner {
-  width: 17px;
-  height: 17px;
-  position: absolute;
-  right: 13px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  &Thumb {
-    @keyframes rotation {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(359deg);
-      }
-    }
-
-    display: block;
-    margin: auto;
-    height: 100%;
-    width: 100%;
-    border: 2px solid white;
-    border-top-color: #248BDA;
-    border-radius: 50%;
-    animation: rotation 1s infinite var(--first_layer);
-  }
 }

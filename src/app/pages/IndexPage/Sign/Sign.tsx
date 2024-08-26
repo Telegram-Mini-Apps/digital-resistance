@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { Trans } from 'react-i18next';
 
 import { Section } from '../Section/Section';
+import { Button } from '../Button/Button';
 
 import styles from './Sign.module.scss';
 
@@ -26,24 +27,24 @@ export function Sign(props: { onSigned(): void }) {
       setLoading(false);
       props.onSigned();
     }, 2000);
-  } ,[]);
+  }, []);
 
   return (
     <Section className={styles.root}>
-      <button className={styles.button} disabled={loading} onClick={onSign}>
-        <SignIcon/>
-        <Trans i18nKey={'sign_letter'}/>
-        {loading && (
+      <Button
+        icon={<SignIcon/>}
+        disabled={loading}
+        onClick={onSign}
+        after={loading && (
           <div className={styles.spinner}>
             <span className={styles.spinnerThumb}/>
           </div>
         )}
-      </button>
+      >
+        <Trans i18nKey={'sign_letter'}/>
+      </Button>
       <div className={styles.info}>
-        {/*fixme: translations*/}
-        <b>Elon Musk, Vitalik Buterin, and 65,892 people</b>{' '}
-        have already given their support
-        in&nbsp;the&nbsp;last&nbsp;24&nbsp;hours.
+        <Trans i18nKey={'already_supported'}/>
       </div>
     </Section>
   );
