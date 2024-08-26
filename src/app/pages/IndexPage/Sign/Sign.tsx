@@ -31,15 +31,21 @@ export function Sign({ onSigned }: { onSigned(): void }) {
         .then(r => r.json())
         .then(r => {
           if (r.error) {
+            window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('heavy');
             throw new Error(r.message);
           }
+
+          window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('soft');
           return r.data;
+        }).catch(e => {
+          window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('rigid');
         });
     },
   );
 
   const onSignClick = useCallback(() => {
-    setPerformRequest(true);
+      window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('light');
+      setPerformRequest(true);
   }, []);
 
   useEffect(() => {
