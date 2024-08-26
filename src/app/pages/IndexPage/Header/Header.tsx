@@ -1,9 +1,8 @@
 import React from 'react';
-import { Trans } from 'react-i18next';
 
 import styles from './Header.module.scss';
 
-export function Header() {
+export function Header(props: { title: string }) {
   return (
     <>
       <div className={styles.imgContainer}>
@@ -20,7 +19,7 @@ export function Header() {
         <span>#FreeDurov</span>
       </div>
       <h1 className={styles.title}>
-        <Trans i18nKey={'we_demand_release'} defaults=""/>
+        {props.title}
       </h1>
     </>
   );
