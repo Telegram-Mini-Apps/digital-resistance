@@ -6,9 +6,6 @@ import IndexPage from './app/pages/IndexPage/IndexPage';
 
 import { TWA_ROOT_PATH } from './utils/constatns';
 
-import 'swiper/css';
-import './styles/globals.scss';
-
 function App() {
   const router = useMemo(() => createBrowserRouter([{
     id: 'root',
