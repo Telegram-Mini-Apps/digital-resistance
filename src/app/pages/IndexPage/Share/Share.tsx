@@ -1,11 +1,11 @@
 import { Trans, useTranslation } from 'react-i18next';
+import { useCallback } from 'react';
 import cn from 'classnames';
 
 import { Section } from '../Section/Section';
+import { Button } from '../Button/Button';
 
 import styles from './Share.module.scss';
-import { useCallback } from 'react';
-import { Button } from '../Button/Button';
 
 function CopyIcon(props: { className?: string }) {
   return (
@@ -204,7 +204,7 @@ export function Share() {
   }, [appUrl]);
 
   const onShareStoryClick = useCallback(() => {
-    console.log('will share story');
+    window.Telegram.WebApp.shareToStory(new URL('/img/story.png', window.location.href).toString());
   }, []);
 
   const onShareTelegramClick = useCallback(() => {
