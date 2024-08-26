@@ -16,6 +16,14 @@
   position: relative;
   font-family: var(--font-family);
   font-weight: 600;
+  transition: transform .2s var(--first_layer), filter .2s var(--first_layer);
+
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   &Primary {
     color: white;
@@ -26,6 +34,10 @@
     color: white;
     background: #212A33;
     font-weight: 400;
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 }
 

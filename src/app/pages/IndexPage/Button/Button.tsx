@@ -1,5 +1,6 @@
 import React, { type ButtonHTMLAttributes, type ReactNode } from 'react';
 import cn from 'classnames';
+import { Ripple } from '../../../../uilib/Ripple/Ripple'
 
 import styles from './Button.module.scss';
 
