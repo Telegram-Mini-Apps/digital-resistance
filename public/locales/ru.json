@@ -18,9 +18,9 @@
   "share": "Поделиться",
   "share_description": "Поделитесь этой ссылкой на письмо с вашими друзьями и подписчиками в Telegram, X (бывший Twitter) и WhatsApp",
   "share_tg_stories": "Поделиться в Telegram Stories",
-  "save_stories_img": "Сохранить изображение для Stories",
+  "save_stories_img": "Сохранить для Stories",
   "share_stories_description": "Публикуйте сторис в социальных сетях, чтобы привлечь больше людей",
-  "add_badge_description": "Добавить значок сопротивления на ваш аватар",
-  "save_dog_avatar": "Сохранить аватар с собакой",
-  "save_dog_avatar_image": "Сохранить изображение собаки сопротивления"
+  "add_badge_description": "Добавить значок сопротивления на аватар",
+  "save_dog_avatar": "Сохранить аватар",
+  "save_dog_avatar_image": "Сохранить изображение"
 }
