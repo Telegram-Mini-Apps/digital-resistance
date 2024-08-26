@@ -12,5 +12,15 @@
   "open_letter": "공개 서한",
   "the_situation_in_media": "이 상황이 언론에",
   "wall_title": "두로프의 벽",
-  "already_supported": "Elon Musk, Vitalik Buterin 및 많은 사람들이 지난 2-3일 동안 이미 지원을 표명했습니다."
+  "already_supported": "Elon Musk, Vitalik Buterin 및 많은 사람들이 지난 2-3일 동안 이미 지원을 표명했습니다.",
+  "thank_you_for_support": "지원해 주셔서 감사합니다!",
+  "error_message": "문제가 발생했습니다. 다시 시도해 주세요.",
+  "share": "공유하기",
+  "share_description": "Telegram, X (ex. Twitter) 및 WhatsApp에서 친구 및 팔로워와 이 편지의 링크를 공유하세요",
+  "share_tg_stories": "텔레그램 스토리에 공유",
+  "save_stories_img": "스토리 이미지 저장",
+  "share_stories_description": "더 많은 사람들과 소통하기 위해 소셜 네트워크에 스토리를 게시하세요",
+  "add_badge_description": "저항 배지를 아바타에 추가",
+  "save_dog_avatar": "강아지와 아바타 저장",
+  "save_dog_avatar_image": "저항견 이미지 저장"
 }

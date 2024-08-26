@@ -12,5 +12,15 @@
   "open_letter": "La carta abierta",
   "the_situation_in_media": "Esta situación en los medios",
   "wall_title": "El Muro de Durov",
-  "already_supported": "Elon Musk, Vitalik Buterin y muchos otros ya han mostrado su apoyo en los últimos 2-3 días."
+  "already_supported": "Elon Musk, Vitalik Buterin y muchos otros ya han mostrado su apoyo en los últimos 2-3 días.",
+  "thank_you_for_support": "¡Gracias por tu apoyo!",
+  "error_message": "Algo pasó, intenta de nuevo por favor.",
+  "share": "Compartir",
+  "share_description": "Comparte este enlace a esta carta con tus amigos y seguidores en Telegram, X (ex. Twitter) y WhatsApp",
+  "share_tg_stories": "Compartir en Historias de Telegram",
+  "save_stories_img": "Guardar imagen para Historias",
+  "share_stories_description": "Publica historias en las redes sociales para atraer a más personas",
+  "add_badge_description": "Agrega la insignia de resistencia a tu avatar",
+  "save_dog_avatar": "Guardar Avatar con el Perro",
+  "save_dog_avatar_image": "Guardar Imagen del Perro de Resistencia"
 }

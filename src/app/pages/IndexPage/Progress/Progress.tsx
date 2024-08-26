@@ -14,7 +14,6 @@ export function Progress({ current, next }: { current: number; next: number }) {
   return (
     <Section className={styles.root}>
       <div className={styles.bar}>
-        {/*fixme*/}
         <div className={styles.barThumb} style={{ width: `${current / next * 100}%` }}/>
       </div>
       <div className={styles.captions}>

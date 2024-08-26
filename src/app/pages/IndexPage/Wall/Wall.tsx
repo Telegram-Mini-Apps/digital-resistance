@@ -35,6 +35,7 @@ function celebrityImage(key: CelebrityKey, scale: number): string {
 }
 
 function formatDate(date: Date): string {
+  // TODO: We want something like that: 6:32 AM · Jul 20, 2024
   return Intl
     .DateTimeFormat(undefined, {
       day: '2-digit',
@@ -85,7 +86,7 @@ export function Wall() {
           communications. It lowers not only France, but the world.
         </p>
       ),
-      date: new Date(), //fixme
+      date: new Date(Date.UTC(2024, 7, 25, 1, 13)),
       source: 'https://twitter.com/VitalikButerin/status/1827602680388239582',
     },
     {
@@ -137,7 +138,6 @@ export function Wall() {
               </div>
             </div>
             <div className={styles.quoteDate}>
-              {/*fixme: translate "via"  */}
               {formatDate(date)} via X (ex. Twitter)
             </div>
           </div>
