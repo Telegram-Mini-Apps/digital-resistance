@@ -9,7 +9,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary';
 }
 
-export function Button({ icon, variant = 'primary', after, ...rest }: Props) {
+export function Button({ icon, variant = 'primary', after, children, ...rest }: Props) {
   return (
     <button
       {...rest}
@@ -19,7 +19,7 @@ export function Button({ icon, variant = 'primary', after, ...rest }: Props) {
       })}
     >
       {icon && <span className={styles.icon}>{icon}</span>}
-      <span className={styles.content}>{rest.children}</span>
+      {children && <span className={styles.content}>{children}</span>}
       {after && <span className={styles.after}>{after}</span>}
     </button>
   );
