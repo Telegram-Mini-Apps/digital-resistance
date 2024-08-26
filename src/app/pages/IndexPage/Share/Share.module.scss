@@ -35,10 +35,22 @@
   margin-top: 16px;
 }
 
+.actionsRow {
+  display: flex;
+  gap: 10px;
+}
+
 .action {
   & + & {
     margin-top: 8px;
   }
+}
+
+.shareAction {
+  display: flex;
+  flex: 0 0 56px;
+  align-items: center;
+  justify-content: center;
 }
 
 .storiesImage {
