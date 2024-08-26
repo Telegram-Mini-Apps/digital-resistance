@@ -35,7 +35,7 @@ function celebrityImage(key: CelebrityKey, scale: number): string {
 
 function formatDate(date: Date): string {
   return Intl
-    .DateTimeFormat('en-US', {
+    .DateTimeFormat(undefined, {
       day: '2-digit',
       hourCycle: 'h24',
       month: 'long',
@@ -135,6 +135,7 @@ export function Wall() {
               </div>
             </div>
             <div className={styles.quoteDate}>
+              {/*fixme: translate "via"  */}
               {formatDate(date)} via X (ex. Twitter)
             </div>
           </div>
