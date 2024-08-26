@@ -43,7 +43,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ steps.login-ecr.outputs.registry }}/tapps-frontend-cra
+          images: ${{ steps.login-ecr.outputs.registry }}/declient
           flavor: |
             prefix=${{ inputs.image_tag }}
           tags: |
