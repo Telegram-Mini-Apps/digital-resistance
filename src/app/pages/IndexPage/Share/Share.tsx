@@ -193,24 +193,36 @@ function XIcon() {
 
 export function Share() {
   const { t } = useTranslation();
-  const shareUrl = 'https://t.me/tgresistancebot/letter';
+  const appUrl = 'https://t.me/tgresistancebot/letter';
 
   const onCopyClick = useCallback(() => {
+    // TODO: Motion, reaction?
     navigator
       .clipboard
-      .writeText(shareUrl)
+      .writeText(appUrl)
       .catch(console.error);
-  }, [shareUrl]);
+  }, [appUrl]);
 
   const onShareStoryClick = useCallback(() => {
     console.log('will share story');
   }, []);
 
   const onShareTelegramClick = useCallback(() => {
-    window.Telegram.WebApp.openTelegramLink(
-      'https://t.me/share/url?url=https%3A%2F%2Ft.me%2Ffree%2Fletter&text=We%20demand%20the%20release%20of%20Pavel%20Durov%20from%20custody%20in%20France.%20Support%20Pavel%20and%20sign%20the%20petition',
-    );
-  }, [shareUrl]);
+    window.Telegram.WebApp.openTelegramLink(`https://t.me/share/url?${
+      new URLSearchParams([
+        ['url', appUrl],
+        [
+          'text',
+          'We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition',
+        ],
+      ])
+        .toString()
+        // By default, URL search params encode spaces with "+".
+        // We are replacing them with "%20", because plus symbols are working incorrectly
+        // in Telegram.
+        .replace(/\+/g, '%20')
+    }`);
+  }, [appUrl]);
 
   const onShareXClick = useCallback(() => {
     window.Telegram.WebApp.openLink(
@@ -252,7 +264,7 @@ export function Share() {
             after={<CopyIcon className={styles.copyIcon}/>}
             onClick={onCopyClick}
           >
-            {shareUrl}
+            {appUrl}
           </Button>
           <div className={cn(styles.action, styles.actionsRow)}>
             <Button onClick={onShareTelegramClick} icon={<PlaneIcon/>}>
