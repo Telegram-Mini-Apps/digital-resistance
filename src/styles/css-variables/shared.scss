@@ -1,8 +1,8 @@
 @import "../media";
 
 @mixin shared {
-  --font_family: -apple-system, system-ui, "Roboto", sans-serif;
-  --font_family_rounded: ui-rounded, system-ui, "Roboto", sans-serif;
+  --font_family: -apple-system, "SF Pro", "SF Pro Text", system-ui, "Roboto", sans-serif;
+  --font_family_rounded: ui-rounded, "SF Pro", "SF Pro Text", system-ui, "Roboto", sans-serif;
 
   --border_width: 1px;
   --border_mobile: 0.5px;
