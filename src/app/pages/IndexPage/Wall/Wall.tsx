@@ -1,4 +1,5 @@
 import React, { type ReactNode, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Section } from '../Section/Section';
 
@@ -47,6 +48,7 @@ function formatDate(date: Date): string {
 }
 
 export function Wall() {
+  const { t } = useTranslation();
   const quotes = useMemo<Quote[]>(() => [
     {
       author: 'Elon Musk',
@@ -118,7 +120,7 @@ export function Wall() {
   ], []);
 
   return (
-    <Section title={'Durov’s Wall'}>
+    <Section title={t('wall_title')}>
       <div className={styles.content}>
         {quotes.map(({ key, date, ...q }) => (
           <div className={styles.quote} key={key}>
