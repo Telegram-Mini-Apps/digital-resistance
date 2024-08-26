@@ -51,7 +51,6 @@ app.use(express.static(path.join(__dirname, '../../build')));
 
 attachPetitionsController(app);
 
-
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '../../build', 'index.html'));
 });
