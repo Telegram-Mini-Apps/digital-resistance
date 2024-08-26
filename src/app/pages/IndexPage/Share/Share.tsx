@@ -204,8 +204,16 @@ export function Share() {
   }, [appUrl]);
 
   const onShareStoryClick = useCallback(() => {
-    window.Telegram.WebApp.shareToStory(new URL('/img/story.png', window.location.href).toString());
-  }, []);
+    window.Telegram.WebApp.shareToStory(
+      new URL('/img/story.png', window.location.href).toString(),
+      {
+        widget_link: {
+          url: appUrl,
+          name: 'Sign the petition'
+        }
+      }
+    );
+  }, [appUrl]);
 
   const onShareTelegramClick = useCallback(() => {
     window.Telegram.WebApp.openTelegramLink(`https://t.me/share/url?${
