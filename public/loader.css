@@ -4,7 +4,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background: var(--bg_color);
+    background: var(--bg-color);
     z-index: 100;
     opacity: 1;
     will-change: transform;
