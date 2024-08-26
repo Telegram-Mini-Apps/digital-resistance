@@ -1,9 +1,9 @@
 {
   "title": "Цифровое Сопротивление",
   "people_signed": "уже подписали",
-  "share_letter_link": "Поделиться ссылкой на письмо",
-  "publish_to_stories": "Опубликовать в сторис",
-  "add_badge": "Добавить значок на аватар",
+  "share_letter_link": "Поделиться письмом",
+  "publish_to_stories": "Опубликовать сторис",
+  "add_badge": "Показать значок",
   "we_demand_release": "Мы требуем освободить Павла Дурова из-под стражи во Франции",
   "signatures": "Подписи",
   "next_goal": "Следующая цель",
@@ -14,13 +14,13 @@
   "wall_title": "Стена Дурова",
   "already_supported": "Илон Маск, Виталик Бутерин и многие другие уже выразили свою поддержку за последние 2-3 дня.",
   "thank_you_for_support": "Спасибо за вашу поддержку!",
-  "error_message": "Что-то произошло, попробуйте снова.",
+  "error_message": "Что-то пошло не так, попробуйте снова.",
   "share": "Поделиться",
-  "share_description": "Поделитесь этой ссылкой на письмо с вашими друзьями и подписчиками в Telegram, X (бывший Twitter) и WhatsApp",
+  "share_description": "Поделитесь ссылкой на это письмо с вашими друзьями и подписчиками в Telegram, X (Twitter) и WhatsApp",
   "share_tg_stories": "Поделиться в Telegram Stories",
-  "save_stories_img": "Сохранить для Stories",
-  "share_stories_description": "Публикуйте сторис в социальных сетях, чтобы привлечь больше людей",
-  "add_badge_description": "Добавить значок сопротивления на аватар",
-  "save_dog_avatar": "Сохранить аватар",
-  "save_dog_avatar_image": "Сохранить изображение"
+  "save_stories_img": "Сохранить изображение Stories",
+  "share_stories_description": "Добавьте письмо в свою сторис и привлеките больше людей",
+  "add_badge_description": "Используйте значок сопротивления в своей фотографии профиля",
+  "save_dog_avatar": "Сохранить фото со значком",
+  "save_dog_avatar_image": "Сохранить изображение собаки"
 }

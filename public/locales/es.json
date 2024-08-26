@@ -1,9 +1,9 @@
 {
   "title": "Resistencia Digital",
   "people_signed": "personas ya firmaron",
-  "share_letter_link": "Compartir enlace de la carta",
-  "publish_to_stories": "Publicar en historias",
-  "add_badge": "Agregar insignia al avatar",
+  "share_letter_link": "Compartir la carta",
+  "publish_to_stories": "Publicar una historia",
+  "add_badge": "Mostrar tu insignia",
   "we_demand_release": "Exigimos la liberación de Pavel Durov de la custodia en Francia",
   "signatures": "Firmas",
   "next_goal": "Próxima meta",
@@ -14,13 +14,13 @@
   "wall_title": "El Muro de Durov",
   "already_supported": "Elon Musk, Vitalik Buterin y muchos otros ya han mostrado su apoyo en los últimos 2-3 días.",
   "thank_you_for_support": "¡Gracias por tu apoyo!",
-  "error_message": "Algo pasó, intenta de nuevo por favor.",
+  "error_message": "Algo salió mal, intenta nuevamente, por favor.",
   "share": "Compartir",
-  "share_description": "Comparte este enlace a esta carta con tus amigos y seguidores en Telegram, X (ex. Twitter) y WhatsApp",
+  "share_description": "Comparte un enlace a esta carta con tus amigos y seguidores en Telegram, X (Twitter) y WhatsApp",
   "share_tg_stories": "Compartir en Historias de Telegram",
   "save_stories_img": "Guardar imagen para Historias",
-  "share_stories_description": "Publica historias en las redes sociales para atraer a más personas",
-  "add_badge_description": "Agrega la insignia de resistencia a tu avatar",
-  "save_dog_avatar": "Guardar Avatar con el Perro",
-  "save_dog_avatar_image": "Guardar Imagen del Perro de Resistencia"
+  "share_stories_description": "Añade la carta a tu historia y atrae a más personas",
+  "add_badge_description": "Usa la insignia de resistencia en tu foto de perfil",
+  "save_dog_avatar": "Guardar foto con insignia",
+  "save_dog_avatar_image": "Guardar imagen del Perro"
 }

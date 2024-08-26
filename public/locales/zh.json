@@ -1,9 +1,9 @@
 {
   "title": "数字抵抗",
   "people_signed": "人已经签署",
-  "share_letter_link": "分享信件链接",
-  "publish_to_stories": "发布到动态",
-  "add_badge": "添加徽章到头像",
+  "share_letter_link": "分享信件",
+  "publish_to_stories": "发布故事",
+  "add_badge": "展示你的徽章",
   "we_demand_release": "我们要求释放帕维尔·杜罗夫，他在法国被拘留",
   "signatures": "签名",
   "next_goal": "下一个目标",
@@ -16,11 +16,11 @@
   "thank_you_for_support": "感谢您的支持！",
   "error_message": "发生了问题，请再试一次。",
   "share": "分享",
-  "share_description": "将此信的链接与您的朋友和追随者分享在Telegram、X（前Twitter）和WhatsApp上",
+  "share_description": "将此信的链接与您的朋友和追随者分享在Telegram、X（Twitter）和WhatsApp上",
   "share_tg_stories": "分享到Telegram动态",
   "save_stories_img": "保存动态图片",
-  "share_stories_description": "发布动态到社交网络，吸引更多人参与",
-  "add_badge_description": "在您的头像上添加抵抗徽章",
-  "save_dog_avatar": "保存带有狗的头像",
+  "share_stories_description": "将信件添加到您的动态中，吸引更多人参与",
+  "add_badge_description": "在您的头像上使用抵抗徽章",
+  "save_dog_avatar": "保存带有徽章的照片",
   "save_dog_avatar_image": "保存抵抗狗图片"
 }

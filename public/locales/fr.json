@@ -1,9 +1,9 @@
 {
   "title": "Résistance Numérique",
   "people_signed": "personnes ont déjà signé",
-  "share_letter_link": "Partager le lien de la lettre",
-  "publish_to_stories": "Publier dans les stories",
-  "add_badge": "Ajouter un badge à l'avatar",
+  "share_letter_link": "Partager la lettre",
+  "publish_to_stories": "Publier une histoire",
+  "add_badge": "Montrez votre badge",
   "we_demand_release": "Nous demandons la libération de Pavel Durov de la garde à vue en France",
   "signatures": "Signatures",
   "next_goal": "Prochain objectif",
@@ -16,11 +16,11 @@
   "thank_you_for_support": "Merci pour votre soutien!",
   "error_message": "Quelque chose s'est passé, essayez encore une fois s'il vous plaît.",
   "share": "Partager",
-  "share_description": "Partagez ce lien vers cette lettre avec vos amis et abonnés sur Telegram, X (ex. Twitter) et WhatsApp",
+  "share_description": "Partagez un lien vers cette lettre avec vos amis et abonnés sur Telegram, X (Twitter) et WhatsApp",
   "share_tg_stories": "Partager dans les Stories Telegram",
   "save_stories_img": "Enregistrer l'image pour les Stories",
-  "share_stories_description": "Publiez des stories sur les réseaux sociaux pour engager plus de personnes",
-  "add_badge_description": "Ajouter le badge de résistance à votre avatar",
-  "save_dog_avatar": "Enregistrer l'Avatar avec le Chien",
-  "save_dog_avatar_image": "Enregistrer l'Image du Chien de la Résistance"
+  "share_stories_description": "Ajoutez la lettre à votre story et engagez plus de personnes",
+  "add_badge_description": "Utilisez le badge de résistance dans votre photo de profil",
+  "save_dog_avatar": "Enregistrer la photo avec le badge",
+  "save_dog_avatar_image": "Enregistrer l'image du Chien"
 }

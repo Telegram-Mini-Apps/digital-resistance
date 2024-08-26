@@ -1,9 +1,9 @@
 {
   "title": "Digital Resistance",
   "people_signed": "people already signed",
-  "share_letter_link": "Share letter link",
-  "publish_to_stories": "Publish to stories",
-  "add_badge": "Add badge to avatar",
+  "share_letter_link": "Share the letter",
+  "publish_to_stories": "Post a Story",
+  "add_badge": "Show your badge",
   "we_demand_release": "We demand the release of Pavel Durov from custody in France",
   "signatures": "Signatures",
   "next_goal": "Next Goal",
@@ -16,11 +16,11 @@
   "thank_you_for_support": "Thank you for your support!",
   "error_message": "Something happened, try again please.",
   "share": "Share",
-  "share_description": "Share this link to this letter with your friends and followers on Telegram, X (ex. Twitter) and WhatsApp",
+  "share_description": "Share a link to this letter with your friends and followers on Telegram, X (Twitter) and WhatsApp",
   "share_tg_stories": "Share to Telegram Stories",
   "save_stories_img": "Save Stories Image",
-  "share_stories_description": "Publish stories to social networks to engage more people",
-  "add_badge_description": "Add resistance badge to your avatar",
-  "save_dog_avatar": "Save Avatar with Dog",
+  "share_stories_description": "Add the letter to your story and engage more people",
+  "add_badge_description": "Use the resistance badge in your profile photo",
+  "save_dog_avatar": "Save Photo with Badge",
   "save_dog_avatar_image": "Save Resistance Dog Image"
 }

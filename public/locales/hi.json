@@ -1,9 +1,9 @@
 {
   "title": "डिजिटल प्रतिरोध",
   "people_signed": "लोगों ने पहले ही साइन कर दिए हैं",
-  "share_letter_link": "पत्र लिंक साझा करें",
-  "publish_to_stories": "कहानियों में प्रकाशित करें",
-  "add_badge": "अवतार में बैज जोड़ें",
+  "share_letter_link": "पत्र साझा करें",
+  "publish_to_stories": "कहानी पोस्ट करें",
+  "add_badge": "अपना बैज दिखाएं",
   "we_demand_release": "हम पावेल ड्यूरोव की फ्रांस में हिरासत से रिहाई की मांग करते हैं",
   "signatures": "हस्ताक्षर",
   "next_goal": "अगला लक्ष्य",
@@ -16,11 +16,11 @@
   "thank_you_for_support": "आपके समर्थन के लिए धन्यवाद!",
   "error_message": "कुछ हुआ, कृपया पुनः प्रयास करें।",
   "share": "साझा करें",
-  "share_description": "इस पत्र का लिंक अपने दोस्तों और अनुयायियों के साथ Telegram, X (पूर्व Twitter) और WhatsApp पर साझा करें",
+  "share_description": "इस पत्र का लिंक अपने दोस्तों और अनुयायियों के साथ Telegram, X (Twitter) और WhatsApp पर साझा करें",
   "share_tg_stories": "Telegram कहानियों में साझा करें",
   "save_stories_img": "कहानी की छवि सहेजें",
-  "share_stories_description": "अधिक लोगों को शामिल करने के लिए सोशल नेटवर्क पर कहानियाँ प्रकाशित करें",
-  "add_badge_description": "अपने अवतार में प्रतिरोध बैज जोड़ें",
-  "save_dog_avatar": "कुत्ते के साथ अवतार सहेजें",
+  "share_stories_description": "पत्र को अपनी कहानी में जोड़ें और अधिक लोगों को शामिल करें",
+  "add_badge_description": "अपने प्रोफ़ाइल फोटो में प्रतिरोध बैज का उपयोग करें",
+  "save_dog_avatar": "बैज के साथ फोटो सहेजें",
   "save_dog_avatar_image": "प्रतिरोध कुत्ते की छवि सहेजें"
 }
