@@ -20,7 +20,17 @@ export const attachPetitionsController = (app: Express) => {
               'x-init-data': req.header('x-init-data') || '',
             },
           },
-        ).then((response) => response.json());
+        )
+          .then(async (response) => {
+            const j = await response.json();
+            if (!response.ok) {
+              if (j.error) {
+                throw new Error(`${j.error}: ${j.message}`);
+              }
+              throw new Error('Unknown error');
+            }
+            return j;
+          });
         return res.json({ data: result, error: null });
       } catch (e) {
         console.error('Request failed:', e);
@@ -50,7 +60,17 @@ export const attachPetitionsController = (app: Express) => {
               user_id: initData.user?.id.toString(),
             }),
           },
-        ).then((response) => response.json());
+        )
+          .then(async (response) => {
+            const j = await response.json();
+            if (!response.ok) {
+              if (j.error) {
+                throw new Error(`${j.error}: ${j.message}`);
+              }
+              throw new Error('Unknown error');
+            }
+            return j;
+          });
         return res.json({ data: result, error: null });
       } catch (e) {
         console.error('Request failed:', e);
