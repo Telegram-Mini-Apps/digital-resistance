@@ -35,11 +35,15 @@ export default function IndexPage() {
       />
       {isSigned
         ? <Share/>
-        : <Progress current={signedCount} next={targetCount}/>}
-      <Sign onSigned={onSigned}/>
-      <Letter/>
-      <Wall/>
-      <Media/>
+        : (
+          <>
+            <Progress current={signedCount} next={targetCount}/>
+            <Sign onSigned={onSigned}/>
+            <Letter/>
+            <Wall/>
+            <Media/>
+          </>
+        )}
     </main>
   );
 }
