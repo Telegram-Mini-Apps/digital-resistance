@@ -3,6 +3,7 @@
 @mixin shared {
   --font_family: -apple-system, "SF Pro Text", "SF Pro",  system-ui, "Roboto", sans-serif;
   --font_family_rounded: ui-rounded, "SF Pro Text", "SF Pro", system-ui, "Roboto", sans-serif;
+  --font_family_alt: 'Google Sans', system-ui, "Roboto", sans-serif;
 
   --border_width: 1px;
   --border_mobile: 0.5px;
