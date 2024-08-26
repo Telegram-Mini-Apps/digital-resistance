@@ -4,15 +4,10 @@ import path from 'path';
 import express from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
-import { attachCSRFController } from './controllers/csrf';
 import { hostnameMiddleware } from './hostnameMiddleware';
 import redisClient from './redisClient';
 import cors from 'cors';
 
-import { attachAnalyticsController } from './controllers/analytics';
-import { attachApplicationsController } from './controllers/applications';
-import { attachConfigController } from './controllers/config';
-import { attachEntitiesProxy } from './controllers/entities';
 import {
   FRAME_ANCESSORS,
   TRUSTED_CONNECT_PROVIDERS,
@@ -20,11 +15,6 @@ import {
   TRUSTED_SCRIPT_SRC_PROVIDERS,
   TRUSTED_WORKER_PROVIDERS,
 } from './trustedDomains';
-
-import {
-  csrfTokenMiddleware,
-  verifyCsrfToken,
-} from './middleware/csrfProtection';
 
 configDotenv({ path: path.join(__dirname, '../../.env') });
 
@@ -55,12 +45,6 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, '../../build')));
-
-attachCSRFController(app);
-attachConfigController(app);
-attachAnalyticsController(app);
-attachApplicationsController(app);
-attachEntitiesProxy(app);
 
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '../../build', 'index.html'));

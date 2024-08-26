@@ -121,7 +121,7 @@ export const ECOSYSTEM_KEY_NAME = 'ecosystem';
 
 export const APP_KEY_NAME = 'app';
 
-export const TWA_ROOT_PATH = '/twa';
+export const TWA_ROOT_PATH = '/';
 
 export const TWA_APPLICATIONS_ROOT_PATH = '/applications';
 export const ALL_CATEGORIES_PATH = '';

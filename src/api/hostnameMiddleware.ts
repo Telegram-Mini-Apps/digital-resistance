@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-const ALLOWED_HOSTNAMES: string[] = ['web.tappscenter.org', 'save.digitalresistance.me'];
+const ALLOWED_HOSTNAMES: string[] = ['save.digitalresistance.me'];
 
 export const hostnameMiddleware = (req: Request, res: Response, next: NextFunction): void => {
   const clientHostname = req.hostname;
