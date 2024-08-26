@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   padding: 14px;
-  font-family: "SF Pro Text", sans-serif;
   font-weight: 500;
   font-size: 17px;
   line-height: 22px;
@@ -15,6 +14,7 @@
   border-radius: 10px;
   margin-bottom: 8px;
   position: relative;
+  font-family: var(--font-family);
 
   &Primary {
     color: white;

@@ -1,5 +1,4 @@
 .root {
-  color: white;
   padding-top: 0;
 }
 
@@ -26,9 +25,9 @@
   &Title {
     font-size: 22px;
     line-height: 28px;
-    font-weight: bold;
+    font-weight: 700;
     letter-spacing: -0.26px;
-    font-family: var(--font_family_alt);
+    font-family: var(--font-family-alt);
     margin-bottom: 2px;
   }
 
@@ -36,7 +35,6 @@
     font-size: 15px;
     line-height: 20px;
     letter-spacing: -0.23px;
-    font-family: 'SF Pro Text', sans-serif;
   }
 
   &Right {
