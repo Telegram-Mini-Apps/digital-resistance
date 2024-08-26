@@ -19,6 +19,7 @@ export const TRUSTED_CONNECT_PROVIDERS = [
 export const TRUSTED_IMG_PROVIDES = [
   '\'self\'',
   't.me',
+  '*.cdn-telegram.org',
   'strapi-images-data.s3.eu-central-1.amazonaws.com',
   'tganalytics.xyz',
 ];
