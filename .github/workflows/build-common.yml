@@ -75,4 +75,4 @@ jobs:
         run: sed "s/\${IMAGE_TAG}/sha-${GITHUB_SHA}/g" k8s/${{ inputs.image_tag }}.deployment.yml | kubectl apply -f -
 
       - name: Verify deployment
-        run: kubectl -n default rollout status deployment/${{ inputs.image_tag }}-deployment
+        run: kubectl -n default rollout status deployment/de-${{ inputs.image_tag }}-deployment
