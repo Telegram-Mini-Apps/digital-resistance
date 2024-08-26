@@ -208,7 +208,7 @@ export function Share() {
 
   const onShareTelegramClick = useCallback(() => {
     window.Telegram.WebApp.openTelegramLink(
-      'https://t.me/share/url?url=https%3A%2F%2Ft.me%2Ffree%2Fletter&text=We+demand+the+release+of+Pavel+Durov+from+custody+in+France.+Support+Pavel+and+sign+the+petition',
+      'https://t.me/share/url?url=https%3A%2F%2Ft.me%2Ffree%2Fletter&text=We%20demand%20the%20release%20of%20Pavel%20Durov%20from%20custody%20in%20France.%20Support%20Pavel%20and%20sign%20the%20petition',
     );
   }, [shareUrl]);
 
