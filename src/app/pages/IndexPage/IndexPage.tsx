@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
@@ -17,7 +17,6 @@ import styles from './IndexPage.module.scss';
 
 export default function IndexPage() {
   const { isSigned: isAlreadySigned, signaturesCount } = useDataContext();
-  const targetCount = useMemo(() => 1000000, []);
 
   const [isSigned, setIsSigned] = useState(isAlreadySigned);
   const [showTransition, setShowTransition] = useState(false);
@@ -60,7 +59,7 @@ export default function IndexPage() {
           )
           : (
             <>
-              <Progress current={signaturesCount} next={targetCount}/>
+              <Progress current={signaturesCount}/>
               <Sign onSigned={onSigned}/>
               <Letter/>
               <Wall/>
