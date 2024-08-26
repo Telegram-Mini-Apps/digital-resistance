@@ -12,57 +12,12 @@
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <link rel="stylesheet" href="/loader.css"/>
+  <link rel="stylesheet" href="/important.css"/>
 
   <script src="/telegram-web-app.js"></script>
   <script src="/csrf-retry-polyfill.js"></script>
   <script src="/setupColorScheme.js"></script>
   <script src="/init.js"></script>
-  <style>
-    :root {
-      --bg-color: #1A2026;
-      --font-family: -apple-system, "SF Pro Text", "SF Pro", system-ui, "Roboto", sans-serif;
-      --font-family-alt: 'Product Sans', system-ui, "Roboto", sans-serif;
-      --first_layer: ease;
-    }
-
-    html {
-      height: 100%;
-    }
-
-    html,
-    body {
-      max-width: 100vw;
-
-      &.noscroll {
-        position: fixed;
-        overflow-y: hidden;
-        width: 100%;
-        padding-right: var(--scrollbar-width);
-      }
-    }
-
-    body {
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-      color: white;
-      background: var(--bg-color);
-      padding-right: var(--scrollbar-width);
-      font-family: var(--font-family);
-      -webkit-font-smoothing: subpixel-antialiased;
-    }
-
-    .twaBody {
-      height: 100vh;
-      overflow: hidden;
-      -webkit-text-size-adjust:none;
-    }
-
-    .twaBody * {
-      -webkit-user-select: none;
-      user-select: none;
-    }
-  </style>
   <title>Tapps center</title>
 </head>
 <body class="twaBody">
