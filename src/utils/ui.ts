@@ -36,7 +36,6 @@ export async function hideLoader(): Promise<void> {
       ], { duration: 300 })
       .finished
       .then(() => {
-        console.log(123);
         loader.remove();
       })
     : undefined;
