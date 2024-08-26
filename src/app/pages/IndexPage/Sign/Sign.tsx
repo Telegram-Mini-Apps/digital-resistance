@@ -1,5 +1,5 @@
 import React from 'react';
-import cn from 'classnames';
+import { Trans } from 'react-i18next';
 
 import { Section } from '../Section/Section';
 
@@ -21,10 +21,11 @@ export function Sign() {
     <Section className={styles.root}>
       <button className={styles.button}>
         <SignIcon/>
-        Sign this letter
+        <Trans i18nKey={'sign_letter'}/>
       </button>
       <div className={styles.info}>
-        <b>Elon Musk, Vitalik Buterin, and 65,892 people</b>
+        {/*fixme: translations*/}
+        <b>Elon Musk, Vitalik Buterin, and 65,892 people</b>{' '}
         have already given their support
         in&nbsp;the&nbsp;last&nbsp;24&nbsp;hours.
       </div>

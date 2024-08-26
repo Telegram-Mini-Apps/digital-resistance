@@ -9,14 +9,14 @@ import { Media } from './Media/Media';
 import { Header } from './Header/Header';
 
 export default function IndexPage() {
-    return (
-        <PageContainer>
-            <Header/>
-            <Progress/>
-            {/*<Sign/>*/}
-            {/*<Letter/>*/}
-            {/*<Wall/>*/}
-            {/*<Media/>*/}
-        </PageContainer>
-    )
+  return (
+    <PageContainer>
+      <Header/>
+      <Progress/>
+      <Sign/>
+      <Letter/>
+      <Wall/>
+      <Media/>
+    </PageContainer>
+  );
 }

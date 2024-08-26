@@ -1,15 +1,15 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans } from 'react-i18next';
 
 import styles from './Header.module.scss';
 
 export function Header() {
-  const { t } = useTranslation();
-
   return (
     <>
       <div className={styles.imgContainer}>
         <img
+          height={144}
+          width={144}
           alt="digital-resistance"
           src="/img/dr/dark@1x.png"
           srcSet="/img/dr/dark@2x.png 2x"
@@ -20,7 +20,7 @@ export function Header() {
         <span>#FreeDurov</span>
       </div>
       <h1 className={styles.title}>
-        {t('we_demand_release')}
+        <Trans i18nKey={'we_demand_release'} defaults=""/>
       </h1>
     </>
   );
