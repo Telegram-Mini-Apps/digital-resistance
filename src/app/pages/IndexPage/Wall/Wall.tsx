@@ -35,6 +35,7 @@ function celebrityImage(key: CelebrityKey, scale: number): string {
 }
 
 function formatDate(date: Date): string {
+  // TODO: We want something like that: 6:32 AM · Jul 20, 2024
   return Intl
     .DateTimeFormat(undefined, {
       day: '2-digit',
