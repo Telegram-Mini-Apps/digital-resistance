@@ -44,7 +44,7 @@ export function Sign({ onSigned }: { onSigned(): void }) {
 
   useEffect(() => {
     data && onSigned();
-  }, [onSigned]);
+  }, [onSigned, data]);
 
   return (
     <Section className={styles.root}>
