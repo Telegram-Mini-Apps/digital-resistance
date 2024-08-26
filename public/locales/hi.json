@@ -12,5 +12,15 @@
   "open_letter": "खुला पत्र",
   "the_situation_in_media": "इस स्थिति की मीडिया में",
   "wall_title": "ड्यूरोव की दीवार",
-  "already_supported": "Elon Musk, Vitalik Buterin, और कई अन्य लोगों ने पिछले 2-3 दिनों में अपना समर्थन दे दिया है।"
+  "already_supported": "Elon Musk, Vitalik Buterin, और कई अन्य लोगों ने पिछले 2-3 दिनों में अपना समर्थन दे दिया है।",
+  "thank_you_for_support": "आपके समर्थन के लिए धन्यवाद!",
+  "error_message": "कुछ हुआ, कृपया पुनः प्रयास करें।",
+  "share": "साझा करें",
+  "share_description": "इस पत्र का लिंक अपने दोस्तों और अनुयायियों के साथ Telegram, X (पूर्व Twitter) और WhatsApp पर साझा करें",
+  "share_tg_stories": "Telegram कहानियों में साझा करें",
+  "save_stories_img": "कहानी की छवि सहेजें",
+  "share_stories_description": "अधिक लोगों को शामिल करने के लिए सोशल नेटवर्क पर कहानियाँ प्रकाशित करें",
+  "add_badge_description": "अपने अवतार में प्रतिरोध बैज जोड़ें",
+  "save_dog_avatar": "कुत्ते के साथ अवतार सहेजें",
+  "save_dog_avatar_image": "प्रतिरोध कुत्ते की छवि सहेजें"
 }

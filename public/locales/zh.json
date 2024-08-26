@@ -12,5 +12,15 @@
   "open_letter": "公开信",
   "the_situation_in_media": "媒体报道的情况",
   "wall_title": "杜罗夫的墙",
-  "already_supported": "埃隆·马斯克、维塔利克·布特林和其他许多人已经在过去的2-3天里表示了支持。"
+  "already_supported": "埃隆·马斯克、维塔利克·布特林和其他许多人已经在过去的2-3天里表示了支持。",
+  "thank_you_for_support": "感谢您的支持！",
+  "error_message": "发生了问题，请再试一次。",
+  "share": "分享",
+  "share_description": "将此信的链接与您的朋友和追随者分享在Telegram、X（前Twitter）和WhatsApp上",
+  "share_tg_stories": "分享到Telegram动态",
+  "save_stories_img": "保存动态图片",
+  "share_stories_description": "发布动态到社交网络，吸引更多人参与",
+  "add_badge_description": "在您的头像上添加抵抗徽章",
+  "save_dog_avatar": "保存带有狗的头像",
+  "save_dog_avatar_image": "保存抵抗狗图片"
 }
