@@ -54,7 +54,7 @@ export default function IndexPage() {
       <div className={styles.body}>
         {isSigned
           ? (
-            <div className={cn(styles.shareSections, { [styles.shareSectionsAppear]: showTransition })}>
+            <div className={cn({ [styles.shareSectionsAppear]: showTransition })}>
               <Share/>
             </div>
           )
