@@ -117,10 +117,14 @@ function DownloadIcon() {
   );
 }
 
-function DogeIcon(props: { className?: string; bgColor: string }) {
+function DogeIcon({ bgColor, ...rest }: {
+  className?: string;
+  bgColor: string;
+  width?: number;
+}) {
   return (
     <svg
-      className={props.className}
+      {...rest}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 19 24"
@@ -130,7 +134,7 @@ function DogeIcon(props: { className?: string; bgColor: string }) {
         d="M1.894 10.863c-.127.824-.687 3.435-.951 4.638-.195.896-.288 2.005-.066 2.332.575.844 1.717 1.423 2.71 2.132 1.028.733 3.478 2.098 4.999 2.881s3.123-.323 3.691-.593c.616-.291 4.552-2.19 5.828-3.011 1.156-.743.664-1.676.573-2.139-.201-1.015-.325-1.852-.96-6.45-.634-4.6-1.091-4.764-1.884-6.191s-3.38-3.175-4.371-3.77c-.992-.594-2.016-.758-3.56.262-1.448.957-2.797 2.812-3.471 3.764-.674.951-2.38 5.114-2.538 6.145"
       />
       <path
-        fill={props.bgColor}
+        fill={bgColor}
         d="M6.892 19.122c-.987-1.095-1.809-3.16-2.096-4.056-1.054-2.903.27-3.464.592-3.718.32-.253 1.504-.604 2.349.254.84.852 1.307.81 2.054.884.638.064 2.316-.935 2.738-1.138s1.564-.17 2.477.59c.912.761.51 2.297.211 3.685-.274 1.275-1 2.454-2.115 3.908s-2.278 1.692-3.311 1.618c-1.068-.078-1.666-.659-2.9-2.027"
       />
       <path
@@ -207,12 +211,20 @@ export function Share() {
     );
   }, []);
 
-  const onSaveStoryClick = useCallback(() => {
-    console.log('will save story');
+  const onSaveStoriesImageClick = useCallback(() => {
+    // FIXME: set normal link
+    const l = document.createElement('a');
+    l.download = 'test.png';
+    l.href = '/img/dr/@1x.png';
+    l.click();
   }, []);
 
   const onSaveAvatarClick = useCallback(() => {
     console.log('will save avatar');
+  }, []);
+
+  const onSaveDRImageClick = useCallback(() => {
+    console.log('onSaveDRImageClick');
   }, []);
 
   return (
@@ -267,11 +279,7 @@ export function Share() {
           </span>
         </p>
         <div className={styles.actions}>
-          <Button
-            className={styles.action}
-            icon={<PlusIcon/>}
-            onClick={onShareStoryClick}
-          >
+          <Button className={styles.action} icon={<PlusIcon/>} onClick={onShareStoryClick}>
             {/*fixme*/}
             Share to Telegram Stories
           </Button>
@@ -279,7 +287,7 @@ export function Share() {
             className={styles.action}
             variant="secondary"
             icon={<DownloadIcon/>}
-            onClick={onSaveStoryClick}
+            onClick={onSaveStoriesImageClick}
           >
             {/*fixme*/}
             Save Stories Image
@@ -307,7 +315,24 @@ export function Share() {
             onClick={onSaveAvatarClick}
           >
             {/*fixme*/}
-            Save image
+            Save Avatar with Dog
+          </Button>
+          <Button
+            variant="secondary"
+            icon={
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="none">
+                <path
+                  fill="#fff"
+                  fillRule="evenodd"
+                  d="M20.253 16.645c-.176-.887-.284-1.618-.838-5.635-.908-6.58-6.984-12.59-11.608-5.186-1.583 2.534-2.18 5.35-2.786 8.198q-.129.612-.262 1.223c-.17.783-.252 1.752-.058 2.038.37.543 1.009.96 1.666 1.39.236.154.473.309.702.472.897.641 3.038 1.833 4.367 2.518 1.154.594 2.362-.057 2.985-.393a6 6 0 0 1 .24-.125c.537-.255 3.976-1.914 5.092-2.631.864-.556.674-1.233.55-1.67q-.032-.11-.05-.199m-4.872 2.121c-.974 1.27-1.99 1.479-2.892 1.414-2.281-.165-3.774-3.476-4.364-5.315-.84-2.314.05-2.925.425-3.182q.054-.037.092-.066c.28-.221 1.239-.445 2.052.222.806.661 1.14.786 1.795.773.54-.011 1.419-.482 1.976-.781.179-.096.325-.174.416-.214.544-.237 1.408-.279 2.164.516.714.753.513 2.023.184 3.219-.35 1.275-.873 2.144-1.848 3.414m-.845-.557c.29-.48.45-1.12.33-1.751-.29-1.532-3.293-1.57-4.154-.68-.666.69-.282 2.091.325 2.672.928.887 2.776.954 3.499-.24"
+                  clipRule="evenodd"
+                />
+              </svg>
+            }
+            onClick={onSaveDRImageClick}
+          >
+            {/*fixme*/}
+            Save Resistance Dog Image
           </Button>
         </div>
       </Section>
