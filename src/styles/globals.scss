@@ -1,20 +1,21 @@
-@import "mixins";
-@import "css-variables/scheme-dark";
-@import "css-variables/scheme-light";
-@import "css-variables/shared";
+@import "reset";
 
-:root {
-  @include schemeLight();
-
-  @media (prefers-color-scheme: dark) {
-    @include schemeDark();
-  }
-
-  @include shared();
+@font-face {
+  font-family: 'Product Sans';
+  src: url('../../public/fonts/ProductSans-Bold/ProductSans-Bold.woff2') format('woff2'),
+  url('../../public/fonts/ProductSans-Bold/ProductSans-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Misc. */
-@import "reset";
-@import "html-body";
-@import "misc";
-@import "fonts";
+@font-face {
+  font-family: 'Product Sans';
+  src: url('../../public/fonts/ProductSans-Regular/ProductSans-Regular.woff2') format('woff2'),
+  url('../../public/fonts/ProductSans-Regular/ProductSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
