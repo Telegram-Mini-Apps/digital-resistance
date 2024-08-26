@@ -1,0 +1,11 @@
+@import '../../../styles/mixins';
+
+.root {
+  padding: 0 20px 18px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+
+  @include noScrollbar();
+}

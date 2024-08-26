@@ -16,7 +16,7 @@ function SignIcon() {
   );
 }
 
-export function Sign() {
+export function Sign(props: { onSigned(): void }) {
   const [loading, setLoading] = useState(false);
 
   const onSign = useCallback(() => {
@@ -24,6 +24,7 @@ export function Sign() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
+      props.onSigned();
     }, 2000);
   } ,[]);
 
