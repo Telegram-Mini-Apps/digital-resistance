@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Wall } from './Wall/Wall';
@@ -12,12 +12,13 @@ import { useScrollRestoration } from '../../../hooks/useScrollRestoration';
 
 import styles from './IndexPage.module.scss';
 import { Share } from './Share/Share';
+import { useDataContext } from '../../../dataSource/DataContext/DataContext';
 
 export default function IndexPage() {
-  const [signedCount, setSignedCount] = useState(123456);
-  const [targetCount, setTargetCount] = useState(1000000);
+  const { isSigned: isAlreadySigned, signaturesCount } = useDataContext();
+  const targetCount = useMemo(() => 1000000, []);
 
-  const [isSigned, setIsSigned] = useState(false);
+  const [isSigned, setIsSigned] = useState(isAlreadySigned);
   const onSigned = useCallback(() => {
     setIsSigned(true);
   }, []);
@@ -30,14 +31,14 @@ export default function IndexPage() {
       <Header
         title={isSigned
           // TODO: Should be a part of the translation itself.
-          ? `${signedCount} ${t('people_signed')}`
+          ? `${signaturesCount} ${t('people_signed')}`
           : t('we_demand_release')}
       />
       {isSigned
         ? <Share/>
         : (
           <>
-            <Progress current={signedCount} next={targetCount}/>
+            <Progress current={signaturesCount} next={targetCount}/>
             <Sign onSigned={onSigned}/>
             <Letter/>
             <Wall/>

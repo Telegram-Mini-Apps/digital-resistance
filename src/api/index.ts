@@ -16,6 +16,9 @@ import {
   TRUSTED_WORKER_PROVIDERS,
 } from './trustedDomains';
 
+import { attachPetitionsController } from './controllers/petitions';
+
+
 configDotenv({ path: path.join(__dirname, '../../.env') });
 
 const app = express();
@@ -45,6 +48,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, '../../build')));
+
+attachPetitionsController(app);
+
 
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '../../build', 'index.html'));
