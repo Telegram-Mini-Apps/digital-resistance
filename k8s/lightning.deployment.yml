@@ -17,7 +17,7 @@ spec:
         app.kubernetes.io/name: app-lightning
     spec:
       containers:
-        - image: 058378981158.dkr.ecr.eu-west-1.amazonaws.com/declient:${IMAGE_TAG}
+        - image: 058378981158.dkr.ecr.eu-central-1.amazonaws.com/declient:${IMAGE_TAG}
           imagePullPolicy: Always
           name: app-lightning
           ports:
