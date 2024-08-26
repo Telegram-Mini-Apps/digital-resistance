@@ -1,21 +1,33 @@
-.root {
-  color: white;
-  font-family: "SF Pro Text", sans-serif;
-  font-size: 16px;
-  line-height: 23px;
-  letter-spacing: -0.31px;
+.items {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 12px;
 }
 
-.content {
-  *:first-child {
-    margin-top: 0;
+.item {
+  background: #212A33;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 17px;
+  color: white;
+
+  & + & {
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      left: 17px;
+      height: 0.33px;
+      background: black;
+    }
   }
 
-  * {
-    margin: 16px 0;
-  }
-
-  *:last-child {
-    margin-bottom: 0;
+  &Arrow {
+    color: #8794A1;
   }
 }
