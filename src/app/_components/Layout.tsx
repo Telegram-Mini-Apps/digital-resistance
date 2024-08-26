@@ -4,7 +4,6 @@ import { Outlet, ScrollRestoration } from 'react-router-dom';
 import { DataProvider } from '../../dataSource/DataContext/DataContext';
 import { initI18n } from '../../dataSource/LocaleContext/i18n';
 
-import { NavigationEvents } from './NavigationEvents';
 import { hideLoader } from '../../utils/ui';
 
 export default function Layout() {
@@ -30,7 +29,6 @@ export default function Layout() {
 
   return (
     <>
-      <NavigationEvents/>
       <ScrollRestoration/>
       <DataProvider>
         {!loadingI18n && <Outlet/>}
