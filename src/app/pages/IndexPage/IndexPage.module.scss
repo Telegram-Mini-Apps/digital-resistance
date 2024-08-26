@@ -9,3 +9,24 @@
 
   @include noScrollbar();
 }
+
+.body {
+  position: relative;
+}
+
+.shareSectionsAppear {
+  position: absolute;
+  left: 0;
+  animation: 300ms ease-in-out appear;
+}
+
+@keyframes appear {
+  from {
+    transform: scale(0.99);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
