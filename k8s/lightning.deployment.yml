@@ -50,7 +50,7 @@ metadata:
   name: lightning-lb
   annotations:
     kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-central-1:058378981158:certificate/144d3462-39d6-4af8-b23c-099aa37c0597
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-central-1:058378981158:certificate/aa05b5e1-b9b6-46ea-9d6c-586fc50555a2
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
