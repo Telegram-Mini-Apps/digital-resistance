@@ -8,10 +8,7 @@ import { initI18n } from '../../dataSource/LocaleContext/i18n';
 import { hideLoader } from '../../utils/ui';
 
 export default function Layout() {
-  const {
-    data,
-    isLoading: isPetitionLoading,
-  } = useSWR<{
+  const { data, isLoading: isPetitionLoading } = useSWR<{
     id: string;
     title: string;
     image_url: string;
@@ -20,7 +17,7 @@ export default function Layout() {
     is_signed_by_user: boolean;
     signatures_count: number;
   }>('petition', () => {
-    return fetch('/api/petitions/0de4e94f-f131-49d1-8d61-17b107e36793', {
+    return fetch('/api/petitions/freedurov', {
       headers: {
         'x-init-data': window.Telegram.WebApp.initData,
       },
@@ -34,16 +31,16 @@ export default function Layout() {
       });
   });
 
-  const [loadingI18n, setLoadingI18n] = useState(true);
+  const [isI18nLoading, setIsI18nLoading] = useState(true);
 
   useEffect(() => {
     initI18n()
       .catch(console.error)
-      .finally(() => setLoadingI18n(false));
+      .finally(() => setIsI18nLoading(false));
   }, []);
 
   useEffect(() => {
-    if (!loadingI18n && !isPetitionLoading && data) {
+    if (!isI18nLoading && !isPetitionLoading && data) {
       // We are not hiding the loader on purpose, because change of loadingI18n to
       // false will also lead to rendering the Outlet component, which may be the reason
       // of layout shifts (due to loading images, for example).
@@ -52,14 +49,14 @@ export default function Layout() {
         clearTimeout(timeoutId);
       };
     }
-  }, [loadingI18n, isPetitionLoading, data]);
+  }, [isI18nLoading, isPetitionLoading, data]);
 
   return (
     <>
       <ScrollRestoration/>
       {data && (
         <DataProvider isSigned={data.is_signed_by_user} signaturesCount={data.signatures_count}>
-          {!loadingI18n && <Outlet/>}
+          {!isI18nLoading && <Outlet/>}
         </DataProvider>
       )}
     </>
