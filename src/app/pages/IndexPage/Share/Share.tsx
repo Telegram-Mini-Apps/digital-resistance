@@ -7,19 +7,6 @@ import styles from './Share.module.scss';
 import { useCallback } from 'react';
 import { Button } from '../Button/Button';
 
-function ShareIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
-      <path
-        fill="currentColor"
-        fillRule="evenodd"
-        d="M12.707 2.71a1 1 0 0 0-1.414 0l-4.85 4.85a1 1 0 0 0 1.414 1.414L11 5.83v8.365a1 1 0 1 0 2 0V5.83l3.143 3.144a1 1 0 1 0 1.414-1.415zM5.455 14.733a1 1 0 1 0-2 0v1.44c0 .57 0 1.058.033 1.458.034.421.11.834.311 1.229a3.16 3.16 0 0 0 1.38 1.379c.394.201.807.277 1.228.311.4.033.888.033 1.458.033h8.27c.57 0 1.057 0 1.458-.033.421-.034.834-.11 1.229-.311a3.16 3.16 0 0 0 1.379-1.38c.201-.394.277-.807.311-1.228.033-.4.033-.888.033-1.458v-1.44a1 1 0 1 0-2 0v1.4c0 .62 0 1.026-.026 1.335-.024.298-.066.418-.1.484-.11.217-.288.394-.505.505-.066.034-.186.076-.484.1-.31.025-.714.026-1.334.026H7.904c-.62 0-1.025 0-1.334-.026-.298-.024-.418-.066-.484-.1a1.16 1.16 0 0 1-.505-.505c-.034-.066-.076-.186-.1-.484-.025-.31-.026-.714-.026-1.334z"
-        clipRule="evenodd"
-      />
-    </svg>
-  );
-}
-
 function CopyIcon(props: { className?: string }) {
   return (
     <svg
@@ -154,20 +141,70 @@ function DogeIcon(props: { className?: string; bgColor: string }) {
   );
 }
 
+function PlaneIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+      <path
+        fill="#fff"
+        d="M3.582 11.77q7.594-3.306 10.126-4.36c4.824-2.007 5.825-2.355 6.479-2.367.143-.002.464.033.672.202.174.143.223.335.247.47.022.136.052.444.028.684-.26 2.746-1.392 9.409-1.967 12.484-.242 1.302-.722 1.738-1.186 1.78-1.01.093-1.775-.666-2.751-1.306-1.528-1.002-2.39-1.625-3.875-2.603-1.715-1.13-.602-1.75.375-2.766.255-.265 4.699-4.307 4.783-4.673.01-.046.022-.217-.081-.307-.1-.09-.25-.06-.359-.035q-.229.052-7.325 4.841-1.037.714-1.883.696c-.619-.013-1.813-.35-2.7-.639-1.085-.353-1.95-.54-1.875-1.14q.058-.47 1.292-.96"
+      />
+    </svg>
+  );
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+      <path
+        fill="#fff"
+        d="M12.542 2.323c-5.49 0-9.956 4.302-9.958 9.59a9.3 9.3 0 0 0 1.329 4.795L2.5 21.678l5.28-1.334a10.25 10.25 0 0 0 4.758 1.168c5.264 0 9.96-4.216 9.962-9.591.001-2.562-1.034-4.973-2.914-6.785s-4.38-2.813-7.044-2.813m-.003 17.569c-1.622 0-3.12-.488-4.516-1.284l-3.132.79.836-2.941c-.898-1.376-1.463-2.881-1.462-4.544.001-4.396 3.715-7.97 8.28-7.97 2.21 0 4.289.83 5.852 2.337 1.563 1.506 2.423 3.51 2.422 5.64-.002 4.468-3.905 7.972-8.28 7.972m4.543-5.971c-.25-.12-1.472-.7-1.7-.78-.229-.08-.394-.121-.56.119-.165.24-.643.78-.787.94-.146.16-.291.179-.54.06-.25-.12-1.051-.374-2-1.19-.74-.635-1.24-1.42-1.385-1.66s-.016-.37.109-.489c.111-.106.249-.28.373-.42.123-.14.165-.24.249-.4.082-.158.04-.3-.022-.418-.062-.121-.559-1.3-.767-1.78-.202-.467-.407-.404-.56-.412-.145-.006-.31-.008-.477-.008a.93.93 0 0 0-.663.3c-.228.24-.871.819-.871 1.998s.891 2.32 1.016 2.48c.124.159 1.755 2.58 4.25 3.619.594.246 1.058.393 1.42.504.596.183 1.138.157 1.566.095.478-.069 1.473-.579 1.68-1.138.207-.56.207-1.04.145-1.14-.06-.1-.227-.16-.476-.28"
+      />
+    </svg>
+  );
+}
+
+function XIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+      <path
+        fill="#fff"
+        d="M17.217 3.865h2.76l-6.03 6.892 7.094 9.378h-5.555l-4.35-5.688-4.978 5.688H3.396l6.45-7.372L3.04 3.866h5.695l3.932 5.199zm-.97 14.618h1.53L7.905 5.43H6.264z"
+      />
+    </svg>
+  );
+}
+
 export function Share() {
   const { t } = useTranslation();
   const shareUrl = 'https://t.me/free/letter';
 
   const onCopyClick = useCallback(() => {
-    console.log('Will copy', shareUrl);
-  }, [shareUrl]);
-
-  const onShareClick = useCallback(() => {
-    console.log('Will share', shareUrl);
+    navigator
+      .clipboard
+      .writeText(shareUrl)
+      .catch(console.error);
   }, [shareUrl]);
 
   const onShareStoryClick = useCallback(() => {
     console.log('will share story');
+  }, []);
+
+  const onShareTelegramClick = useCallback(() => {
+    window.Telegram.WebApp.openTelegramLink(
+      'https://t.me/share/url?url=https%3A%2F%2Ft.me%2Ffree%2Fletter&text=We+demand+the+release+of+Pavel+Durov+from+custody+in+France.+Support+Pavel+and+sign+the+petition',
+    );
+  }, [shareUrl]);
+
+  const onShareXClick = useCallback(() => {
+    window.Telegram.WebApp.openLink(
+      'https://x.com/intent/post?text=We+demand+the+release+of+Pavel+Durov+from+custody+in+France.+Support+Pavel+and+sign+the+petition&url=https%3A%2F%2Ft.me%2Ffree%2Fletter',
+    );
+  }, []);
+
+  const onShareWhatsAppClick = useCallback(() => {
+    window.Telegram.WebApp.openLink(
+      'https://wa.me/?text=We+demand+the+release+of+Pavel+Durov+from+custody+in+France.+Support+Pavel+and+sign+the+petition https%3A%2F%2Ft.me%2Ffree%2Fletter',
+    );
   }, []);
 
   const onSaveStoryClick = useCallback(() => {
@@ -196,10 +233,27 @@ export function Share() {
           >
             {shareUrl}
           </Button>
-          <Button className={styles.action} icon={<ShareIcon/>} onClick={onShareClick}>
-            {/*fixme*/}
-            Share
-          </Button>
+          <div className={cn(styles.action, styles.actionsRow)}>
+            <Button
+              onClick={onShareTelegramClick}
+              icon={<PlaneIcon/>}
+            >
+              {/*fixme*/}
+              Share
+            </Button>
+            <Button
+              className={styles.shareAction}
+              variant="secondary"
+              onClick={onShareWhatsAppClick}
+              icon={<WhatsAppIcon/>}
+            />
+            <Button
+              className={styles.shareAction}
+              variant="secondary"
+              onClick={onShareXClick}
+              icon={<XIcon/>}
+            />
+          </div>
         </div>
       </Section>
       <Section
