@@ -19,9 +19,10 @@ function SignIcon() {
 }
 
 export function Sign({ onSigned }: { onSigned(): void }) {
-  const [performRequest, setPerformRequest] = useState(false);
+  const [shouldPerformRequest, setShouldPerformRequest] = useState(false);
   const { data, isLoading } = useSWR(
-    performRequest ? 'signPetition' : null, () => {
+    shouldPerformRequest ? 'signPetition' : null,
+    () => {
       return fetch('/api/petitions/freedurov/sign', {
         method: 'PATCH',
         headers: {
@@ -40,17 +41,23 @@ export function Sign({ onSigned }: { onSigned(): void }) {
         }).catch(e => {
           window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('rigid');
         });
+    }, {
+      revalidateOnFocus: false,
     },
   );
 
   const onSignClick = useCallback(() => {
-      window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('light');
-      setPerformRequest(true);
+    window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('light');
+    setShouldPerformRequest(true);
   }, []);
 
   useEffect(() => {
     data && onSigned();
   }, [onSigned, data]);
+
+  useEffect(() => {
+    !isLoading && setShouldPerformRequest(false);
+  }, [isLoading]);
 
   return (
     <Section className={styles.root}>

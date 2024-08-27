@@ -4,6 +4,7 @@ import cn from 'classnames';
 
 import { Section } from '../Section/Section';
 import { Button } from '../Button/Button';
+import { copyTextToClipboard } from '../../../../utils/clipboard';
 
 import styles from './Share.module.scss';
 
@@ -22,71 +23,6 @@ function CopyIcon(props: { className?: string }) {
         d="M16.8 7.6V3.978q.078.048.148.107c.032.027.065.06.193.188l4.586 4.586c.129.128.16.161.188.193q.06.07.107.148H18.4c-.433 0-.71 0-.92-.018-.2-.016-.269-.044-.298-.058a.7.7 0 0 1-.306-.306c-.015-.029-.042-.097-.058-.298-.017-.21-.018-.487-.018-.92m5.4 9.2v-6h-3.83c-.395 0-.737 0-1.02-.023-.3-.025-.602-.079-.894-.228a2.3 2.3 0 0 1-1.005-1.005c-.15-.292-.203-.594-.228-.894a13 13 0 0 1-.023-1.02V3.8h-2c-.573 0-.955 0-1.248.025-.284.023-.415.064-.497.106a1.2 1.2 0 0 0-.524.524c-.042.083-.083.213-.106.497-.024.293-.025.675-.025 1.248v1h.226c.143 0 .259 0 .373.01a2.8 2.8 0 0 1 1.585.656c.087.074.169.156.27.257l.019.018 4.586 4.586.018.018c.101.102.183.184.257.27a2.8 2.8 0 0 1 .657 1.586c.009.114.009.23.009.373V19.2h1c.573 0 .955 0 1.248-.025.284-.023.414-.064.497-.106a1.2 1.2 0 0 0 .524-.524c.042-.083.083-.213.106-.497.024-.293.025-.675.025-1.248m-3.4 4h1.032c.533 0 .98 0 1.347-.03.383-.031.747-.1 1.092-.275a2.8 2.8 0 0 0 1.224-1.224c.176-.345.244-.71.275-1.092.03-.366.03-.814.03-1.347V9.974c0-.143 0-.259-.01-.373a2.8 2.8 0 0 0-.656-1.585 5 5 0 0 0-.257-.27l-.018-.019-4.586-4.586-.018-.018a5 5 0 0 0-.271-.257 2.8 2.8 0 0 0-1.585-.657c-.114-.009-.23-.009-.373-.009h-2.858c-.533 0-.98 0-1.347.03-.383.031-.747.1-1.092.275A2.8 2.8 0 0 0 9.505 3.73c-.176.345-.244.71-.275 1.092-.03.367-.03.814-.03 1.347V7.2H8.168c-.533 0-.98 0-1.347.03-.383.031-.747.1-1.092.275A2.8 2.8 0 0 0 4.505 8.73c-.176.345-.244.71-.275 1.092-.03.367-.03.814-.03 1.347v10.664c0 .533 0 .98.03 1.347.031.383.1.747.275 1.092a2.8 2.8 0 0 0 1.224 1.224c.345.176.71.244 1.092.275.366.03.814.03 1.347.03h6.664c.533 0 .98 0 1.347-.03.383-.031.747-.1 1.092-.275a2.8 2.8 0 0 0 1.224-1.224c.176-.345.244-.71.275-1.092.03-.366.03-.814.03-1.347V20.8m-7-8.2V8.978q.078.048.148.107c.032.027.065.06.193.188l4.586 4.586c.129.128.16.161.188.193q.06.07.107.148H13.4c-.433 0-.71 0-.92-.018-.2-.016-.269-.044-.298-.058a.7.7 0 0 1-.306-.306c-.014-.029-.042-.097-.058-.298-.017-.21-.018-.487-.018-.92m1.6 3.2h3.8v6c0 .573 0 .955-.025 1.249-.023.284-.064.413-.106.496a1.2 1.2 0 0 1-.524.524c-.083.042-.213.083-.497.106-.293.024-.675.025-1.248.025H8.2c-.573 0-.955 0-1.248-.025-.285-.023-.415-.064-.497-.106a1.2 1.2 0 0 1-.524-.524c-.042-.083-.083-.213-.106-.497-.024-.293-.025-.675-.025-1.248V11.2c0-.573 0-.955.025-1.248.023-.284.064-.414.106-.497a1.2 1.2 0 0 1 .524-.524c.082-.042.212-.083.497-.106C7.245 8.8 7.627 8.8 8.2 8.8h2v3.83c0 .394 0 .737.023 1.02.024.3.079.602.228.894a2.3 2.3 0 0 0 1.005 1.005c.292.15.594.203.894.228.283.023.626.023 1.02.023z"
         clipRule="evenodd"
       />
-    </svg>
-  );
-}
-
-function StoriesImage(props: { className?: string }) {
-  return (
-    <svg
-      className={props.className}
-      xmlns="http://www.w3.org/2000/svg"
-      width="86"
-      height="106"
-      fill="none"
-    >
-      <g filter="url(#a)">
-        <rect
-          width="63"
-          height="84"
-          x="16.063"
-          y="5.938"
-          fill="#212A33"
-          rx="8"
-          transform="rotate(6 16.063 5.938)"
-        />
-        <rect
-          width="62.5"
-          height="83.5"
-          x="16.285"
-          y="6.212"
-          stroke="#8794A1"
-          strokeOpacity=".11"
-          strokeWidth=".5"
-          rx="7.75"
-          transform="rotate(6 16.285 6.212)"
-        />
-        <path
-          fill="#8794A1"
-          fillRule="evenodd"
-          d="M28.571 48.689c-.393 1.493-1.93 6.191-2.649 8.354-.532 1.612-.918 3.636-.571 4.28.66 1.227 1.912 2.247 3.202 3.298.462.376.928.756 1.374 1.151 1.749 1.549 5.996 4.535 8.644 6.271 2.3 1.508 4.989.404 6.376-.166.21-.086.39-.16.534-.21 1.189-.42 8.802-3.152 11.311-4.417 1.944-.98 1.693-2.449 1.53-3.397-.027-.16-.051-.304-.063-.429-.174-1.908-.24-3.472-.517-12.06-.238-7.343-.864-8.694-1.781-10.67-.155-.334-.32-.687-.49-1.09-1.184-2.781-5.61-6.499-7.318-7.785-1.71-1.287-3.564-1.787-6.605-.207-2.85 1.482-5.692 4.634-7.117 6.256-1.425 1.62-5.368 8.954-5.86 10.82m7.601 16.17c-1.604-2.207-2.717-6.167-3.072-7.871-1.258-5.064.753-6.153 1.6-6.612q.123-.065.208-.118c.64-.404 2.885-.821 4.275.921 1.247 1.564 2.077 1.726 3.228 1.95l.383.077c.934.193 3.241-.75 4.533-1.277.314-.128.567-.232.727-.289.817-.292 2.912-.01 4.445 1.566 1.443 1.485.608 4.01-.178 6.384l-.145.439c-.753 2.295-2.317 4.325-4.651 6.785s-4.52 2.675-6.407 2.337c-1.95-.348-2.94-1.534-4.946-4.292m2.27.327c.707.833 2.358 1.837 3.649 1.806.831-.02 2.812-.266 3.777-1.538.718-.948 1.195-2.263 1.083-3.618-.083-1.013-1.3-2.49-2.913-2.768l-.273-.048c-1.638-.286-4.19-.733-5.418.466-.76.742-.846 1.71-.906 2.383l-.021.222c-.035.747.04 1.936 1.022 3.095"
-          clipRule="evenodd"
-        />
-      </g>
-      <defs>
-        <filter
-          id="a"
-          width="87.435"
-          height="106.125"
-          x="-.717"
-          y="-.063"
-          colorInterpolationFilters="sRGB"
-          filterUnits="userSpaceOnUse"
-        >
-          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-          <feColorMatrix
-            in="SourceAlpha"
-            result="hardAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feOffset dy="2"/>
-          <feGaussianBlur stdDeviation="4"/>
-          <feComposite in2="hardAlpha" operator="out"/>
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
-          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_16_1718"/>
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow_16_1718" result="shape"/>
-        </filter>
-      </defs>
     </svg>
   );
 }
@@ -197,10 +133,14 @@ export function Share() {
 
   const onCopyClick = useCallback(() => {
     // TODO: Motion, reaction?
-    navigator
-      .clipboard
-      .writeText(appUrl)
-      .catch(console.error);
+    copyTextToClipboard(appUrl)
+      .then(() => {
+        window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');
+      })
+      .catch(e => {
+        console.error(e);
+        window.Telegram.WebApp.HapticFeedback.notificationOccurred('error');
+      });
   }, [appUrl]);
 
   const onShareStoryClick = useCallback(() => {
@@ -209,9 +149,9 @@ export function Share() {
       {
         widget_link: {
           url: appUrl,
-          name: 'Sign the open letter'
-        }
-      }
+          name: 'Sign the open letter',
+        },
+      },
     );
   }, [appUrl]);
 
@@ -234,15 +174,26 @@ export function Share() {
 
   const onShareXClick = useCallback(() => {
     window.Telegram.WebApp.openLink(
-      'https://x.com/intent/post?text=We+demand+the+release+of+Pavel+Durov+from+custody+in+France.+Support+Pavel+and+sign+the+petition&url=https%3A%2F%2Ft.me%2Ffree%2Fletter',
+      `https://x.com/intent/post?${new URLSearchParams([
+        [
+          'text',
+          'We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition',
+        ],
+        ['url', appUrl],
+      ]).toString()}`,
     );
-  }, []);
+  }, [appUrl]);
 
   const onShareWhatsAppClick = useCallback(() => {
     window.Telegram.WebApp.openLink(
-      'https://wa.me/?text=We+demand+the+release+of+Pavel+Durov+from+custody+in+France.+Support+Pavel+and+sign+the+petition https%3A%2F%2Ft.me%2Ffree%2Fletter',
+      `https://wa.me/?${new URLSearchParams([
+        [
+          'text',
+          `We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition ${appUrl}`,
+        ],
+      ]).toString()}`,
     );
-  }, []);
+  }, [appUrl]);
 
   const onSaveStoriesImageClick = useCallback(() => {
     // FIXME: set normal link
