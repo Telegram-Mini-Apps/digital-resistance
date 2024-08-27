@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import cn from 'classnames';
 
 import { Wall } from './Wall/Wall';
 import { Letter } from './Letter/Letter';
@@ -17,50 +16,76 @@ import styles from './IndexPage.module.scss';
 
 export default function IndexPage() {
   const { isSigned: isAlreadySigned, signaturesCount } = useDataContext();
+  const debugNoSign = window.Telegram.WebApp.initDataUnsafe.start_param === 'debug_no_sign';
 
-  const [isSigned, setIsSigned] = useState(isAlreadySigned);
-  const [showTransition, setShowTransition] = useState(false);
+  const [page, setPage] = useState<'index' | 'share'>(
+    debugNoSign
+      ? 'index'
+      : isAlreadySigned ? 'share' : 'index',
+  );
+
+  const goToShare = useCallback(() => {
+    setPage('share');
+  }, []);
+
+  const goToIndex = useCallback(() => {
+    setPage('index');
+  }, []);
+
   const [showThanks, setShowThanks] = useState(false);
+  const [isSigned, setIsSigned] = useState(
+    debugNoSign ? false : isAlreadySigned,
+  );
   const onSigned = useCallback(() => {
-    setShowTransition(true);
     setShowThanks(true);
     setIsSigned(true);
+    goToShare();
 
-    const transitionTimeoutId = setTimeout(() => {
-      setShowTransition(false);
-    }, 300);
     const thanksTimeoutId = setTimeout(() => {
       setShowThanks(false);
     }, 4500);
 
     return () => {
-      clearTimeout(transitionTimeoutId);
       clearTimeout(thanksTimeoutId);
     };
-  }, []);
+  }, [goToShare]);
 
   const { ref } = useScrollRestoration('indexPage', { debounceTime: 200 });
   const { t } = useTranslation();
 
+  useEffect(() => {
+    const bb = window.Telegram.WebApp.BackButton;
+    bb.onClick(goToIndex);
+    return () => {
+      bb.offClick(goToIndex);
+    };
+  }, [goToIndex]);
+
+  useEffect(() => {
+    const bb = window.Telegram.WebApp.BackButton;
+    page === 'index' ? bb.hide() : bb.show();
+  }, [page]);
+
   return (
     <main className={styles.root} ref={ref}>
       <Header
-        title={isSigned
+        title={page === 'index'
+          ? t('we_demand_release')
           // TODO: Should be a part of the translation itself.
-          ? `${signaturesCount} ${t('people_signed')}`
-          : t('we_demand_release')}
+          : `${signaturesCount} ${t('people_signed')}`
+        }
       />
       <div className={styles.body}>
-        {isSigned
-          ? (
-            <div className={cn({ [styles.shareSectionsAppear]: showTransition })}>
-              <Share/>
-            </div>
-          )
+        {page === 'share'
+          ? <Share/>
           : (
             <>
               <Progress current={signaturesCount}/>
-              <Sign onSigned={onSigned}/>
+              <Sign
+                isSigned={isSigned}
+                onSigned={onSigned}
+                onShareClick={goToShare}
+              />
               <Letter/>
               <Wall/>
               <Media/>

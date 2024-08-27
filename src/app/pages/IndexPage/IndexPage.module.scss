@@ -14,25 +14,6 @@
   position: relative;
 }
 
-.shareSectionsAppear {
-  position: absolute;
-  top: 0;
-  animation: 300ms ease-in-out next-page-appear;
-
-  @keyframes next-page-appear {
-    from {
-      top: 5px;
-      transform: scale(0.99);
-      opacity: 0;
-    }
-    to {
-      top: 0;
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-}
-
 .thanks {
   position: fixed;
   left: 16px;
