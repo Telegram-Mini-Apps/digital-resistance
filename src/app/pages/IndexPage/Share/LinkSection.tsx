@@ -1,5 +1,5 @@
 import { Trans, useTranslation } from 'react-i18next';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import cn from 'classnames';
 
 import { Section } from '../Section/Section';
@@ -7,6 +7,8 @@ import { Button } from '../Button/Button';
 import { copyTextToClipboard } from '../../../../utils/clipboard';
 
 import styles from './Share.module.scss';
+import { AnimatePresence } from 'framer-motion';
+import { Toast } from '../Toast/Toast';
 
 function CopyIcon(props: { className?: string }) {
   return (
@@ -54,18 +56,21 @@ export function LinkSection({ displayAppUrl, appUrl }: {
   appUrl: string;
 }) {
   const { t } = useTranslation();
+  const [toastText, setToastText] = useState<string | undefined>();
 
   const onCopyClick = useCallback(() => {
-    // TODO: Toast!
-    copyTextToClipboard(appUrl)
-      .then(() => {
+    copyTextToClipboard(appUrl).then((copied) => {
+      if (copied) {
         window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');
-      })
-      .catch(e => {
-        console.error(e);
+        // fixme
+        setToastText('Link is copied to clipboard.');
+      } else {
         window.Telegram.WebApp.HapticFeedback.notificationOccurred('error');
-      });
-  }, [appUrl]);
+        // fixme
+        setToastText('Unable to copy the link.');
+      }
+    });
+  }, [appUrl, t]);
 
   const onShareTelegramClick = useCallback(() => {
     window.Telegram.WebApp.openTelegramLink(`https://t.me/share/url?${
@@ -116,6 +121,9 @@ export function LinkSection({ displayAppUrl, appUrl }: {
           />
         </div>
       </div>
+      <AnimatePresence>
+        {toastText && <Toast>{toastText}</Toast>}
+      </AnimatePresence>
     </Section>
   );
 }
