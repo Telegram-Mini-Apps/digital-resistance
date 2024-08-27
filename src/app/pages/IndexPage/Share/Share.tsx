@@ -27,71 +27,6 @@ function CopyIcon(props: { className?: string }) {
   );
 }
 
-function StoriesImage(props: { className?: string }) {
-  return (
-    <svg
-      className={props.className}
-      xmlns="http://www.w3.org/2000/svg"
-      width="86"
-      height="106"
-      fill="none"
-    >
-      <g filter="url(#a)">
-        <rect
-          width="63"
-          height="84"
-          x="16.063"
-          y="5.938"
-          fill="#212A33"
-          rx="8"
-          transform="rotate(6 16.063 5.938)"
-        />
-        <rect
-          width="62.5"
-          height="83.5"
-          x="16.285"
-          y="6.212"
-          stroke="#8794A1"
-          strokeOpacity=".11"
-          strokeWidth=".5"
-          rx="7.75"
-          transform="rotate(6 16.285 6.212)"
-        />
-        <path
-          fill="#8794A1"
-          fillRule="evenodd"
-          d="M28.571 48.689c-.393 1.493-1.93 6.191-2.649 8.354-.532 1.612-.918 3.636-.571 4.28.66 1.227 1.912 2.247 3.202 3.298.462.376.928.756 1.374 1.151 1.749 1.549 5.996 4.535 8.644 6.271 2.3 1.508 4.989.404 6.376-.166.21-.086.39-.16.534-.21 1.189-.42 8.802-3.152 11.311-4.417 1.944-.98 1.693-2.449 1.53-3.397-.027-.16-.051-.304-.063-.429-.174-1.908-.24-3.472-.517-12.06-.238-7.343-.864-8.694-1.781-10.67-.155-.334-.32-.687-.49-1.09-1.184-2.781-5.61-6.499-7.318-7.785-1.71-1.287-3.564-1.787-6.605-.207-2.85 1.482-5.692 4.634-7.117 6.256-1.425 1.62-5.368 8.954-5.86 10.82m7.601 16.17c-1.604-2.207-2.717-6.167-3.072-7.871-1.258-5.064.753-6.153 1.6-6.612q.123-.065.208-.118c.64-.404 2.885-.821 4.275.921 1.247 1.564 2.077 1.726 3.228 1.95l.383.077c.934.193 3.241-.75 4.533-1.277.314-.128.567-.232.727-.289.817-.292 2.912-.01 4.445 1.566 1.443 1.485.608 4.01-.178 6.384l-.145.439c-.753 2.295-2.317 4.325-4.651 6.785s-4.52 2.675-6.407 2.337c-1.95-.348-2.94-1.534-4.946-4.292m2.27.327c.707.833 2.358 1.837 3.649 1.806.831-.02 2.812-.266 3.777-1.538.718-.948 1.195-2.263 1.083-3.618-.083-1.013-1.3-2.49-2.913-2.768l-.273-.048c-1.638-.286-4.19-.733-5.418.466-.76.742-.846 1.71-.906 2.383l-.021.222c-.035.747.04 1.936 1.022 3.095"
-          clipRule="evenodd"
-        />
-      </g>
-      <defs>
-        <filter
-          id="a"
-          width="87.435"
-          height="106.125"
-          x="-.717"
-          y="-.063"
-          colorInterpolationFilters="sRGB"
-          filterUnits="userSpaceOnUse"
-        >
-          <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-          <feColorMatrix
-            in="SourceAlpha"
-            result="hardAlpha"
-            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          />
-          <feOffset dy="2"/>
-          <feGaussianBlur stdDeviation="4"/>
-          <feComposite in2="hardAlpha" operator="out"/>
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
-          <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_16_1718"/>
-          <feBlend in="SourceGraphic" in2="effect1_dropShadow_16_1718" result="shape"/>
-        </filter>
-      </defs>
-    </svg>
-  );
-}
-
 function PlusIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="none">
@@ -239,15 +174,26 @@ export function Share() {
 
   const onShareXClick = useCallback(() => {
     window.Telegram.WebApp.openLink(
-      'https://x.com/intent/post?text=We+demand+the+release+of+Pavel+Durov+from+custody+in+France.+Support+Pavel+and+sign+the+petition&url=https%3A%2F%2Ft.me%2Ffree%2Fletter',
+      `https://x.com/intent/post?${new URLSearchParams([
+        [
+          'text',
+          'We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition',
+        ],
+        ['url', appUrl],
+      ]).toString()}`,
     );
-  }, []);
+  }, [appUrl]);
 
   const onShareWhatsAppClick = useCallback(() => {
     window.Telegram.WebApp.openLink(
-      'https://wa.me/?text=We+demand+the+release+of+Pavel+Durov+from+custody+in+France.+Support+Pavel+and+sign+the+petition https%3A%2F%2Ft.me%2Ffree%2Fletter',
+      `https://wa.me/?${new URLSearchParams([
+        [
+          'text',
+          `We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition ${appUrl}`,
+        ],
+      ]).toString()}`,
     );
-  }, []);
+  }, [appUrl]);
 
   const onSaveStoriesImageClick = useCallback(() => {
     // FIXME: set normal link
