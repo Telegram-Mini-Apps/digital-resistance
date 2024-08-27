@@ -31,7 +31,7 @@ export function Letter() {
   );
 
   return (
-    <Section title={t('open_letter')}>
+    <Section title={t('open_title')}>
       <div className={styles.content}>
         {/*fixme: translations*/}
         <p>Enabling freedom of private speech is not a crime. The creator of Telegram, Pavel Durov, has been unjustly targeted by French authorities for protecting our right to private communication.</p>
