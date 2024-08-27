@@ -104,3 +104,28 @@
     }
   }
 }
+
+.twCallout {
+  &Header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  &User {
+    padding: 0 2px;
+    font-weight: 590;
+  }
+
+  &Username {
+    color: #8794A1;
+  }
+
+  &Text {
+    font-size: 17px;
+    line-height: 22px;
+    color: white;
+  }
+}
