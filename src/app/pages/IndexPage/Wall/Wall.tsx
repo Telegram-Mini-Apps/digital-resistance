@@ -124,7 +124,10 @@ export function Wall() {
     <Section title={t('wall_title')}>
       <div className={styles.content}>
         {quotes.map(({ key, date, ...q }) => (
-          <div className={styles.quote} key={key}>
+          <a className={styles.quote} key={key} href={q.source} onClick={(e) => {
+            e.preventDefault();
+            window.Telegram.WebApp.openTelegramLink(q.source);
+          }}>
             <div className={styles.quoteTop}>
               <img
                 className={styles.quoteImage}
@@ -140,7 +143,7 @@ export function Wall() {
             <div className={styles.quoteDate}>
               {formatDate(date)} via X (ex. Twitter)
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </Section>
