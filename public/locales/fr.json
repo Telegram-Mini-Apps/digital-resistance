@@ -24,5 +24,8 @@
   "save_dog_avatar": "Enregistrer la photo avec le badge",
   "save_dog_avatar_image": "Enregistrer l'image du Chien",
   "you_signed": "Vous avez déjà signé",
-  "open_title": "Libérez Pavel Durov et défendez la liberté d'expression"
+  "open_title": "Libérez Pavel Durov et défendez la liberté d'expression",
+  "repost_tweet": "Reposter sur X (Twitter)",
+  "repost_tweet_cta": "Amplifiez le message - repostez pour rassembler plus de signatures.",
+  "repost_tweet_btn": "Reposter sur Twitter"
 }
