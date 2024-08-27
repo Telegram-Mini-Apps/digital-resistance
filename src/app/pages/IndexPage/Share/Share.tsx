@@ -209,7 +209,7 @@ export function Share() {
       {
         widget_link: {
           url: appUrl,
-          name: 'Sign the petition'
+          name: 'Sign the open letter'
         }
       }
     );
