@@ -42,7 +42,7 @@ export function Letter() {
         <p>This symbolic change goes deeper than solidarity. In internet culture, meme’s rule the world. We believe meme culture can change the world. Memes are powerful, a shortcut to an emotional feeling. TON Community and Toncoin’s culture seen through Resistance Dog as the {drHashtag} sends a powerful message: <strong>we stand united in protection of fundamental rights - the right to privacy, and the freedom to speak our minds.</strong></p>
         <p>This gesture is not just about showing support—it’s an act of resistance. It’s a declaration that the values of the {drHashtag} are non-negotiable, and we will not compromise.</p>
         <p>This is more than just a battle for one man’s freedom. It’s a battle for our future. Freedom of speech and the right to privacy are not negotiable—they are the foundation of society. If we allow anyone to strip these rights away, we risk losing everything.</p>
-        <p>Demand your voice is heard. Sign this petition. Share it as far and wide as possible, use the hashtag {freeHashtag}. Defend your fundamental rights. RESIST and secure the right to speak your mind.</p>
+        <p>Demand your voice is heard. Sign this open letter. Share it as far and wide as possible, use the hashtag {freeHashtag}. Defend your fundamental rights. RESIST and secure the right to speak your mind.</p>
       </div>
     </Section>
   );
