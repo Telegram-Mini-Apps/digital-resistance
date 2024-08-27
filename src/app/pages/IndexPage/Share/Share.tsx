@@ -1,6 +1,7 @@
 import { LinkSection } from './LinkSection';
 import { StoriesSection } from './StoriesSection';
 import { CommunitySection } from './CommunitySection';
+import { TwitterSection } from './TwitterSection';
 
 import styles from './Share.module.scss';
 
@@ -54,7 +55,7 @@ export function Share() {
     <>
       <hr className={styles.separator}/>
       <LinkSection displayAppUrl={displayAppUrl} appUrl={appUrl}/>
-      {/*<TwitterSection appUrl={appUrl}/>*/}
+      <TwitterSection/>
       <StoriesSection appUrl={appUrl}/>
       <CommunitySection/>
       {/*<Section className={styles.section} title={t('add_badge')}>*/}
