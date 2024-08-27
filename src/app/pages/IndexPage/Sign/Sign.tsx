@@ -21,7 +21,8 @@ function SignIcon() {
 export function Sign({ onSigned }: { onSigned(): void }) {
   const [performRequest, setPerformRequest] = useState(false);
   const { data, isLoading } = useSWR(
-    performRequest ? 'signPetition' : null, () => {
+    performRequest ? 'signPetition' : null,
+    () => {
       return fetch('/api/petitions/freedurov/sign', {
         method: 'PATCH',
         headers: {
@@ -40,12 +41,14 @@ export function Sign({ onSigned }: { onSigned(): void }) {
         }).catch(e => {
           window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('rigid');
         });
+    }, {
+      revalidateOnFocus: false,
     },
   );
 
   const onSignClick = useCallback(() => {
-      window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('light');
-      setPerformRequest(true);
+    window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('light');
+    setPerformRequest(true);
   }, []);
 
   useEffect(() => {
