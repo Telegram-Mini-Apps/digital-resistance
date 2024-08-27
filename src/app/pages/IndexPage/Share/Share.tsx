@@ -162,7 +162,7 @@ export function Share() {
         ['url', completeAppUrl],
         [
           'text',
-          `${t('we_demand_release')} ${completeAppUrl}`,
+          `${t('we_demand_release')}`,
         ],
       ])
         .toString()
@@ -178,7 +178,7 @@ export function Share() {
       `https://x.com/intent/post?${new URLSearchParams([
         [
           'text',
-          `${t('we_demand_release')} ${completeAppUrl}`,
+          `${t('we_demand_release')}`,
         ],
         ['url', completeAppUrl],
       ]).toString()}`,
