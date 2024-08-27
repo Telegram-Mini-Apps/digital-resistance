@@ -18,11 +18,7 @@ export default function IndexPage() {
   const { isSigned: isAlreadySigned, signaturesCount } = useDataContext();
   const debugNoSign = window.Telegram.WebApp.initDataUnsafe.start_param === 'debug_no_sign';
 
-  const [page, setPage] = useState<'index' | 'share'>(
-    debugNoSign
-      ? 'index'
-      : isAlreadySigned ? 'share' : 'index',
-  );
+  const [page, setPage] = useState<'index' | 'share'>('index');
 
   const goToShare = useCallback(() => {
     setPage('share');
