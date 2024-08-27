@@ -162,7 +162,7 @@ export function Share() {
         ['url', completeAppUrl],
         [
           'text',
-          'We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition',
+          `${t('we_demand_release')} ${completeAppUrl}`,
         ],
       ])
         .toString()
@@ -178,7 +178,7 @@ export function Share() {
       `https://x.com/intent/post?${new URLSearchParams([
         [
           'text',
-          'We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition',
+          `${t('we_demand_release')} ${completeAppUrl}`,
         ],
         ['url', completeAppUrl],
       ]).toString()}`,
@@ -190,7 +190,7 @@ export function Share() {
       `https://wa.me/?${new URLSearchParams([
         [
           'text',
-          `We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition ${completeAppUrl}`,
+          `${t('we_demand_release')} ${completeAppUrl}`,
         ],
       ]).toString()}`,
     );
