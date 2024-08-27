@@ -3,7 +3,6 @@ import { StoriesSection } from './StoriesSection';
 import { CommunitySection } from './CommunitySection';
 
 import styles from './Share.module.scss';
-import { TwitterSection } from './TwitterSection';
 
 function DownloadIcon() {
   return (
