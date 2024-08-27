@@ -13,16 +13,13 @@ export function CommunitySection() {
   } ,[]);
 
   return (
-    // fixme
-    <Section className={styles.section} title="">
+    <Section className={styles.section} title={t('quest_block_title')}>
       <p>
-        {/*fixme*/}
-        <Trans i18nKey=""/>
+        <Trans i18nKey="quest_block_text"/>
       </p>
-      <div className={styles.action}>
+      <div className={styles.actions}>
         <Button onClick={onClick}>
-          {/*fixme*/}
-          <Trans i18nKey=""/>
+          <Trans i18nKey="quest_block_btn"/>
         </Button>
       </div>
     </Section>
