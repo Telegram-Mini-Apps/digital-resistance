@@ -35,7 +35,7 @@ body {
   background: var(--bg-color);
   padding-right: var(--scrollbar-width);
   font-family: var(--font-family);
-  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 .twaBody {
