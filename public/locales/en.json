@@ -12,7 +12,7 @@
   "open_letter": "Free Pavel Durov and Defend Free Speech",
   "the_situation_in_media": "This situation in media",
   "wall_title": "Durov's Wall",
-  "already_supported": "Elon Musk, Vitalik Buterin, and many others have already given their support in the last several days.",
+  "already_supported": "Elon Musk, Vitalik Buterin, and many others have already given their support in the last few days.",
   "thank_you_for_support": "Thank you for your support!",
   "error_message": "Something happened, try again please.",
   "share": "Share",
@@ -23,5 +23,6 @@
   "add_badge_description": "Use the resistance badge in your profile photo",
   "save_dog_avatar": "Save Photo with Badge",
   "save_dog_avatar_image": "Save Resistance Dog Image",
-  "you_signed": "You've already signed"
+  "you_signed": "You've already signed",
+  "open_title": "Free Pavel Durov and Defend Free Speech"
 }
