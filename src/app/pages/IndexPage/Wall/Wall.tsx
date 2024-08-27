@@ -2,6 +2,7 @@ import React, { type ReactNode, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Section } from '../Section/Section';
+import { ExternalLink } from '../ExternalLink/ExternalLink';
 
 import styles from './Wall.module.scss';
 
@@ -124,12 +125,7 @@ export function Wall() {
     <Section title={t('wall_title')}>
       <div className={styles.content}>
         {quotes.map(({ key, date, ...q }) => (
-          <a
-            className={styles.quote} key={key} href={q.source} onClick={(e) => {
-            e.preventDefault();
-            window.Telegram.WebApp.openLink(q.source, { try_instant_view: true });
-          }}
-          >
+          <ExternalLink className={styles.quote} key={key} href={q.source}>
             <div className={styles.quoteTop}>
               <img
                 className={styles.quoteImage}
@@ -145,7 +141,7 @@ export function Wall() {
             <div className={styles.quoteDate}>
               {formatDate(date)} via X (ex. Twitter)
             </div>
-          </a>
+          </ExternalLink>
         ))}
       </div>
     </Section>
