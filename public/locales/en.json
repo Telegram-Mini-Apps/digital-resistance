@@ -27,5 +27,8 @@
   "you_signed": "You've already signed",
   "repost_tweet": "Repost on Twitter(X)",
   "repost_tweet_cta": "Amplify the message—repost to help us gather more signatures.",
-  "repost_tweet_btn": "Repost on Twitter"
+  "repost_tweet_btn": "Repost on Twitter",
+  "quest_block_title": "Activate the Resistance Pack",
+  "quest_block_text": "Join the Digital Resistance movement",
+  "quest_block_btn": "Launch the Community App"
 }
