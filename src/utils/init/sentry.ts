@@ -9,7 +9,7 @@ import {
 
 export const initSentry = () => {
   Sentry.init({
-    dsn: 'https://f725aed79ab980f9e217928685c84704@s.tontmaservice.xyz/6',
+    dsn: 'https://6c88dafc14f327e5ee7b4c03d56fb92e@s.tontmaservice.xyz/12',
     integrations: [
       Sentry.reactRouterV6BrowserTracingIntegration({
         useEffect: React.useEffect,
@@ -21,7 +21,7 @@ export const initSentry = () => {
       Sentry.replayIntegration(),
     ],
     tracesSampleRate: 1.0,
-    tracePropagationTargets: ['localhost', /^https:\/\/tappscenter\.org/],
+    tracePropagationTargets: ['localhost', /^https:\/\/digitalresistance\.me/],
     replaysSessionSampleRate: 0.1,
     replaysOnErrorSampleRate: 1.0,
   });
