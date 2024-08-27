@@ -9,35 +9,3 @@
 
   @include noScrollbar();
 }
-
-.thanks {
-  position: fixed;
-  left: 16px;
-  right: 16px;
-  bottom: -50px;
-  height: 48px;
-  backdrop-filter: blur(25px);
-  font-size: 14px;
-  background: #354352;
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  padding: 9px 16px;
-  border-radius: 14px;
-  animation: 4500ms ease-in-out thanks-appear;
-
-  @keyframes thanks-appear {
-    0% {
-      bottom: -50px;
-    }
-    16% {
-      bottom: 32px
-    }
-    90% {
-      bottom: 32px;
-    }
-    100% {
-      bottom: -50px;
-    }
-  }
-}

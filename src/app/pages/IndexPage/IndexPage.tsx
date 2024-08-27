@@ -9,6 +9,7 @@ import { Sign } from './Sign/Sign';
 import { Media } from './Media/Media';
 import { Header } from './Header/Header';
 import { Share } from './Share/Share';
+import { Toast } from './Toast/Toast';
 
 import { useScrollRestoration } from '../../../hooks/useScrollRestoration';
 import { useDataContext } from '../../../dataSource/DataContext/DataContext';
@@ -40,7 +41,7 @@ export default function IndexPage() {
 
     const thanksTimeoutId = setTimeout(() => {
       setShowThanks(false);
-    }, 4500);
+    }, 3500);
 
     return () => {
       clearTimeout(thanksTimeoutId);
@@ -88,11 +89,7 @@ export default function IndexPage() {
             ) : (
               <motion.div key="index" {...animation}>
                 <Progress current={signaturesCount}/>
-                <Sign
-                  isSigned={isSigned}
-                  onSigned={onSigned}
-                  onShareClick={goToShare}
-                />
+                <Sign isSigned={isSigned} onSigned={onSigned} onShareClick={goToShare}/>
                 <Letter/>
                 <Wall/>
                 <Media/>
@@ -100,9 +97,9 @@ export default function IndexPage() {
             )}
         </div>
       </AnimatePresence>
-      {
-        showThanks && (
-          <div className={styles.thanks}>
+      <AnimatePresence>
+        {showThanks && (
+          <Toast className={styles.thanks}>
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none">
               <path
                 fill="#fff"
@@ -112,8 +109,9 @@ export default function IndexPage() {
               />
             </svg>
             <Trans i18nKey="thank_you_for_support"/>
-          </div>
+          </Toast>
         )}
+      </AnimatePresence>
     </main>
   );
 }
