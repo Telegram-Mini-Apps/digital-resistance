@@ -43,7 +43,7 @@ export function Letter() {
 
         <p>
           <ExternalLink href="https://telegra.ph/Open-Letter-to-France-08-27" tryInstantView>
-            <strong>Read the full text ot the Open letter to France.</strong>
+            <strong>Read the full text of the Open letter to France.</strong>
           </ExternalLink>
         </p>
       </div>
