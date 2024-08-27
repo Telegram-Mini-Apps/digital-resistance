@@ -5,13 +5,14 @@ import styles from './ExternalLink.module.scss';
 
 interface Props extends HTMLProps<HTMLAnchorElement> {
   href: string;
+  tryInstantView?: boolean;
 }
 
-export function ExternalLink(props: Props) {
+export function ExternalLink({ href, tryInstantView, className, ...rest }: Props) {
   const onClick = useCallback<PointerEventHandler<HTMLAnchorElement>>((e) => {
     e.preventDefault();
-    window.Telegram.WebApp.openLink(props.href);
-  }, []);
+    window.Telegram.WebApp.openLink(href, { try_instant_view: tryInstantView || false });
+  }, [href, tryInstantView]);
 
-  return <a {...props} className={cn(styles.root, props.className)} onClick={onClick}/>;
+  return <a {...rest} className={cn(styles.root, className)} onClick={onClick}/>;
 }
