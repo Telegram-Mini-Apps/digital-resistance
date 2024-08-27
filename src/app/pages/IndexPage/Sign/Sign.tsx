@@ -18,7 +18,22 @@ function SignIcon() {
   );
 }
 
-export function Sign({ onSigned }: { onSigned(): void }) {
+function ShareIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="none">
+      <path
+        fill="#fff"
+        d="M12.656 20.633a1.1 1.1 0 0 1-.322-.82v-3.731c-3.471 0-6.474.983-8.154 4.15-.256.473-.663.723-1.201.723-.693 0-1.006-.713-1.006-1.308 0-3.617.779-6.526 2.402-8.565q1.23-1.533 3.135-2.344c1.528-.647 3.18-.81 4.824-.81V4.236c0-.66.507-1.191 1.172-1.191.53 0 .952.345 1.318.693l7.705 7.207q.285.264.39.537c.141.358.147.654 0 1.026a1.5 1.5 0 0 1-.39.537l-7.705 7.275q-.351.332-.674.479c-.477.239-1.098.218-1.494-.166"
+      />
+    </svg>
+  );
+}
+
+export function Sign({ onSigned, isSigned, onShareClick }: {
+  isSigned: boolean;
+  onSigned(): void;
+  onShareClick(): void;
+}) {
   const [shouldPerformRequest, setShouldPerformRequest] = useState(false);
   const { data, isLoading } = useSWR(
     shouldPerformRequest ? 'signPetition' : null,
@@ -61,21 +76,34 @@ export function Sign({ onSigned }: { onSigned(): void }) {
 
   return (
     <Section className={styles.root}>
-      <Button
-        icon={<SignIcon/>}
-        disabled={isLoading}
-        onClick={onSignClick}
-        after={isLoading && (
-          <div className={styles.spinner}>
-            <span className={styles.spinnerThumb}/>
+      {isSigned ? (
+        <>
+          <Button icon={<ShareIcon/>} disabled={isLoading} onClick={onShareClick}>
+            <Trans i18nKey={'share_letter_link'}/>
+          </Button>
+          <div className={styles.info} style={{ textAlign: 'center' }}>
+            <Trans i18nKey={'you_signed'}/>
           </div>
-        )}
-      >
-        <Trans i18nKey={'sign_letter'}/>
-      </Button>
-      <div className={styles.info}>
-        <Trans i18nKey={'already_supported'}/>
-      </div>
+        </>
+      ) : (
+        <>
+          <Button
+            icon={<SignIcon/>}
+            disabled={isLoading}
+            onClick={onSignClick}
+            after={isLoading && (
+              <div className={styles.spinner}>
+                <span className={styles.spinnerThumb}/>
+              </div>
+            )}
+          >
+            <Trans i18nKey={'sign_letter'}/>
+          </Button>
+          <div className={styles.info}>
+            <Trans i18nKey={'already_supported'}/>
+          </div>
+        </>
+      )}
     </Section>
   );
 }

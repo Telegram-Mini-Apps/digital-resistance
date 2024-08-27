@@ -124,10 +124,12 @@ export function Wall() {
     <Section title={t('wall_title')}>
       <div className={styles.content}>
         {quotes.map(({ key, date, ...q }) => (
-          <a className={styles.quote} key={key} href={q.source} onClick={(e) => {
+          <a
+            className={styles.quote} key={key} href={q.source} onClick={(e) => {
             e.preventDefault();
-            window.Telegram.WebApp.openTelegramLink(q.source);
-          }}>
+            window.Telegram.WebApp.openLink(q.source, { try_instant_view: true });
+          }}
+          >
             <div className={styles.quoteTop}>
               <img
                 className={styles.quoteImage}
