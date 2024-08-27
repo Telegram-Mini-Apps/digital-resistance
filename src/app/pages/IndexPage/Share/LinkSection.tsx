@@ -1,14 +1,14 @@
 import { Trans, useTranslation } from 'react-i18next';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import cn from 'classnames';
 
 import { Section } from '../Section/Section';
 import { Button } from '../Button/Button';
+import { Toast } from '../Toast/Toast';
 import { copyTextToClipboard } from '../../../../utils/clipboard';
 
 import styles from './Share.module.scss';
-import { AnimatePresence } from 'framer-motion';
-import { Toast } from '../Toast/Toast';
 
 function CopyIcon(props: { className?: string }) {
   return (
@@ -62,12 +62,10 @@ export function LinkSection({ displayAppUrl, appUrl }: {
     copyTextToClipboard(appUrl).then((copied) => {
       if (copied) {
         window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');
-        // fixme
-        setToastText('Link is copied to clipboard.');
+        setToastText(t('letter_app_link_copied'));
       } else {
         window.Telegram.WebApp.HapticFeedback.notificationOccurred('error');
-        // fixme
-        setToastText('Unable to copy the link.');
+        setToastText(t('letter_app_link_copy_error'));
       }
     });
   }, [appUrl, t]);
@@ -96,6 +94,17 @@ export function LinkSection({ displayAppUrl, appUrl }: {
       ]).toString()}`,
     );
   }, [appUrl]);
+
+  useEffect(() => {
+    if (toastText) {
+      const timeoutId = setTimeout(() => {
+        setToastText(undefined);
+      }, 2000);
+      return () => {
+        clearTimeout(timeoutId);
+      }
+    }
+  }, [toastText]);
 
   return (
     <Section className={styles.section} title={t('share_letter_link')}>
