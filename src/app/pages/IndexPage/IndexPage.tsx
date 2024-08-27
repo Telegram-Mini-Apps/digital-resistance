@@ -74,7 +74,7 @@ export default function IndexPage() {
     <main className={styles.root} ref={ref}>
       <Header
         title={page === 'index'
-          ? t('we_demand_release')
+          ? t('open_letter')
           // TODO: Should be a part of the translation itself.
           : `${signaturesCount} ${t('people_signed')}`
         }
