@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: app-de-stable
-  replicas: 32
+  replicas: 64
   strategy:
     type: RollingUpdate
   template:
