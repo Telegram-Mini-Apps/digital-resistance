@@ -4,9 +4,9 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Callout } from '../Callout/Callout';
 import { Button } from '../Button/Button';
 import { Section } from '../Section/Section';
+import { TgLink } from '../TgLink/TgLink';
 
 import styles from './Share.module.scss';
-import { TgLink } from '../TgLink/TgLink';
 
 export function TwitterSection({ appUrl }: { appUrl: string }) {
   const { t } = useTranslation();
@@ -14,10 +14,7 @@ export function TwitterSection({ appUrl }: { appUrl: string }) {
   const onClick = useCallback(() => {
     window.Telegram.WebApp.openLink(
       `https://x.com/intent/post?${new URLSearchParams([
-        [
-          'text',
-          `${t('we_demand_release')} ${appUrl}`,
-        ],
+        ['text', t('we_demand_release')],
         ['url', appUrl],
       ]).toString()}`,
     );
