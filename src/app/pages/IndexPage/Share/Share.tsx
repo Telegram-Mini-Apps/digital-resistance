@@ -149,7 +149,7 @@ export function Share() {
       {
         widget_link: {
           url: appUrl,
-          name: 'Sign the open letter',
+          name: 'Sign The Open Letter',
         },
       },
     );
