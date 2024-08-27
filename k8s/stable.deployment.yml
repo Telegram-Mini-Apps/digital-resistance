@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: app-de-stable
-  replicas: 64
+  replicas: 104
   strategy:
     type: RollingUpdate
   template:
@@ -24,6 +24,7 @@ spec:
             - containerPort: 3000
           resources:
             limits:
+              cpu: 1000m
               memory: 2048Mi
             requests:
               cpu: 500m
