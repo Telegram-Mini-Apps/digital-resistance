@@ -106,6 +106,8 @@
 }
 
 .twCallout {
+  color: white;
+
   &Header {
     display: flex;
     align-items: center;
@@ -126,6 +128,5 @@
   &Text {
     font-size: 17px;
     line-height: 22px;
-    color: white;
   }
 }
