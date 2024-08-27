@@ -10,7 +10,14 @@ import styles from './Progress.module.scss';
 
 export function Progress({ current }: { current: number }) {
   const targetCount = useMemo(() => {
-    return [1_000_000, 100_000_000, 500_000_000].find(m => m > current) || current;
+    return [
+      1_000_000,
+      5_000_000,
+      20_000_000,
+      50_000_000,
+      100_000_000,
+      500_000_000,
+    ].find(m => m > current) || current;
   }, [current]);
 
   return (
