@@ -27,5 +27,8 @@
   "open_title": "Открытое письмо",
   "repost_tweet": "Репост на X (Twitter)",
   "repost_tweet_cta": "Усиль послание — сделай репост, чтобы собрать больше подписей.",
-  "repost_tweet_btn": "Репост в Twitter"
+  "repost_tweet_btn": "Репост в Twitter",
+  "quest_block_title": "Активируйте Сопротивление",
+  "quest_block_text": "Присоединяйтесь к движению Цифрового Сопротивления",
+  "quest_block_btn": "Запустить Community App"
 }

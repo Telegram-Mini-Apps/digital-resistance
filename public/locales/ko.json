@@ -27,5 +27,8 @@
   "you_signed": "이미 서명하셨습니다",
   "repost_tweet": "X (Twitter)에 리포스트하기",
   "repost_tweet_cta": "메시지를 확대하여 더 많은 서명을 받으세요.",
-  "repost_tweet_btn": "트위터에 리포스트"
+  "repost_tweet_btn": "트위터에 리포스트",
+  "quest_block_title": "저항 팩 활성화",
+  "quest_block_text": "디지털 저항 운동에 동참하세요",
+  "quest_block_btn": "커뮤니티 앱 실행"
 }

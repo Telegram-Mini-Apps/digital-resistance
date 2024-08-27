@@ -27,5 +27,8 @@
   "you_signed": "你已经签署了",
   "repost_tweet": "在X（Twitter）上转发",
   "repost_tweet_cta": "放大信息-转发以收集更多签名。",
-  "repost_tweet_btn": "在Twitter上转发"
+  "repost_tweet_btn": "在Twitter上转发",
+  "quest_block_title": "激活抵抗包",
+  "quest_block_text": "加入数字抵抗运动",
+  "quest_block_btn": "启动社区应用程序"
 }

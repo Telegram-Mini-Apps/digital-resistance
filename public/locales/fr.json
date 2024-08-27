@@ -27,5 +27,8 @@
   "you_signed": "Vous avez déjà signé",
   "repost_tweet": "Reposter sur X (Twitter)",
   "repost_tweet_cta": "Amplifiez le message - repostez pour rassembler plus de signatures.",
-  "repost_tweet_btn": "Reposter sur Twitter"
+  "repost_tweet_btn": "Reposter sur Twitter",
+  "quest_block_title": "Activez le Pack de Résistance",
+  "quest_block_text": "Rejoignez le mouvement de Résistance Numérique",
+  "quest_block_btn": "Lancer Community App"
 }

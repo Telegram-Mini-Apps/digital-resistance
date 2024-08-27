@@ -27,5 +27,8 @@
   "you_signed": "Ya has firmado",
   "repost_tweet": "Repostear en X (Twitter)",
   "repost_tweet_cta": "Amplifica el mensaje—repostea para reunir más firmas.",
-  "repost_tweet_btn": "Repostear en Twitter"
+  "repost_tweet_btn": "Repostear en Twitter",
+  "quest_block_title": "Activa el Paquete de Resistencia",
+  "quest_block_text": "Únete al movimiento de Resistencia Digital",
+  "quest_block_btn": "Lanza la Community App"
 }
