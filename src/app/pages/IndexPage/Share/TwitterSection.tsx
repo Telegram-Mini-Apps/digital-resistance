@@ -5,7 +5,7 @@ import cn from 'classnames';
 import { Callout } from '../Callout/Callout';
 import { Button } from '../Button/Button';
 import { Section } from '../Section/Section';
-import { TgLink } from '../TgLink/TgLink';
+import { ExternalLink } from '../ExternalLink/ExternalLink';
 
 import styles from './Share.module.scss';
 
@@ -56,10 +56,13 @@ export function TwitterSection() {
             <span className={styles.twCalloutUsername}>@ton_society</span>
           </div>
           <p className={styles.twCalloutText}>
-            Today, we stand with Pavel Durov. Sign the Open Letter in his support.{' '}
-            <TgLink href="https://t.me/tgresistancebot/letter">
-              t.me/tgresistancebot/letter
-            </TgLink>
+            Today, TON Society launches a first of its kind initiative to urge france to{' '}
+            <ExternalLink href="https://x.com/hashtag/DigitalResistance">
+              #FreeDurov
+            </ExternalLink>
+            <br/>
+            <br/>
+            An Open Letter Mini App in Telegram.
           </p>
         </Callout>
         <Button
