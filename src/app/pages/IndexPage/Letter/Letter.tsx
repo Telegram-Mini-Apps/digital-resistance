@@ -35,13 +35,31 @@ export function Letter() {
     <Section title={t('open_title')}>
       <div className={styles.content}>
         {/*fixme: translations*/}
-        <p>France: The arrest of the Telegram founder, Pavel Durov, is a direct assault on the basic human right – the freedom of expression of everyone.</p>
+        <p>France: The arrest of the Telegram founder, Pavel Durov, is a direct assault on the basic
+          human right – the freedom of expression of everyone.
+        </p>
 
-        <p>We strongly condemn the arrest of Mr. Pavel Durov by the French authorities, a blatant attack on the freedom of expression and the right to private life.</p>
+        <p>We strongly condemn the arrest of Mr. Pavel Durov by the French authorities, a blatant
+          attack on the freedom of expression and the right to private life.
+        </p>
 
-        <p>We call upon France to immediately release Mr. Durov and to respect the social media platform’s right to protect the freedom of expression, privacy of its users, and right to private life. We also call on the United Nations (UN), the Council of Europe (CoE), the Organisation for Security and Cooperation in Europe (OSCE), the European Union (EU), and other concerned governments to challenge France’s actions and uphold the fundamental right to liberty online. Lastly, we call on all tech and social media platforms to resist baseless and extra-judicial orders that violate the rights of their users, which must be defended at all costs.</p>
+        <p>We call upon France to immediately release Mr. Durov and to respect the social media
+          platform’s right to protect the freedom of expression, privacy of its users, and right to
+          private life. We also call on the United Nations (UN), the Council of Europe (CoE), the
+          Organisation for Security and Cooperation in Europe (OSCE), the European Union (EU), and
+          other concerned governments to challenge France’s actions and uphold the fundamental right
+          to liberty online. Lastly, we call on all tech and social media platforms to resist
+          baseless and extra-judicial orders that violate the rights of their users, which must be
+          defended at all costs.
+        </p>
 
-        <p><ExternalLink href="https://telegra.ph/Open-Letter-to-France-08-27">Read the full text ot the Open letter to France.</ExternalLink></p>
+        <p>
+          <b>
+            <ExternalLink href="https://telegra.ph/Open-Letter-to-France-08-27">
+              Read the full text ot the Open letter to France.
+            </ExternalLink>
+          </b>
+        </p>
       </div>
     </Section>
   );
