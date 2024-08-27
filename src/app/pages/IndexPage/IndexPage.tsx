@@ -18,9 +18,10 @@ import { formatNumber } from '../../../utils/formatNumber';
 import styles from './IndexPage.module.scss';
 
 export default function IndexPage() {
-  const { isSigned: isAlreadySigned, signaturesCount } = useDataContext();
+  const dataContext = useDataContext();
   const debugNoSign = window.Telegram.WebApp.initDataUnsafe.start_param === 'debug_no_sign';
 
+  const [signaturesCount, setSignaturesCount] = useState(dataContext.signaturesCount);
   const [page, setPage] = useState<'index' | 'share'>('index');
 
   const goToShare = useCallback(() => {
@@ -33,11 +34,12 @@ export default function IndexPage() {
 
   const [showThanks, setShowThanks] = useState(false);
   const [isSigned, setIsSigned] = useState(
-    debugNoSign ? false : isAlreadySigned,
+    debugNoSign ? false : dataContext.isSigned,
   );
-  const onSigned = useCallback(() => {
+  const onSigned = useCallback((signaturesCount: number) => {
     setShowThanks(true);
     setIsSigned(true);
+    setSignaturesCount(signaturesCount);
     goToShare();
 
     const thanksTimeoutId = setTimeout(() => {
