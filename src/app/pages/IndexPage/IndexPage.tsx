@@ -17,10 +17,20 @@ import styles from './IndexPage.module.scss';
 
 export default function IndexPage() {
   const { isSigned: isAlreadySigned, signaturesCount } = useDataContext();
+  const debugNoSign = window.Telegram.WebApp.initDataUnsafe.start_param === 'debug_no_sign';
+
+  const [page, setPage] = useState<'index' | 'share'>(
+    debugNoSign
+      ? 'index'
+      : isAlreadySigned ? 'share' : 'index',
+  );
 
   const [isSigned, setIsSigned] = useState(isAlreadySigned);
   const [showTransition, setShowTransition] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
+  const [isSigned, setIsSigned] = useState(
+    debugNoSign ? false : isAlreadySigned,
+  );
   const onSigned = useCallback(() => {
     setShowTransition(true);
     setShowThanks(true);
