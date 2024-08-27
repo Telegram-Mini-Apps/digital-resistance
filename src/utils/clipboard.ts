@@ -27,7 +27,11 @@ function copyTextToClipboardDeprecated(text: string): boolean {
  * @param text - text to copy.
  */
 export async function copyTextToClipboard(text: string): Promise<boolean> {
-  return navigator.clipboard
-    ? navigator.clipboard.writeText(text).then(() => true, () => false)
-    : copyTextToClipboardDeprecated(text);
+  return Promise.resolve(
+    navigator.clipboard
+      ? navigator.clipboard.writeText(text)
+      : copyTextToClipboardDeprecated(text),
+  )
+    .then(() => true)
+    .catch(() => false);
 }
