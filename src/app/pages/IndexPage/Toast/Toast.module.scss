@@ -6,9 +6,12 @@
   backdrop-filter: blur(25px);
   font-size: 14px;
   background: #354352;
+  padding: 9px 16px;
+  border-radius: 14px;
+}
+
+.inner {
   display: flex;
   align-items: center;
   gap: 13px;
-  padding: 9px 16px;
-  border-radius: 14px;
 }

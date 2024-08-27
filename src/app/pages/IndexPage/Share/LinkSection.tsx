@@ -1,9 +1,11 @@
 import { Trans, useTranslation } from 'react-i18next';
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import cn from 'classnames';
 
 import { Section } from '../Section/Section';
 import { Button } from '../Button/Button';
+import { Toast } from '../Toast/Toast';
 import { copyTextToClipboard } from '../../../../utils/clipboard';
 
 import styles from './Share.module.scss';
@@ -54,18 +56,19 @@ export function LinkSection({ displayAppUrl, appUrl }: {
   appUrl: string;
 }) {
   const { t } = useTranslation();
+  const [toastText, setToastText] = useState<string | undefined>();
 
   const onCopyClick = useCallback(() => {
-    // TODO: Toast!
-    copyTextToClipboard(appUrl)
-      .then(() => {
+    copyTextToClipboard(appUrl).then((copied) => {
+      if (copied) {
         window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');
-      })
-      .catch(e => {
-        console.error(e);
+        setToastText(t('letter_app_link_copied'));
+      } else {
         window.Telegram.WebApp.HapticFeedback.notificationOccurred('error');
-      });
-  }, [appUrl]);
+        setToastText(t('letter_app_link_copy_error'));
+      }
+    });
+  }, [appUrl, t]);
 
   const onShareTelegramClick = useCallback(() => {
     window.Telegram.WebApp.openTelegramLink(`https://t.me/share/url?${
@@ -92,6 +95,17 @@ export function LinkSection({ displayAppUrl, appUrl }: {
     );
   }, [appUrl]);
 
+  useEffect(() => {
+    if (toastText) {
+      const timeoutId = setTimeout(() => {
+        setToastText(undefined);
+      }, 2000);
+      return () => {
+        clearTimeout(timeoutId);
+      }
+    }
+  }, [toastText]);
+
   return (
     <Section className={styles.section} title={t('share_letter_link')}>
       <p><Trans i18nKey="share_description"/></p>
@@ -116,6 +130,9 @@ export function LinkSection({ displayAppUrl, appUrl }: {
           />
         </div>
       </div>
+      <AnimatePresence>
+        {toastText && <Toast>{toastText}</Toast>}
+      </AnimatePresence>
     </Section>
   );
 }
