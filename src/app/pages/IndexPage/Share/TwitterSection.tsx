@@ -14,7 +14,7 @@ export function TwitterSection() {
   const { t } = useTranslation();
 
   const onClick = useCallback(() => {
-    window.Telegram.WebApp.openLink('https://x.com/intent/retweet?tweet_id=1828438344558072205');
+    window.Telegram.WebApp.openLink('https://x.com/ton_society/status/1828446248841441467');
     mixpanel.track('twitter_shared');
   }, []);
 
