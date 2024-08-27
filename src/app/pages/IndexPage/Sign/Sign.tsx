@@ -4,6 +4,7 @@ import useSWR from 'swr';
 
 import { Section } from '../Section/Section';
 import { Button } from '../Button/Button';
+import { Callout } from '../Callout/Callout';
 
 import styles from './Sign.module.scss';
 
@@ -35,6 +36,7 @@ export function Sign({ onSigned, isSigned, onShareClick }: {
   onShareClick(): void;
 }) {
   const [shouldPerformRequest, setShouldPerformRequest] = useState(false);
+  const haptic = window.Telegram.WebApp.HapticFeedback;
   const { data, isLoading } = useSWR(
     shouldPerformRequest ? 'signPetition' : null,
     () => {
@@ -47,14 +49,15 @@ export function Sign({ onSigned, isSigned, onShareClick }: {
         .then(r => r.json())
         .then(r => {
           if (r.error) {
-            window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('heavy');
+            haptic.notificationOccurred('error');
             throw new Error(r.message);
           }
-
-          window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('soft');
+          haptic.notificationOccurred('success');
           return r.data;
-        }).catch(e => {
-          window.Telegram?.WebApp?.HapticFeedback?.impactOccurred('rigid');
+        })
+        .catch(e => {
+          haptic.notificationOccurred('error');
+          throw e;
         });
     }, {
       revalidateOnFocus: false,
@@ -81,9 +84,9 @@ export function Sign({ onSigned, isSigned, onShareClick }: {
           <Button icon={<ShareIcon/>} disabled={isLoading} onClick={onShareClick}>
             <Trans i18nKey={'share_letter_link'}/>
           </Button>
-          <div className={styles.info} style={{ textAlign: 'center' }}>
+          <Callout style={{ textAlign: 'center' }}>
             <Trans i18nKey={'you_signed'}/>
-          </div>
+          </Callout>
         </>
       ) : (
         <>
@@ -99,9 +102,9 @@ export function Sign({ onSigned, isSigned, onShareClick }: {
           >
             <Trans i18nKey={'sign_letter'}/>
           </Button>
-          <div className={styles.info}>
+          <Callout>
             <Trans i18nKey={'already_supported'}/>
-          </div>
+          </Callout>
         </>
       )}
     </Section>
