@@ -24,11 +24,16 @@ export default function Layout() {
     })
       .then(r => r.json())
       .then(r => {
+        if (r.data === 'error') {
+          throw new Error('Unknown error');
+        }
         if (r.error) {
           throw new Error(r.message);
         }
         return r.data;
       });
+  }, {
+    revalidateOnFocus: false,
   });
 
   const [isI18nLoading, setIsI18nLoading] = useState(true);
