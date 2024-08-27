@@ -195,21 +195,21 @@ export function Share() {
     );
   }, [appUrl]);
 
-  const onSaveStoriesImageClick = useCallback(() => {
-    // FIXME: set normal link
-    const l = document.createElement('a');
-    l.download = 'test.png';
-    l.href = '/img/dr/@1x.png';
-    l.click();
-  }, []);
-
-  const onSaveAvatarClick = useCallback(() => {
-    console.log('will save avatar');
-  }, []);
-
-  const onSaveDRImageClick = useCallback(() => {
-    console.log('onSaveDRImageClick');
-  }, []);
+  // const onSaveStoriesImageClick = useCallback(() => {
+  //   // FIXME: set normal link
+  //   const l = document.createElement('a');
+  //   l.download = 'test.png';
+  //   l.href = '/img/dr/@1x.png';
+  //   l.click();
+  // }, []);
+  //
+  // const onSaveAvatarClick = useCallback(() => {
+  //   console.log('will save avatar');
+  // }, []);
+  //
+  // const onSaveDRImageClick = useCallback(() => {
+  //   console.log('onSaveDRImageClick');
+  // }, []);
 
   return (
     <>
@@ -258,39 +258,39 @@ export function Share() {
           <Button className={styles.action} icon={<PlusIcon/>} onClick={onShareStoryClick}>
             <Trans i18nKey="share_tg_stories"/>
           </Button>
-          <Button
-            className={styles.action}
-            variant="secondary"
-            icon={<DownloadIcon/>}
-            onClick={onSaveStoriesImageClick}
-          >
-            <Trans i18nKey="save_stories_img"/>
-          </Button>
+          {/*<Button*/}
+          {/*  className={styles.action}*/}
+          {/*  variant="secondary"*/}
+          {/*  icon={<DownloadIcon/>}*/}
+          {/*  onClick={onSaveStoriesImageClick}*/}
+          {/*>*/}
+          {/*  <Trans i18nKey="save_stories_img"/>*/}
+          {/*</Button>*/}
         </div>
       </Section>
-      <Section className={styles.section} title={t('add_badge')}>
-        <p className={styles.sectionTextWithImage}>
-          <Trans i18nKey="add_badge_description"/>
-          <span className={styles.avatarImageWrapper}>
-            <img
-              className={styles.avatarImage}
-              alt="user-avatar"
-              src={window.Telegram.WebApp.initDataUnsafe.user?.photo_url}
-            />
-            <span className={styles.avatarImageDogeWrapper}>
-              <DogeIcon className={styles.avatarImageDoge} bgColor="#fff"/>
-            </span>
-          </span>
-        </p>
-        <div className={styles.actions}>
-          <Button icon={<DownloadIcon/>} onClick={onSaveAvatarClick}>
-            <Trans i18nKey="save_dog_avatar"/>
-          </Button>
-          <Button variant="secondary" icon={<LittleDogeIcon/>} onClick={onSaveDRImageClick}>
-            <Trans i18nKey="save_dog_avatar_image"/>
-          </Button>
-        </div>
-      </Section>
+      {/*<Section className={styles.section} title={t('add_badge')}>*/}
+      {/*  <p className={styles.sectionTextWithImage}>*/}
+      {/*    <Trans i18nKey="add_badge_description"/>*/}
+      {/*    <span className={styles.avatarImageWrapper}>*/}
+      {/*      <img*/}
+      {/*        className={styles.avatarImage}*/}
+      {/*        alt="user-avatar"*/}
+      {/*        src={window.Telegram.WebApp.initDataUnsafe.user?.photo_url}*/}
+      {/*      />*/}
+      {/*      <span className={styles.avatarImageDogeWrapper}>*/}
+      {/*        <DogeIcon className={styles.avatarImageDoge} bgColor="#fff"/>*/}
+      {/*      </span>*/}
+      {/*    </span>*/}
+      {/*  </p>*/}
+      {/*  <div className={styles.actions}>*/}
+      {/*    <Button icon={<DownloadIcon/>} onClick={onSaveAvatarClick}>*/}
+      {/*      <Trans i18nKey="save_dog_avatar"/>*/}
+      {/*    </Button>*/}
+      {/*    <Button variant="secondary" icon={<LittleDogeIcon/>} onClick={onSaveDRImageClick}>*/}
+      {/*      <Trans i18nKey="save_dog_avatar_image"/>*/}
+      {/*    </Button>*/}
+      {/*  </div>*/}
+      {/*</Section>*/}
     </>
   );
 }
