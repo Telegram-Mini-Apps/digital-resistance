@@ -32,12 +32,20 @@ function ShareIcon() {
 
 export function Sign({ onSigned, isSigned, onShareClick }: {
   isSigned: boolean;
-  onSigned(): void;
+  onSigned(signaturesCount: number): void;
   onShareClick(): void;
 }) {
   const [shouldPerformRequest, setShouldPerformRequest] = useState(false);
   const haptic = window.Telegram.WebApp.HapticFeedback;
-  const { data, isLoading } = useSWR(
+  const { data, isLoading } = useSWR<{
+    id: string;
+    title: string;
+    image_url: string;
+    description: string;
+    created_at: string;
+    is_signed_by_user: boolean;
+    signatures_count: number;
+  }>(
     shouldPerformRequest ? 'signPetition' : null,
     () => {
       return fetch('/api/petitions/freedurov/sign', {
@@ -49,7 +57,6 @@ export function Sign({ onSigned, isSigned, onShareClick }: {
         .then(r => r.json())
         .then(r => {
           if (r.error) {
-            haptic.notificationOccurred('error');
             throw new Error(r.message);
           }
           haptic.notificationOccurred('success');
@@ -70,7 +77,7 @@ export function Sign({ onSigned, isSigned, onShareClick }: {
   }, []);
 
   useEffect(() => {
-    data && onSigned();
+    data && onSigned(data.signatures_count);
   }, [onSigned, data]);
 
   useEffect(() => {

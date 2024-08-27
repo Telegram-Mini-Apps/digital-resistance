@@ -8,6 +8,7 @@ import { initI18n } from '../../dataSource/LocaleContext/i18n';
 import { hideLoader } from '../../utils/ui';
 
 export default function Layout() {
+  const haptic = window.Telegram.WebApp.HapticFeedback;
   const { data, isLoading: isPetitionLoading } = useSWR<{
     id: string;
     title: string;
@@ -24,13 +25,15 @@ export default function Layout() {
     })
       .then(r => r.json())
       .then(r => {
-        if (r.data === 'error') {
-          throw new Error('Unknown error');
-        }
         if (r.error) {
           throw new Error(r.message);
         }
+        haptic.notificationOccurred('success');
         return r.data;
+      })
+      .catch(e => {
+        haptic.notificationOccurred('error');
+        throw e;
       });
   }, {
     revalidateOnFocus: false,
