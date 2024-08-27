@@ -4,6 +4,7 @@ import cn from 'classnames';
 
 import { Section } from '../Section/Section';
 import { Button } from '../Button/Button';
+import { copyTextToClipboard } from '../../../../utils/clipboard';
 
 import styles from './Share.module.scss';
 
@@ -197,10 +198,14 @@ export function Share() {
 
   const onCopyClick = useCallback(() => {
     // TODO: Motion, reaction?
-    navigator
-      .clipboard
-      .writeText(appUrl)
-      .catch(console.error);
+    copyTextToClipboard(appUrl)
+      .then(() => {
+        window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');
+      })
+      .catch(e => {
+        console.error(e);
+        window.Telegram.WebApp.HapticFeedback.notificationOccurred('error');
+      });
   }, [appUrl]);
 
   const onShareStoryClick = useCallback(() => {
@@ -209,9 +214,9 @@ export function Share() {
       {
         widget_link: {
           url: appUrl,
-          name: 'Sign the open letter'
-        }
-      }
+          name: 'Sign the open letter',
+        },
+      },
     );
   }, [appUrl]);
 
