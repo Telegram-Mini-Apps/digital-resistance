@@ -129,11 +129,12 @@ function XIcon() {
 
 export function Share() {
   const { t } = useTranslation();
-  const appUrl = 'https://t.me/tgresistancebot/letter';
+  const appUrl = 't.me/tgresistancebot/letter';
+  const completeAppUrl = `https://${appUrl}`;
 
   const onCopyClick = useCallback(() => {
-    // TODO: Motion, reaction?
-    copyTextToClipboard(appUrl)
+    // TODO: Toast!
+    copyTextToClipboard(completeAppUrl)
       .then(() => {
         window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');
       })
@@ -141,24 +142,24 @@ export function Share() {
         console.error(e);
         window.Telegram.WebApp.HapticFeedback.notificationOccurred('error');
       });
-  }, [appUrl]);
+  }, [completeAppUrl]);
 
   const onShareStoryClick = useCallback(() => {
     window.Telegram.WebApp.shareToStory(
       new URL('/img/story.png', window.location.href).toString(),
       {
         widget_link: {
-          url: appUrl,
+          url: completeAppUrl,
           name: 'Sign The Open Letter',
         },
       },
     );
-  }, [appUrl]);
+  }, [completeAppUrl]);
 
   const onShareTelegramClick = useCallback(() => {
     window.Telegram.WebApp.openTelegramLink(`https://t.me/share/url?${
       new URLSearchParams([
-        ['url', appUrl],
+        ['url', completeAppUrl],
         [
           'text',
           'We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition',
@@ -170,7 +171,7 @@ export function Share() {
         // in Telegram.
         .replace(/\+/g, '%20')
     }`);
-  }, [appUrl]);
+  }, [completeAppUrl]);
 
   const onShareXClick = useCallback(() => {
     window.Telegram.WebApp.openLink(
@@ -179,21 +180,21 @@ export function Share() {
           'text',
           'We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition',
         ],
-        ['url', appUrl],
+        ['url', completeAppUrl],
       ]).toString()}`,
     );
-  }, [appUrl]);
+  }, [completeAppUrl]);
 
   const onShareWhatsAppClick = useCallback(() => {
     window.Telegram.WebApp.openLink(
       `https://wa.me/?${new URLSearchParams([
         [
           'text',
-          `We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition ${appUrl}`,
+          `We demand the release of Pavel Durov from custody in France. Support Pavel and sign the petition ${completeAppUrl}`,
         ],
       ]).toString()}`,
     );
-  }, [appUrl]);
+  }, [completeAppUrl]);
 
   // const onSaveStoriesImageClick = useCallback(() => {
   //   // FIXME: set normal link
