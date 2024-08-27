@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import mixpanel from 'mixpanel-browser';
 
 import { Section } from '../Section/Section';
 import { Button } from '../Button/Button';
@@ -10,6 +11,7 @@ export function CommunitySection() {
   const { t } = useTranslation();
   const onClick = useCallback(() => {
     window.Telegram.WebApp.openTelegramLink('https://t.me/community_bot/join?startapp=id_4124');
+    mixpanel.track('community_bot_opened');
   } ,[]);
 
   return (

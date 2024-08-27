@@ -2,6 +2,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import { useCallback, useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import cn from 'classnames';
+import mixpanel from 'mixpanel-browser';
 
 import { Section } from '../Section/Section';
 import { Button } from '../Button/Button';
@@ -72,27 +73,23 @@ export function LinkSection({ displayAppUrl, appUrl }: {
 
   const onShareTelegramClick = useCallback(() => {
     window.Telegram.WebApp.openTelegramLink(`https://t.me/share/url?${
-      new URLSearchParams([
-        ['url', appUrl],
-        ['text', t('we_demand_release')],
-      ])
+      new URLSearchParams([['url', appUrl], ['text', t('we_demand_release')]])
         .toString()
         // By default, URL search params encode spaces with "+".
         // We are replacing them with "%20", because plus symbols are working incorrectly
         // in Telegram.
         .replace(/\+/g, '%20')
     }`);
+    mixpanel.track('telegram_link_shared');
   }, [appUrl]);
 
   const onShareWhatsAppClick = useCallback(() => {
     window.Telegram.WebApp.openLink(
       `https://wa.me/?${new URLSearchParams([
-        [
-          'text',
-          `${t('we_demand_release')} ${appUrl}`,
-        ],
+        ['text', `${t('we_demand_release')} ${appUrl}`],
       ]).toString()}`,
     );
+    mixpanel.track('whatsapp_shared');
   }, [appUrl]);
 
   useEffect(() => {
@@ -102,7 +99,7 @@ export function LinkSection({ displayAppUrl, appUrl }: {
       }, 2000);
       return () => {
         clearTimeout(timeoutId);
-      }
+      };
     }
   }, [toastText]);
 

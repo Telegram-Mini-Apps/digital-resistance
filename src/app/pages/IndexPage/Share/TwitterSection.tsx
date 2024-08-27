@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import cn from 'classnames';
+import mixpanel from 'mixpanel-browser';
 
 import { Callout } from '../Callout/Callout';
 import { Button } from '../Button/Button';
@@ -14,6 +15,7 @@ export function TwitterSection() {
 
   const onClick = useCallback(() => {
     window.Telegram.WebApp.openLink('https://x.com/intent/retweet?tweet_id=1828438344558072205');
+    mixpanel.track('twitter_shared');
   }, []);
 
   return (

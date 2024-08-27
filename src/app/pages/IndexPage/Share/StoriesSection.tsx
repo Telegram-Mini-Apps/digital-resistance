@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import { Trans, useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
+import mixpanel from 'mixpanel-browser';
 
 import { Button } from '../Button/Button';
 import { Section } from '../Section/Section';
@@ -34,6 +35,7 @@ export function StoriesSection({ appUrl }: { appUrl: string }) {
         },
       },
     );
+    mixpanel.track('telegram_stories_shared');
   }, [appUrl]);
 
   return (
