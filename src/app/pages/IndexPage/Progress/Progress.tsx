@@ -1,15 +1,14 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import cn from 'classnames';
+import { Trans } from 'react-i18next';
+
+import { formatNumber } from '../../../../utils/formatNumber';
 
 import { Section } from '../Section/Section';
 
 import styles from './Progress.module.scss';
-import { Trans } from 'react-i18next';
 
 export function Progress({ current }: { current: number }) {
-  const formatNumber = useCallback((num: number) => {
-    return num.toLocaleString('en-US');
-  }, []);
   const targetCount = useMemo(() => {
     return [1_000_000, 100_000_000, 500_000_000].find(m => m > current) || current;
   }, [current]);
