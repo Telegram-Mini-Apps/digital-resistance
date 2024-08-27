@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { Wall } from './Wall/Wall';
 import { Letter } from './Letter/Letter';
@@ -62,6 +63,12 @@ export default function IndexPage() {
     page === 'index' ? bb.hide() : bb.show();
   }, [page]);
 
+  const animation = {
+    initial: { scale: 0.97, opacity: 0, transformOrigin: '50% 0' },
+    animate: { scale: 1, opacity: 1 },
+    transition: { type: 'spring', bounce: 0, ease: 'easeInOut', duration: 0.5 },
+  };
+
   return (
     <main className={styles.root} ref={ref}>
       <Header
@@ -71,36 +78,42 @@ export default function IndexPage() {
           : `${signaturesCount} ${t('people_signed')}`
         }
       />
-      <div className={styles.body}>
-        {page === 'share'
-          ? <Share/>
-          : (
-            <>
-              <Progress current={signaturesCount}/>
-              <Sign
-                isSigned={isSigned}
-                onSigned={onSigned}
-                onShareClick={goToShare}
-              />
-              <Letter/>
-              <Wall/>
-              <Media/>
-            </>
-          )}
-      </div>
-      {showThanks && (
-        <div className={styles.thanks}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none">
-            <path
-              fill="#fff"
-              fillRule="evenodd"
-              d="M14 25c6.075 0 11-4.925 11-11S20.075 3 14 3 3 7.925 3 14s4.925 11 11 11m5.183-15.083a.8.8 0 1 0-1.366-.834l-4.932 8.07-2.783-3.18a.8.8 0 0 0-1.204 1.054l3.5 4a.8.8 0 0 0 1.285-.11z"
-              clipRule="evenodd"
-            />
-          </svg>
-          <Trans i18nKey="thank_you_for_support"/>
+      <AnimatePresence>
+        <div>
+          {page === 'share'
+            ? (
+              <motion.div key="share" {...animation}>
+                <Share/>
+              </motion.div>
+            ) : (
+              <motion.div key="index" {...animation}>
+                <Progress current={signaturesCount}/>
+                <Sign
+                  isSigned={isSigned}
+                  onSigned={onSigned}
+                  onShareClick={goToShare}
+                />
+                <Letter/>
+                <Wall/>
+                <Media/>
+              </motion.div>
+            )}
         </div>
-      )}
+      </AnimatePresence>
+      {
+        showThanks && (
+          <div className={styles.thanks}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none">
+              <path
+                fill="#fff"
+                fillRule="evenodd"
+                d="M14 25c6.075 0 11-4.925 11-11S20.075 3 14 3 3 7.925 3 14s4.925 11 11 11m5.183-15.083a.8.8 0 1 0-1.366-.834l-4.932 8.07-2.783-3.18a.8.8 0 0 0-1.204 1.054l3.5 4a.8.8 0 0 0 1.285-.11z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <Trans i18nKey="thank_you_for_support"/>
+          </div>
+        )}
     </main>
   );
 }
