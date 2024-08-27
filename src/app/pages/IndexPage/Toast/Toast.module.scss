@@ -1,0 +1,14 @@
+.root {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  top: 100%;
+  backdrop-filter: blur(25px);
+  font-size: 14px;
+  background: #354352;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 9px 16px;
+  border-radius: 14px;
+}
