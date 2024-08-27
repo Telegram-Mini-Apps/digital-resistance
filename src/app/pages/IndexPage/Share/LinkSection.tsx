@@ -71,10 +71,7 @@ export function LinkSection({ displayAppUrl, appUrl }: {
     window.Telegram.WebApp.openTelegramLink(`https://t.me/share/url?${
       new URLSearchParams([
         ['url', appUrl],
-        [
-          'text',
-          `${t('we_demand_release')} ${appUrl}`,
-        ],
+        ['text', t('we_demand_release')],
       ])
         .toString()
         // By default, URL search params encode spaces with "+".
