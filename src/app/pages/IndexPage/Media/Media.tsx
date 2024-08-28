@@ -29,7 +29,7 @@ export function Media() {
     ['Reuters',
       'https://www.reuters.com/world/europe/telegram-messaging-app-ceo-pavel-durov-arrested-france-tf1-tv-says-2024-08-24/'],
     ['The New York Times',
-      'https://www.nytimes.com/2024/08/25/technology/pavel-durov-telegram-detained-france.html'],
+      'https://www.nytimes.com/2024/08/26/technology/pavel-durov-telegram-founder.html'],
     ['Techcrunch',
       'https://techcrunch.com/2024/08/25/telegram-founder-pavel-durov-reportedly-arrested-in-france/'],
   ], []);

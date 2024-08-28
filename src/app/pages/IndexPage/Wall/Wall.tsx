@@ -6,7 +6,7 @@ import { ExternalLink } from '../ExternalLink/ExternalLink';
 
 import styles from './Wall.module.scss';
 
-type CelebrityKey = 'buterin' | 'carlson' | 'graham' | 'musk' | 'snowden';
+type CelebrityKey = 'buterin' | 'carlson' | 'graham' | 'musk' | 'snowden' | 'kennedy' | 'lexfridman' | 'nayibbukele';
 
 interface Quote {
   /**
@@ -81,10 +81,10 @@ export function Wall() {
       // fixme: openTelegramLink
       text: (
         <p>
-          The arrest of @Durov is an assault on the basic human rights of speech and
-          association. I am surprised and deeply saddened that Macron has descended
-          to the level of taking hostages as a means for gaining access to private
-          communications. It lowers not only France, but the world.
+          First they came for Tiktok, and I did not speak out—
+     Because I was not twelve years old. Then they came for the Telegram, and I did not speak out—
+     Because I was using some other app or sth idk. Then they came for literally every other platform for dissent, and I did not speak out—
+     because bro how tf could i that's the entire point wake up wake up wa—
         </p>
       ),
       date: new Date(Date.UTC(2024, 7, 25, 1, 13)),
@@ -116,6 +116,38 @@ export function Wall() {
         <p>
           It's hard to imagine a country both arresting the founder of Telegram and being
           a major startup hub.
+        </p>
+      ),
+    },
+    {
+      author: 'Robert F. Kennedy Jr',
+      date: new Date(Date.UTC(2024, 7, 25, 4, 56)),
+      key: 'kennedy',
+      source: 'https://x.com/robertkennedyjr/status/1827540616282055012',
+      text: (
+        <p>
+          France just arrested Pavel Durov, founder & CEO of the encrypted, uncensored Telegram platform. The need to protect free speech has never been more urgent.
+        </p>
+      ),
+    },
+    {
+      author: 'Lex Fridman',
+      date: new Date(Date.UTC(2024, 7, 25, 20, 1)),
+      key: 'lexfridman',
+      source: 'https://x.com/lexfridman/status/1827783276657877198',
+      text: (
+        <p>Arrest of Pavel Durov is a disturbing attack on free speech and a threat not just to Telegram but to any online platform. <br/><br/>  Governments should not engage in censorship. This is a blatant and deeply troubling overreach of power.</p>
+      ),
+    },
+    {
+      author: 'Nayib Bukele',
+      date: new Date(Date.UTC(2024, 7, 25, 2, 26)),
+      key: 'nayibbukele',
+      source: 'https://x.com/nayibbukele/status/1827502729402437924',
+      text: (
+        <p>El Salvador is not only the safest country in the Western Hemisphere, but we also guarantee that you won’t be arrested, censored, or have your assets seized for exercising your right to free speech.
+          <br/><br/> 
+          And there’s no property tax 🤷🏻‍♂️
         </p>
       ),
     },
