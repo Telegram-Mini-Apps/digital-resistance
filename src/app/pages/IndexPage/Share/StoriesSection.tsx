@@ -31,7 +31,7 @@ export function StoriesSection({ appUrl }: { appUrl: string }) {
         text: appUrl,
         widget_link: {
           url: appUrl,
-          name: 'Sign The Open Letter',
+          name: 'Sign The Open Letter #FREEDUROV',
         },
       },
     );
