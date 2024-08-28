@@ -28,10 +28,10 @@ export function StoriesSection({ appUrl }: { appUrl: string }) {
     window.Telegram.WebApp.shareToStory(
       new URL('/img/story.png', window.location.href).toString(),
       {
-        text: appUrl,
+        text: `${appUrl} #FREEDUROV`,
         widget_link: {
           url: appUrl,
-          name: 'Sign The Open Letter #FREEDUROV',
+          name: 'Sign The Open Letter',
         },
       },
     );
