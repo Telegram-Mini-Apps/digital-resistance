@@ -32,5 +32,10 @@
   "title": "Digital Resistance",
   "wall_title": "Durov's Wall",
   "we_demand_release": "Join the #DigitalResistance. Sign the Open Letter to #FREEDUROV.",
-  "you_signed": "You've already signed"
+  "you_signed": "You've already signed",
+  "letter_p1": "France: The arrest of the Telegram founder, Pavel Durov, is a direct assault on the basic human right – the freedom of expression of everyone.",
+  "letter_p2": "We strongly condemn the arrest of Mr. Pavel Durov by the French authorities, a blatant attack on the freedom of expression and the right to private life.",
+  "letter_p3": "We call upon France to immediately release Mr. Durov and to respect the social media platform’s right to protect the freedom of expression, privacy of its users, and right to private life. We also call on the United Nations (UN), the Council of Europe (CoE), the Organisation for Security and Cooperation in Europe (OSCE), the European Union (EU), and other concerned governments to challenge France’s actions and uphold the fundamental right to liberty online. Lastly, we call on all tech and social media platforms to resist baseless and extra-judicial orders that violate the rights of their users, which must be defended at all costs.",
+  "letter_p4": "Read the full text of the Open letter to France.",
+  "full_letter_link": "https://telegra.ph/Open-Letter-to-France-08-27"
 }
