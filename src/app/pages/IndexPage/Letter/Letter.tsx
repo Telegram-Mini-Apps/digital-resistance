@@ -34,16 +34,19 @@ export function Letter() {
   return (
     <Section title={t('open_title')}>
       <div className={styles.content}>
-        {/*fixme: translations*/}
-        <p>{t('letter_p1')}</p>
-
-        <p>{t('letter_p2')}</p>
-
-        <p>{t('letter_p3')}</p>
+        <p>
+          Dear {drHashtag} community, thanks to all of your support, Pavel Durov was able to
+          avoid imprisonment. Since he has been indicted, we will have to go through the due process
+          in France. Mr. Durov won’t be able to leave France and has to report to the police twice a
+          week. This is a very important milestone, but we must continue to support him until we
+          achieve complete victory. {freeHashtag} ✊
+        </p>
 
         <p>
           <ExternalLink href={t('full_letter_link')} tryInstantView>
-            <strong><p>{t('letter_p4')}</p></strong>
+            <strong>
+              {t('letter_p4')}
+            </strong>
           </ExternalLink>
         </p>
       </div>
