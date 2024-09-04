@@ -59,7 +59,7 @@ export function TwitterSection() {
           </div>
           <p className={styles.twCalloutText}>
             Today, TON Society launches a first of its kind initiative to urge france to{' '}
-            <ExternalLink href="https://x.com/hashtag/DigitalResistance">
+            <ExternalLink href="https://x.com/hashtag/FREEDUROV">
               #FreeDurov
             </ExternalLink>
             <br/>
