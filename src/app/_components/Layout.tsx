@@ -18,7 +18,7 @@ export default function Layout() {
     is_signed_by_user: boolean;
     signatures_count: number;
   }>('petition', () => {
-    return fetch(`${process.env.REACT_APP_API_BASE_URL}/api/petitions/freedurov`, {
+    return fetch('/api/petitions/freedurov', {
       headers: {
         'x-init-data': window.Telegram.WebApp.initData,
       },
