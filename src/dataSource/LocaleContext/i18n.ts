@@ -24,7 +24,7 @@ export function initI18n() {
     .init({
       debug: true,
       backend: {
-        loadPath: '/locales/{{lng}}.json',
+        loadPath: `${process.env.PUBLIC_URL}/locales/{{lng}}.json`,
       },
     });
 }

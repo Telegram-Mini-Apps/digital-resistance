@@ -48,7 +48,7 @@ export function Sign({ onSigned, isSigned, onShareClick }: {
   }>(
     shouldPerformRequest ? 'signPetition' : null,
     () => {
-      return fetch('/api/petitions/freedurov/sign', {
+      return fetch(`${process.env.REACT_APP_API_BASE_URL}/api/petitions/freedurov/sign`, {
         method: 'PATCH',
         headers: {
           'x-init-data': window.Telegram.WebApp.initData,

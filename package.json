@@ -2,15 +2,18 @@
   "name": "tapps_center-cra",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://cdn.webappsbot.com/tma-assets/414f7fdd50/latest",
   "scripts": {
     "dev:server": "nodemon ./src/api/index.ts",
     "dev:client": "react-scripts start",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "update:script": "sh ./scripts/updateTelegramApi.sh && sh ./scripts/updateAnalyticsApi.sh",
-    "build:client": "export NODE_ENV='production' && react-scripts build",
-    "build:server": "export NODE_ENV='production' && tsc --build ./src/api/tsconfig.server.json",
+    "build:client": "cross-env NODE_ENV='production' && react-scripts build",
+    "build:server": "cross-env NODE_ENV='production' && tsc --build ./src/api/tsconfig.server.json",
     "build": "sh scripts/build.sh",
-    "start:prod": "export NODE_ENV='production' && node dist/src/api/index.js",
+    "mate:info": "mate deploy info",
+    "mate:deploy": "mate deploy upload",
+    "start:prod": "cross-env NODE_ENV='production' && node dist/src/api/index.js",
     "sentry:sourcemaps": "sentry-cli sourcemaps inject --org sentry --project tapps-center ./dist/build && sentry-cli --url https://s.tontmaservice.xyz sourcemaps upload --org sentry --project tapps-center ./dist/build"
   },
   "dependencies": {
@@ -95,8 +98,10 @@
     ]
   },
   "devDependencies": {
+    "@telegram-apps/mate": "^0.0.16",
     "@types/cors": "^2.8.17",
     "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2"
   }

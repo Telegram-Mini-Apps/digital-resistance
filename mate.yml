@@ -1,0 +1,4 @@
+deploy:
+  project: digital-r
+  token: 91ffef703a2f027cbf6fd74598794ed101836adeee065fa0f09cd91ed248b80d
+  directory: dist/build
