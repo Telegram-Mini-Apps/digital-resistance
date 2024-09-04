@@ -2,7 +2,6 @@
   "name": "tapps_center-cra",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cdn.webappsbot.com/tma-assets/414f7fdd50/latest",
   "scripts": {
     "dev:server": "nodemon ./src/api/index.ts",
     "dev:client": "react-scripts start",
