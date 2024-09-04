@@ -5,6 +5,7 @@ import { validate } from '@telegram-apps/init-data-node';
 configDotenv();
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN!;
+const TELEGRAM_ALT_BOT_TOKEN = process.env.TELEGRAM_ALT_BOT_TOKEN!;
 
 interface InitDataOptions {
   expiresIn?: number;
@@ -24,13 +25,15 @@ export function checkInitData(options: InitDataOptions = {}) {
 
     try {
       validate(initData, TELEGRAM_BOT_TOKEN, options);
+      return next();
+    } catch {}
 
+    try {
+      validate(initData, TELEGRAM_ALT_BOT_TOKEN, options);
       next();
     } catch (err) {
       res.status(403);
       res.send('Unauthorized');
-
-      return;
     }
   };
 }
