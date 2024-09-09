@@ -88,7 +88,7 @@ export function Wall() {
         </p>
       ),
       date: new Date(Date.UTC(2024, 7, 25, 1, 13)),
-      source: 'https://x.com/Snowden/status/1827695836832334169',
+      source: 'https://x.com/Snowden/status/1827702193572446348',
     },
     {
       author: 'Tucker Carlson',
