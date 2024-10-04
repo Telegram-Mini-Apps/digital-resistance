@@ -1,0 +1,65 @@
+.title {
+  margin-bottom: 15px;
+}
+
+.content {
+  padding-top: 7px;
+}
+
+.quote {
+  display: block;
+  margin-bottom: 16px;
+  & + & {
+    margin-top: 18px;
+  }
+
+  // todo: message tail
+
+  &Top {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  &Image {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+  }
+
+  &Right {
+  }
+
+  &Message {
+    background: #2B3742;
+    padding: 6px 10px;
+    border-radius: 17px;
+  }
+
+  &Author {
+    font-size: 14px;
+    font-weight: 590;
+    letter-spacing: -0.15px;
+    color: #4DB2FF;
+  }
+
+  &Text {
+    color: white;
+    font-size: 16px;
+    letter-spacing: -0.31px;
+    line-height: 22px;
+
+    * + * {
+      margin-top: 16px;
+    }
+  }
+
+  &Date {
+    color: #8794A1;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.08px;
+    padding-top: 5px;
+    padding-left: 57px;
+  }
+}

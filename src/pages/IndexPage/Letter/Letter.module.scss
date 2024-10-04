@@ -1,0 +1,20 @@
+.root {
+  color: white;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: -0.31px;
+}
+
+.content {
+  *:first-child {
+    margin-top: 0;
+  }
+
+  * {
+    margin: 16px 0;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}

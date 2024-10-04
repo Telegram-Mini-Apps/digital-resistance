@@ -1,0 +1,68 @@
+:root {
+  --bg-color: #1A2026;
+  --font-family: -apple-system, "SF Pro Text", "SF Pro", system-ui, "Roboto", sans-serif;
+  --font-family-alt: 'Product Sans', system-ui, "Roboto", sans-serif;
+  --first_layer: ease;
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  user-select: none;
+
+  &.noscroll {
+    position: fixed;
+    overflow-y: hidden;
+    width: 100%;
+    padding-right: var(--scrollbar-width);
+  }
+}
+
+* {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background: var(--bg-color);
+  padding-right: var(--scrollbar-width);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+}
+
+.twaBody {
+  height: 100vh;
+  overflow: hidden;
+  -webkit-text-size-adjust:none;
+}
+
+.twaBody * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.appLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--bg-color);
+  z-index: 100;
+  opacity: 1;
+  will-change: transform;
+  transform: translateZ(0);
+  transition: opacity 0.3s var(--first_layer);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

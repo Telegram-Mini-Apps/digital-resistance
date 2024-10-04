@@ -1,0 +1,82 @@
+{
+  "name": "digital-resistance",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev:server": "tsx --watch api/index.mts",
+    "dev:client": "react-scripts start",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "update:script": "sh ./scripts/updateAnalyticsApi.sh",
+    "build:client": "cross-env NODE_ENV='production' && react-scripts build",
+    "build:server": "cross-env NODE_ENV='production' && tsc --build tsconfig.node.json",
+    "build": "sh scripts/build.sh",
+    "start:prod": "cross-env NODE_ENV='production' && node dist/api/index.mjs",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org sentry --project tapps-center ./dist/build && sentry-cli --url https://s.tontmaservice.xyz sourcemaps upload --org sentry --project tapps-center ./dist/build",
+    "optimize-png:rough": "imagemin --plugin.pngquant.quality=0.1 --plugin.pngquant.quality=0.2 --out-dir=./public/img",
+    "optimize-png:light": "imagemin --plugin.pngquant.quality=0.7 --plugin.pngquant.quality=0.8 --out-dir=./public/img"
+  },
+  "dependencies": {
+    "@sentry/cli": "^2.29.1",
+    "@sentry/react": "^7.105.0",
+    "@telegram-apps/init-data-node": "^1.1.1",
+    "@telegram-apps/sdk-react": "^2.0.4",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/cors": "^2.8.17",
+    "@types/jest": "^27.5.2",
+    "@types/mixpanel-browser": "^2.49.0",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^20.11.20",
+    "@types/react": "^18.2.57",
+    "@types/react-dom": "^18.2.19",
+    "classnames": "^2.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "eruda": "^3.4.0",
+    "express": "^4.18.2",
+    "framer-motion": "^11.0.5",
+    "helmet": "^7.1.0",
+    "http-proxy-middleware": "^2.0.6",
+    "i18next": "^23.11.2",
+    "i18next-http-backend": "^2.5.1",
+    "jotai": "^2.6.5",
+    "mixpanel-browser": "^2.49.0",
+    "morgan": "^1.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^14.1.1",
+    "react-router-dom": "^6.22.1",
+    "react-scripts": "5.0.1",
+    "sass": "^1.71.1",
+    "swr": "^2.2.5",
+    "typescript": "^4.9.5"
+  },
+  "eslintConfig": {
+    "rules": {
+      "no-mixed-operators": "off"
+    },
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "imagemin": "^9.0.0",
+    "tsx": "^4.19.1"
+  }
+}

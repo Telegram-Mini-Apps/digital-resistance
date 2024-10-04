@@ -1,0 +1,139 @@
+.separator {
+  border: none;
+  height: 1px;
+  opacity: 0.2;
+  background: linear-gradient(
+      90deg,
+      rgba(135, 148, 161, 0.00) 0%,
+      #8794A1 34.86%,
+      rgba(135, 148, 161, 0.51) 65%,
+      rgba(135, 148, 161, 0.00) 100%
+  );
+}
+
+.section {
+  color: #8794A1;
+  font-size: 15px;
+  line-height: 22px;
+
+  &TextWithImage {
+    padding-right: 80px;
+    position: relative;
+  }
+
+  &Stories {
+    padding-top: 42px;
+  }
+}
+
+.supporterContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.copyIcon {
+  color: #248BDA;
+}
+
+.actions {
+  margin-top: 16px;
+}
+
+.actionsRow {
+  display: flex;
+  gap: 10px;
+}
+
+.action {
+  & + & {
+    margin-top: 8px;
+  }
+}
+
+.shareAction {
+  display: flex;
+  flex: 0 0 56px;
+  align-items: center;
+  justify-content: center;
+}
+
+.storiesImage {
+  width: 34px;
+
+  &Wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    background: #212A33;
+    color: #8794A1;
+    border-radius: 8px;
+    width: 63px;
+    height: 84px;
+    transform: rotate(6deg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    border: 0.5px rgba(135, 148, 161, 0.11) solid;
+  }
+}
+
+.avatarImage {
+  width: 100%;
+  max-height: 100%;
+  border-radius: 50%;
+
+  &Wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 64px;
+    height: 64px;
+  }
+
+  &Doge {
+    width: 19px;
+
+    &Wrapper {
+      color: black;
+      position: absolute;
+      right: -3px;
+      bottom: -3px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 28px;
+      width: 28px;
+      background: white;
+    }
+  }
+}
+
+.twCallout {
+  color: white;
+
+  &Header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  &User {
+    padding: 0 2px;
+    font-weight: 590;
+  }
+
+  &Username {
+    color: #8794A1;
+  }
+
+  &Text {
+    font-size: 17px;
+    line-height: 22px;
+  }
+}

@@ -1,0 +1,45 @@
+.root {
+  padding-top: 0;
+}
+
+.bar {
+  height: 8px;
+  border-radius: 4px;
+  background: #212A33;
+  overflow: hidden;
+
+  &Thumb {
+    background: #219CFB;
+    height: 100%;
+    min-width: 4px;
+  }
+}
+
+.captions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.item {
+  &Title {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 700;
+    letter-spacing: -0.26px;
+    font-family: var(--font-family-alt);
+    margin-bottom: 2px;
+  }
+
+  &Subtitle {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.23px;
+  }
+
+  &Right {
+    text-align: right;
+    color: #8794A1;
+  }
+}

@@ -1,0 +1,33 @@
+.items {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.item {
+  background: #212A33;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 17px;
+  color: white;
+
+  & + & {
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      left: 17px;
+      height: 0.33px;
+      background: black;
+    }
+  }
+
+  &Arrow {
+    color: #8794A1;
+  }
+}
