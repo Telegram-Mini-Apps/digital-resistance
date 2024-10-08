@@ -1,46 +1,117 @@
-# Getting Started with Create React App
+# Digital Resistance Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the source code for the [Digital Resistance](https://t.me/tgresistancebot)
+mini application, a project dedicated to promoting freedom of speech and advocating for Pavel
+Durov’s release.
 
-## Available Scripts
+## Disclaimer
 
-In the project directory, you can run:
+This repository provides information about the client-side implementation of the project. The
+backend portion may be included later, but currently, it only contains the mini application code
+along with its Backend-for-Frontend (BFF) code.
 
-### `npm start`
+Please note that the code was developed over one or two days, so the quality might seem unusual. It
+was quickly refactored to improve readability and flow.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> [!WARNING]
+> Use this code for educational purposes only and avoid using it as a direct template. The project
+> was built in a "hackathon" mode, which prioritizes speed over code quality.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Internationalization** with [i18next](https://www.npmjs.com/package/i18next).
+- **Event logging** using [Mixpanel](http://mixpanel.com).
+- **Error logging** using [Sentry](https://sentry.io).
+- **BFF server implementation** that serves as a proxy with security improvements.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Libraries
 
-### `npm run build`
+### General
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **[yarn](https://yarnpkg.com/)** for package management.
+- **[imagemin](https://www.npmjs.com/package/imagemin)** for image optimization and compression.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend-for-Frontend (BFF)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **[express](https://www.npmjs.com/package/express)** as the server framework.
+- **[helmet](https://www.npmjs.com/package/helmet)** to secure the app by setting HTTP headers.
+- **[cors](https://www.npmjs.com/package/cors)** for configuring CORS.
 
-### `npm run eject`
+### Mini Application
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **[React](https://react.dev/)** as the main rendering library.
+- **[CRA (Create React App)](https://create-react-app.dev/docs/getting-started/)** to initialize the
+  app.
+- **[@telegram-apps](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk-react/2-x)** for
+  integrating Telegram Mini Apps functionality.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Environment Variables
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+| Name                     | Required | Description                                                                                        |
+|--------------------------|----------|----------------------------------------------------------------------------------------------------|
+| TELEGRAM_BOT_TOKEN       | Yes      | The Telegram Bot token from [@BotFather](https://t.me/botfather), used for BFF request validation. |
+| SERVER_PORT              | Yes      | Port for the BFF server.                                                                           |
+| REACT_APP_API_BASE_URL   | No       | Base URL for the BFF used by the client application.                                               |
+| REACT_APP_MIXPANEL_TOKEN | Yes      | Mixpanel token for event tracking.                                                                 |
+| REACT_APP_SENTRY_DSN     | Yes      | Sentry DSN for error logging.                                                                      |
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Getting Started
 
-## Learn More
+### Step 1: Configure Environment Variables
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a `.env` file and add the required environment variables as outlined in
+the [Environment Variables](#environment-variables) section.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Step 2: Install Dependencies
+
+Install the necessary dependencies:
+
+```bash
+yarn
+```
+
+### Step 3: Run in Development Mode
+
+To start development mode, use:
+
+```bash
+yarn run dev
+```
+
+This will concurrently run the BFF and the client application in development mode, opening the
+application at `http://localhost:3000`.
+
+### Step 4: Create a Tunnel
+
+To develop the application within Telegram, an HTTP tunnel is required. You can use tools
+like [localtunnel](https://npmjs.com/package/localtunnel)
+or [ngrok](https://www.npmjs.com/package/ngrok).
+
+Example using `ngrok`:
+
+```bash
+ngrok http 3000
+```
+
+This will provide an HTTPS URL to use in the BotFather mini app settings.
+
+### Step 5: Open the App
+
+Once the tunnel URL is set in BotFather, launch the mini application and verify it’s working.
+
+## Building
+
+To build the application, run:
+
+```bash
+yarn run build
+```
+
+This will pull the latest `@telegram-apps/analytics` script and build the application in the `dist`
+folder.
+
+To start in production mode, use:
+
+```bash
+yarn run start:prod
+```
