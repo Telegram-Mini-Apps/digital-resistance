@@ -11,7 +11,6 @@
     "build:server": "cross-env NODE_ENV='production' && tsc --build tsconfig.node.json",
     "build": "sh scripts/build.sh",
     "start:prod": "cross-env NODE_ENV='production' && node dist/api/index.mjs",
-    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org sentry --project tapps-center ./dist/build && sentry-cli --url https://s.tontmaservice.xyz sourcemaps upload --org sentry --project tapps-center ./dist/build",
     "optimize-png:rough": "imagemin --plugin.pngquant.quality=0.1 --plugin.pngquant.quality=0.2 --out-dir=./public/img",
     "optimize-png:light": "imagemin --plugin.pngquant.quality=0.7 --plugin.pngquant.quality=0.8 --out-dir=./public/img"
   },
