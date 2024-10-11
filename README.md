@@ -49,16 +49,9 @@ was quickly refactored to improve readability and flow.
 
 ### Mini Application
 
-- **[React](https://react.dev/)** as the main rendering library.
-- **[CRA (Create React App)](https://create-react-app.dev/docs/getting-started/)
-  ** to initialize the
-  app.
--
-    *
-
-*[@telegram-apps](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk-react/2-x)
-** for
-integrating Telegram Mini Apps functionality.
+- [React](https://react.dev/) as the main rendering library.
+- [CRA (Create React App)](https://create-react-app.dev/docs/getting-started/) to initialize the app.
+- [@telegram-apps](https://docs.telegram-mini-apps.com/packages/telegram-apps-sdk-react/2-x) for integrating Telegram Mini Apps functionality.
 
 ## Environment Variables
 
