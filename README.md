@@ -36,16 +36,16 @@ was quickly refactored to improve readability and flow.
 
 ### General
 
-- **[yarn](https://yarnpkg.com/)** for package management.
-- **[imagemin](https://www.npmjs.com/package/imagemin)** for image optimization
+- [yarn](https://yarnpkg.com/) for package management.
+- [imagemin](https://www.npmjs.com/package/imagemin) for image optimization
   and compression.
 
 ### Backend-for-Frontend (BFF)
 
-- **[express](https://www.npmjs.com/package/express)** as the server framework.
-- **[helmet](https://www.npmjs.com/package/helmet)** to secure the app by
+- [express](https://www.npmjs.com/package/express) as the server framework.
+- [helmet](https://www.npmjs.com/package/helmet) to secure the app by
   setting HTTP headers.
-- **[cors](https://www.npmjs.com/package/cors)** for configuring CORS.
+- [cors](https://www.npmjs.com/package/cors) for configuring CORS.
 
 ### Mini Application
 
